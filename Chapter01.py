@@ -18,12 +18,12 @@ def Chapter01():
 
 
       print('')
-      print(Back.RED +                ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-      print(Back.YELLOW +             ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-      print(Back.WHITE + Fore.BLACK + ' ~ ~HOGWARTS: CHOICES~ ~ ')
-      print(Back.BLUE +               ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-      print(Back.GREEN +              ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
-
+      print(Back.RED + Fore.YELLOW +                      ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+      print(Back.YELLOW + Fore.BLACK +                    ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+      print(Back.WHITE + Fore.BLACK +                     ' ~ ~HOGWARTS: CHOICES~ ~ ')
+      print(Back.BLUE + Fore.LIGHTYELLOW_EX +             ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+      print(Back.GREEN + Fore.LIGHTBLACK_EX +             ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+      input()
       print('\n~Before we begin, would you mind giving me your name? Preferably first AND last.~\n')
 
       playerName = input()
@@ -122,7 +122,7 @@ def Chapter01():
       input()
 
       #Question #2
-      print('During your time at Hogwarts, you will have the opportunity to experience all kinds of activities outside the classroom.\n'
+      print('SORTING HAT: During your time at Hogwarts, you will have the opportunity to experience all kinds of activities outside the classroom.\n'
             'Which one appeals most to you?', end='')
       input()
       print(

@@ -66,7 +66,7 @@ def FlyDown():
         FlyDown()
 
 #BEGIN CHARMS
-def Charms1():
+def Charms():
     print('\n~You make your way through the maze of moving staircases, and eventually reach the Charms classroom\n'
           'on the second floor.~', end='')
     input()
@@ -107,14 +107,14 @@ def Charms1():
     else:
         print('FLITWICK: Oh, not good.', end='')
 
-    print('\n~rdcvbhtrdcvbht~')
+    print('\n~rdcvbhtrdcvbht~\n')
     x = input()
     if x == 'rdcvbhtrdcvbht':
         AddHousePoints(10)
     else:
         print('FLITWICK: Oh, not good.', end='')
 
-    print('\n~esxcvgresxcvgr~')
+    print('\n~esxcvgresxcvgr~\n')
     x = input()
     if x == 'esxcvgresxcvgr':
         AddHousePoints(10)
@@ -156,7 +156,7 @@ def Charms1():
     input()
     print('\nFLITWICK: Well done! Now you know how to use both Reducto and Reparo.', end='')
     input()
-    playerDict['AttendCharms1'] = True
+    playerDict['AttendCharms'] = True
     print('FLITWICK: That is all for today. Class dismissed.', end='')
     input()
 
@@ -251,7 +251,7 @@ def Potions():
     else:
         print(f"SNAPE: {playerDict['lastName']}! Don't force me to deduct house points.", end='')
 
-    print('SNAPE: Time\'s up! Let\'s witness the damage done today.', end='')
+    print('\nSNAPE: Time\'s up! Let\'s witness the damage done today.', end='')
     input()
     print('\n~Professor Snape inches towards your cauldron, towering over you.~', end='')
     input()

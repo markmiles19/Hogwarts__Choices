@@ -173,12 +173,12 @@ def Chapter10():
                 print('MILO: Not to mention you didn\'t even win the House Cup. What was it all\n'
                       'for then?', end='')
                 input()
-            print('MILO: They say that all wizards from Slytherin go bad eventually, I guess you\n'
+            print('MILO: They say that all wizards from Slytherin go bad eventually. I guess you\n'
                   'Gryffindors are no different.', end='')
             input()
             print('MILO: Don\'t bother keeping in touch.', end='')
             input()
-            print('\n~You watch as he leaves you far behind. There are no words.~')
+            print('\n~You watch as he leaves you far behind. There are no words.~', end='')
             input()
         elif Choices['GiveFullCredit'] == True:
             print('\nMILO: I had no idea Dumbledore was going to award you as well. I didn\'t even\n'
@@ -267,12 +267,12 @@ def Chapter10():
                 print('PERCIVAL: Not to mention you didn\'t even win the House Cup. What was it all\n'
                       'for then?', end='')
                 input()
-            print('PERCIVAL: They say that all wizards from Slytherin go bad eventually, I guess they\n'
+            print('PERCIVAL: They say that all wizards from Slytherin go bad eventually. I guess they\n'
                   'were right.', end='')
             input()
             print('PERCIVAL: Don\'t bother keeping in touch.', end='')
             input()
-            print('\n~You watch as he leaves you far behind. There are no words.~')
+            print('\n~You watch as he leaves you far behind. There are no words.~', end='')
             input()
         elif Choices['GiveFullCredit'] == True:
             print('\nPERCIVAL: I had no idea Dumbledore was going to award you as well. I didn\'t even\n'

@@ -25,8 +25,9 @@ def Chapter02():
                 print('\nPERCIVAL: ~Laughs~ You’re really quite the comedian, you are.', end='')
                 input()
             else:
-                print('\nPERCIVAL: Oh, I remember now! I heard your name called out during the Sorting Ceremony.\n'
-                    'I probably should have mentioned before that I’m actually a second year.', end='')
+                print('\nPERCIVAL: Oh, I remember now! I heard your name called out during the Sorting Ceremony.', end='')
+                input()
+                print('PERCIVAL: I probably should have mentioned before that I’m actually a second year.', end='')
                 input()
         elif x == '2':
             print('\nPERCIVAL: Are you sure you’re in the right house? I guess it doesn’t matter anyway...', end='')

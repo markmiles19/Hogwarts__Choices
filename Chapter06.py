@@ -27,7 +27,7 @@ def Chapter06():
 
     #BRANCH FUNCTIONS
     def DecideClassOne(x):
-        print(f"{playerDict['Companion'].upper()}: See you later, {playerDict['firstName']}.", end='')
+        print(f"\n{playerDict['Companion'].upper()}: See you later, {playerDict['firstName']}.", end='')
         input()
         if x == '1':
             Transfiguration()
@@ -100,30 +100,47 @@ def Chapter06():
     print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
     input()
 
+
+
     #BEGIN GRYFFINDOR PATH
     if playerDict['House'] == 'Gryffindor':
-        print('~Following the exciting events from last night, you struggle to adjust to start\n'
+        print('\n~Following the exciting events from last night, you struggle to adjust to start\n'
               'of a new day as you meet Percival in the common room.~', end='')
         input()
-        print('PERCIVAL: I just hope that by the end of the day I\'ll have pinpointed to location\n'
-              'to the next clue.', end='')
+        print('\nPERCIVAL: I was just looking for you.', end='')
+        input()
+        print('PERCIVAL: You\'ll be happy to hear that I did a bit of research earlier and I now\n'
+              'know exactly where the next step in our journey will take us.', end='')
+        input()
+        print('PERCIVAL: Mind you that it will be several miles of walking distance, and should anything\n'
+              'go wrong or one of us gets hurt, it\'ll be points from Gryffindor.', end='')
         input()
         if Choices['Compromise'] == True:
             print('PERCIVAL: As much as I disagree with bringing Milo along, it looks like i have\n'
                   'no choice but to let him know when I get the chance.', end='')
+            input()
         else:
             print('PERCIVAL: And hopefully Milo will learn to keep his fat nose out of our business.', end='')
+            input()
         #END GRYFFINDOR PATH
+
+
 
     #BEGIN HUFFLEPUFF PATH
     if playerDict['House'] == 'Hufflepuff':
-        pass
+        print('WORK IN PROGRESS', end='')
+        input()
         #END HUFFLEPUFF PATH
+
+
 
     #BEGIN HUFFLEPUFF PATH
     if playerDict['House'] == 'Ravenclaw':
-        pass
+        print('WORK IN PROGRESS', end='')
+        input()
         #END RAVENCLAW PATH
+
+
 
     #BEGIN SLYTHERIN PATH
     if playerDict['House'] == 'Slytherin':
@@ -150,9 +167,9 @@ def Chapter06():
     input()
     if playerDict['AttendTransfig'] == True and playerDict['AttendHerb'] == True:
         MagicalCreatures()
-    if playerDict['AttendHerb'] == True and playerDict['AttendCare'] == True:
+    elif playerDict['AttendHerb'] == True and playerDict['AttendCare'] == True:
         Transfiguration()
-    if playerDict['AttendTransfig'] == True and playerDict['AttendCare'] == True:
+    elif playerDict['AttendTransfig'] == True and playerDict['AttendCare'] == True:
         Herbology()
     EndDayTwo()
     HousePointTotals()

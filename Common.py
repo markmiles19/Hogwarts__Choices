@@ -20,7 +20,7 @@ playerDict = {'firstName':'Default',
               'Companion':'Default',
               'Quidditch':'Default',
               'WizardsChess':'Default',
-              'AttendCharms1': False,
+              'AttendCharms': False,
               'AttendPotions': False,
               'AttendFlying': False,
               'Reducto':'Default',
@@ -30,7 +30,7 @@ playerDict = {'firstName':'Default',
               'AttendCare': False,
               'AttendDefense': False,
               'AttendDiv': False,
-              'AttendAtr': False,
+              'AttendAstro': False,
               'WinHouseCup': False}
 
 Choices = {'Compromise': False,
@@ -75,15 +75,15 @@ def storeName(name):
             playerDict['lastName'] = playerDict['lastName'][0].upper() + playerDict['lastName'][1:].lower()
             playerDict['fullName'] = playerDict['firstName'] + ' ' + playerDict['lastName']
         else:
-            print('\n~Preferably first and last name AND NO SYMBOLS.~', end='')
+            print('\n~Preferably first and last name AND NO SYMBOLS.~\n')
             playerName = input()
             storeName(playerName)
     elif len(tokens) < 2:
-        print('\n~Preferably first AND last name.~', end='')
+        print('\n~Preferably first AND last name.~\n')
         playerName = input()
         storeName(playerName)
     elif len(tokens) > 2:
-        print('\n~Preferably first and last name ONLY.~', end='')
+        print('\n~Preferably first and last name ONLY.~\n')
         playerName = input()
         storeName(playerName)
 
@@ -165,33 +165,43 @@ def finalizeSort():
     keymax = max(zip(sortingDict.values(), sortingDict.keys()))[1]
     if keymax == 'Red':
         playerDict['House'] = 'Gryffindor'
-        playerDict['Companion'] = 'PERCIVAL'
+        playerDict['Companion'] = 'Percival'
         playerDict['HouseColor'] = 'RED'
     elif keymax == 'Yellow':
         playerDict['House'] = 'Hufflepuff'
-        playerDict['Companion'] = 'LEANNA'
+        playerDict['Companion'] = 'Leanna'
         playerDict['HouseColor'] = 'YELLOW'
     elif keymax == 'Blue':
         playerDict['House'] = 'Ravenclaw'
-        playerDict['Companion'] = 'ALIYA'
+        playerDict['Companion'] = 'Aliya'
         playerDict['HouseColor'] = 'BLUE'
     elif keymax == 'Green':
         playerDict['House'] = 'Slytherin'
-        playerDict['Companion'] = 'MILO'
+        playerDict['Companion'] = 'Milo'
         playerDict['HouseColor'] = 'GREEN'
 
 def AddHousePoints(x):
     housePts[playerDict['House']] += int(x)
     if playerDict['House'] == 'Gryffindor':
-        print(Fore.RED + '\n+' + str(x) + '*')
+        print(Fore.RED + '\n+' + str(x) + '*', end='')
+        time.sleep(0.5)
+        print()
     elif playerDict['House'] == 'Hufflepuff':
-        print(Fore.YELLOW + '\+' + str(x) + '*')
+        print(Fore.YELLOW + '\+' + str(x) + '*', end='')
+        time.sleep(0.5)
+        print()
     elif playerDict['House'] == 'Ravenclaw':
-        print(Fore.BLUE + '\n+' + str(x) + '*')
+        print(Fore.BLUE + '\n+' + str(x) + '*', end='')
+        time.sleep(0.5)
+        print()
     elif playerDict['House'] == 'Slytherin':
-        print(Fore.GREEN + '\n+' + str(x) + '*')
+        print(Fore.GREEN + '\n+' + str(x) + '*', end='')
+        time.sleep(0.5)
+        print()
     else:
         print('\n~Wait, are you unsorted? What are you doing here?~', end='')
+        time.sleep(0.5)
+        print()
 
 def EndDayOne():
     if playerDict['House'] == 'Gryffindor':

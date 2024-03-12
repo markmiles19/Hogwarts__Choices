@@ -1,3 +1,4 @@
+from Common import playerDict
 from Common import AddHousePoints
 
 #BEGIN DEFENSE AGAINST THE DARK ARTS CLASS
@@ -9,11 +10,52 @@ def Defense():
     input()
     print('TEACHER: We\'ll be learning about a most fascinating creature called a boggart.', end='')
     input()
-    print('TEACHER: Now boggarts can be banished through a simple spell...', end='')
+    print('TEACHER: Now a boggart takes the shape of what one fears the most, and they often hide\n'
+          'inside of everyday objects such as wardrobes or cabinets.', end='')
+    input()
+    print('TEACHER: They can be banished through a simple spell...', end='')
     input()
     print('TEACHER: Riddikulus.', end='')
     input()
-    print('')
+    print('TEACHER: Now pay close attention to my movements and repeat the spell.', end='')
+    input()
+    print('\n~qazmlp~\n')
+    x = input()
+    if x == 'qazmlp':
+        AddHousePoints(10)
+        print('TEACHER: Very good!', end='')
+        input()
+    else:
+        print('TEACHER: Ooh! Not good.', end='')
+        input()
+    print('\n~weiosdjkxcbn~\n')
+    x = input()
+    if x == 'weiosdjkxcbn':
+        AddHousePoints(10)
+        print('TEACHER: Very good!', end='')
+        input()
+    else:
+        print('TEACHER: Ooh! Not good.', end='')
+        input()
+    print('\n~rfvbhuh~\n')
+    x = input()
+    if x == 'rfvbhuh':
+        AddHousePoints(10)
+        print('TEACHER: Very good!', end='')
+        input()
+    else:
+        print('TEACHER: Ooh! Not good.', end='')
+        input()
+    print('~Riddikulus!~', end='')
+    input()
+    print('~Your spell disappears into thin air.~', end='')
+    input()
+    print('\nTEACHER: Unfortunately we won\'t be able to put the spell to practical\n'
+          'use during this class period since all boggarts have been curiously displaced.', end='')
+    input()
+    playerDict['AttendDefense'] = True
+    print('TEACHER: Alright, I won\'t hold you any longer. Off you go!', end='')
+    input()
     #END DEFENSE AGAINST THE DARK ARTS CLASS
 
 
@@ -139,7 +181,7 @@ def Divination():
     else:
         print('\nTRELAWNEY: Oh are you sure you\'re using your inner eye?', end='')
         input()
-
+    playerDict['AttendDiv'] = True
     print('\nTRELAWNEY: I\'m afraid that\'s all of the time we have for today.', end='')
     input()
     print('TRELAWNEY: You may go now.', end='')
@@ -149,7 +191,142 @@ def Divination():
 
 #BEGIN ASTRONOMY CLASS
 def Astronomy():
-    print('\n~~')
+    print('\n~You gather with other students in the astronomy tower where you can see the\n'
+          'entire grounds of Hogwarts all around you. Professor Sinistra stands before you.~', end='')
+    input()
+    print('\nSINISTRA: Settle down now, please!', end='')
+    input()
+    print('SINISTRA: I\'m sure many of you are eager to break out those telescopes you bought\n'
+          'from Diagon Alley, but I thought I would warm all of you up a different way...', end='')
+    input()
+    print('SINISTRA: With a pop quiz!', end='')
+    input()
+    print('\n~Every one of you groan.~', end='')
+    input()
+    print('\nSINISTRA: Now I\'ll be a lot more forgiving with your grades since this is the first\n'
+          'day, so let us begin.', end='')
+    input()
+
+    #QUESTION #1
+    print('SINISTRA: Question #1: The constellation Ursa Major is often seen as either a bear, wagon,\n'
+          'or ladle, but it is more commonly known by what other name?', end='')
+    input()
+    print(
+        '\n[1] Big Dipper\n'
+        '[2] Little Dipper\n'
+        '[3] Plough\n'
+        '[4] Polaris\n'
+    )
+    x = input()
+    if x == '1':
+        print('\nSINISTRA: Incorrect.', end='')
+        input()
+        print('SINISTRA: In the United Kingdom, Ursa Major is known as the Plough, whereas the name Big\n'
+              'Dipper is used in the United States and Canada.', end='')
+        input()
+    elif x == '2':
+        print('\nSINISTRA: Incorrect.', end='')
+        input()
+        print('SINISTRA: In the United Kingdom, Ursa Major is known as the Plough, whereas the name Little\n'
+              'Dipper is used in the United States and Canada to refer to Ursa Minor.', end='')
+        input()
+    elif x == '3':
+        AddHousePoints(5)
+        print('\nSINISTRA: Correct.', end='')
+        input()
+        print('SINISTRA: In the United Kingdom, Ursa Major is known as the Plough.', end='')
+        input()
+    elif x == '4':
+        print('\nSINISTRA: Incorrect.', end='')
+        input()
+        print('SINISTRA: In the United Kingdom, Ursa Major is known as the Plough, whereas Polaris is the\n'
+              'star located at the tip of Ursa Minor.', end='')
+        input()
+    else:
+        print('\nSINISTRA: Time\'s up!', end='')
+        input()
+        print('SINISTRA: In the United Kingdom, Ursa Major is known as the Plough.', end='')
+        input()
+
+    #QUESTION #2
+    print('SINISTRA: Question #2: Which zodiac constellation is located between Cancer and Taurus?', end='')
+    input()
+    print(
+        '\n[1] Taurus\n'
+        '[2] Gemini\n'
+        '[3] Leo\n'
+        '[4] Virgo\n'
+    )
+    x = input()
+    if x == '1':
+        print('\nSINISTRA: Incorrect!', end='')
+        input()
+        print('SINISTRA: Taurus can be found between Aries and Gemini, however Leo is found between Cancer and Taurus.', end='')
+        input()
+    elif x == '2':
+        print('\nSINISTRA: Incorrect!', end='')
+        input()
+        print('SINISTRA: Gemini can be found between Taurus and Cancer, however Leo is found between Cancer and Taurus.', end='')
+        input()
+    elif x == '3':
+        AddHousePoints(5)
+        print('\nSINISTRA: Correct!', end='')
+        input()
+        print('SINISTRA: Leo is found in the fifth position of the Zodiac constellations and appears in the\n'
+              'sky from July 23 to August 22.', end='')
+        input()
+    elif x == '4':
+        print('\nSINISTRA: Incorrect!', end='')
+        input()
+        print('SINISTRA: Virgo can be found between Leo and Libra, however Leo is found between Cancer and Taurus.', end='')
+        input()
+    else:
+        print('\nSINISTRA: Time\'s up!', end='')
+        input()
+        print('SINISTRA: Leo is found in the fifth position of the Zodiac constellations and appears in the\n'
+              'sky from July 23 to August 22.', end='')
+        input()
+
+    #QUESTION #3
+    print('\nSINISTRA: Question #3: At what time of the year can Orion be seen?', end='')
+    input()
+    print(
+        '\n[1] Summer\n'
+        '[2] Winter\n'
+        '[3] Spring\n'
+        '[4] Fall\n'
+    )
+    x = input()
+    if x == '1':
+        print('\nSINISTRA: Incorrect!', end='')
+        input()
+        print('SINISTRA: The constellation Orion is visible during Winter, not Summer.', end='')
+        input()
+    elif x == '2':
+        AddHousePoints(5)
+        print('\nSINISTRA: Correct!', end='')
+        input()
+        print('SINISTRA: The constellation Orion is visible during Winter.', end='')
+        input()
+    elif x == '3':
+        print('\nSINISTRA: Incorrect!', end='')
+        input()
+        print('SINISTRA: The constellation Orion is visible during Winter, not Spring.', end='')
+        input()
+    elif x == '4':
+        print('\nSINISTRA: Incorrect!', end='')
+        input()
+        print('SINISTRA: The constellation Orion is visible during Winter, not Fall.', end='')
+        input()
+    else:
+        print('\nSINISTRA: Time\'s up!', end='')
+        input()
+        print('SINISTRA: The constellation Orion is visible during Winter.', end='')
+        input()
+    playerDict['AttendAstro'] = True
+    print('SINISTRA: Unfortunately that\'s all the time we have for today.', end='')
+    input()
+    print('SINISTRA: Class dismissed!', end='')
     input()
     #END ASTRONOMY CLASS
 

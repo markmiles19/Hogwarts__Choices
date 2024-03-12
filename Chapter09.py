@@ -806,9 +806,9 @@ def Chapter09():
 
 
     #TESTING STATEMENTS
-    playerDict['House'] = 'Gryffindor'
-    playerDict['firstName'] = 'Mark'
-    playerDict['Fear'] = 'being alone'
+    #playerDict['House'] = 'Gryffindor'
+    #playerDict['firstName'] = 'Mark'
+    #playerDict['Fear'] = 'being alone'
 
 
 
@@ -1272,14 +1272,26 @@ def Chapter09():
 
     #HUFFLEPUFF PATH
     if playerDict['House'] == 'Hufflepuff':
-        pass
+        print('')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 9: TBD    ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+        input()
+        print('WORK IN PROGRESS', end='')
+        input()
         #END HUFFLEPUFF PATH
 
 
 
     #RAVENCLAW PATH
     if playerDict['House'] == 'Ravenclaw':
-        pass
+        print('')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 9: TBD    ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+        input()
+        print('WORK IN PROGRESS', end='')
+        input()
         #END RAVENCLAW PATH
 
 
@@ -1395,4 +1407,4 @@ def Chapter09():
 
 
 #RUN CHAPTER
-Chapter09()
+#Chapter09()

@@ -3,7 +3,7 @@ def Chapter03():
     from Common import playerDict
 
     #IMPORTED FUNCTIONS
-    from Chapter03b import Charms1
+    from Chapter03b import Charms
     from Chapter03b import Potions
     from Chapter03b import Flying
 
@@ -50,7 +50,7 @@ def Chapter03():
                 input()
             print('...', end='')
             input()
-            Charms1()
+            Charms()
                 
         elif x == '2':
             if playerDict['House'] == 'Gryffindor':
@@ -103,7 +103,7 @@ def Chapter03():
 
     def branch4(x):
         if x == '1':
-            Charms1()
+            Charms()
         elif x == '2':
             Flying()
         else:
@@ -113,7 +113,7 @@ def Chapter03():
 
     def branch5(x):
         if x == '1':
-            Charms1()
+            Charms()
         elif x == '2':
             Potions()
         else:
@@ -122,7 +122,7 @@ def Chapter03():
             branch5(x)
 
     def branch6():
-        if playerDict['AttendCharms1'] == True:
+        if playerDict['AttendCharms'] == True:
             print(
             '\n[1] Potions\n'
             '[2] Flying\n'
@@ -165,8 +165,9 @@ def Chapter03():
     )
     x = input()
     branch1(x)
-    print(f"{playerDict['Companion'].upper()}: If you take a look at the notice board you’ll see the schedule for first-years.\n"
-        'Remember, this year you can choose the order in which you attend classes.', end='')
+    print(f"{playerDict['Companion'].upper()}: If you take a look at the notice board you’ll see the schedule for first-years.", end='')
+    input()
+    print(f"{playerDict['Companion'].upper()}: Remember, this year you can choose the order in which you attend classes.", end='')
     input()
     print(f"{playerDict['Companion'].upper()}: It looks like today will be Charms, Potions, and Flying for you.", end='')
     input()
@@ -184,11 +185,11 @@ def Chapter03():
     branch6()
     print('\n~You\'ve finished two of your classes for the day, leaving just one more...~', end='')
     input()
-    if playerDict['AttendCharms1'] == True and playerDict['AttendPotions'] == True:
+    if playerDict['AttendCharms'] == True and playerDict['AttendPotions'] == True:
         Flying()
-    if playerDict['AttendPotions'] == True and playerDict['AttendFlying'] == True:
-        Charms1()
-    if playerDict['AttendCharms1'] == True and playerDict['AttendFlying'] == True:
+    elif playerDict['AttendPotions'] == True and playerDict['AttendFlying'] == True:
+        Charms()
+    elif playerDict['AttendCharms'] == True and playerDict['AttendFlying'] == True:
         Potions()
 
 

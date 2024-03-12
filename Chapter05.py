@@ -52,10 +52,11 @@ def Chapter05():
     def branch3(x):
         if x == '1':
             print(f"\nPERCIVAL: Not the time, {playerDict['firstName']}!", end='')
+            input()
         elif x == '2':
-            pass
+            print('')
         else:
-            pass
+            print('')
 
     def Reducto(x):
         if x == 'd' or x == 'D':
@@ -95,9 +96,9 @@ def Chapter05():
         print(
             '\n[<] ~PREV~\n'
             '[1] Zacharias Mumps, 1368\n'
-            '[2] TBD\n'
+            '[2] Gladys Boothby, 1901\n'
             '[3] Jonathan Able, 1034\n'
-            '[4] TBD\n')
+            '[4] Katie Rayknolls, 1728\n')
         x = input()
         if x == '<':
             Section2()
@@ -111,8 +112,8 @@ def Chapter05():
             '\n[<] ~PREV~\n'
             '[1] Bowman Wright, 1506\n'
             '[2] R. J. H. King, 1968\n'
-            '[3] TBD\n'
-            '[4] TBD\n'
+            '[3] Jocunda Sykes, 1921\n'
+            '[4] Modesty Rabnott, 1269\n'
             '[>] ~NEXT~\n')
         x = input()
         if x == '<':
@@ -161,6 +162,9 @@ def Chapter05():
             print('\n~You cast the stunning spell, Stupefy, and dash out of the room with the trophy,\n'
                   'your friends trailing behind you.~')
             input()
+            print('\n~After dodging patrolling prefects on your return to the Gryffindor Common room,\n'
+                  'you all turn in after an exhausting night.~', end='')
+            input()
         elif x == '4':
             print('\nMILO: If that\'s what you want, then so be it.', end='')
             input()
@@ -171,40 +175,96 @@ def Chapter05():
             if x == 'd' or x == 'D':
                 pass
             else:
+                print('\n~Milo stunned you in your right arm.~', end='')
+                input()
+            print('\n~You are hidden behind a column. Will you attack from the left or the right?~', end='')
+            input()
+            print(
+                '\n[1] Left\n'
+                '[2] Right\n'
+            )
+            x = input()
+            if x == '1':
+                print('\n~You manage to graze his left knee.~', end='')
+                input()
+                print('\nMILO: You\'ll have to do better than that if you want me to yield!', end='')
+                input()
+            elif x == '2':
+                print('\n~You manage to graze his right knee.~', end='')
+                input()
+                print('\nMILO: You\'ll have to do better than that if you want me to yield!', end='')
+                input()
+            else:
+                print('\n~You sneak a look around the corner...~', end='')
+                input()
+                print('\nMILO: Stupefy!', end='')
+                input()
+                print('\n~He blinds your sight temporarily.~', end='')
+                input()
+                print('\nMILO: It\'s never too late to yield!', end='')
+                input()
+            print('\n~You leave your cover and open fire on him.~', end='')
+            input()
+            print('~Press S to cast stupefy.~', end='')
+            x = input()
+            if x == 's' or x == 'S':
                 pass
+            else:
+                print('~OUCH~', end='')
+                input()
+            print('~Press S to cast stupefy.~', end='')
+            x = input()
+            if x == 's' or x == 'S':
+                pass
+            else:
+                print('~OUCH~', end='')
+                input()
+            print('~Press P to defend with Protego.~', end='')
+            x = input()
+            if x == 'p' or x == 'P':
+                pass
+            else:
+                print('~OUCH~', end='')
+                input()
+            print('\n~Milo is on the ground now, completely defenseless. What will you do?~', end='')
+            input()
+            print(
+                '\n[1] Disarm him\n'
+                '[2] Let him go\n'
+            )
+            def MiloFate(x):
+                if x == '1':
+                    print('\n~Expelliarmus!~', end='')
+                    input()
+                    print('\n~Milo\'s wand flies out of his hand and hits the floor.~', end='')
+                    input()
+                    print('\nMILO: Alright! Alright I yield now.', end='')
+                    input()
+                    print('MILO: Just take your trophy and go.', end='')
+                    input()
+                    print('\n~MILO trudges out of the room, his pride in shambles.~', end='')
+                    input()
+                    print('\n~After dodging patrolling prefects on your return to the Gryffindor Common room,\n'
+                    'you all turn in after an exhausting night.~', end='')
+                    input()
+                elif x == '2':
+                    print('\n~You pocket your want and help him back up on his feet.~', end='')
+                    input()
+                    print('\n~He dashed to the exit, turns back to you briefly, and then disappears.~', end='')
+                    input()
+                    print('\n~After dodging patrolling prefects on your return to the Gryffindor Common room,\n'
+                    'you all turn in after an exhausting night.~', end='')
+                    input()
+                else:
+                    print('\nYou have an important decision to make. Now choose!', end='')
+                    x = input()
+                    MiloFate(x)
+            x = input()
+            MiloFate(x)
         else:
             print('\n~This could turn ugly real fast. Now it\'s time to intervene.~\n')
             x = input()
             Standstill(x)
-
-    def Standstill_S(x):
-        if x == '1':
-            print('\MILO: No!')
-            print('PERCIVAL: No!\n')
-            x = input()
-            Standstill_S(x)
-        elif x == '2':
-            print('\n~You tell Percival that he can join the two of you to the next location.~', end='')
-            input()
-            print('\nPERCIVAL: Alright. I\'ll help the two of you for the time being, but don\'t think for\n'
-                  'a second that I\'ll hand over the treasure to some slimy Slytherin.', end='')
-            input()
-            print('\MILO: I guess that\'s settled then.', end='')
-            input()
-            print('\nPERCIVAL: Okay.', end='')
-            input()
-            print('\nMILO: Okay.', end='')
-            input()
-        elif x == '3':
-            print('~You cast the stunning spell, Stupefy, and dash out of the room with the trophy,\n'
-                  'your friends trailing behind you.~')
-            input()
-        elif x == '4':
-            pass
-        else:
-            print('\n~This could turn ugly real fast. Now it\'s time to intervene.~\n')
-            x = input()
-            Standstill_S(x)
     #END BRANCH FUNCTIONS
 
 
@@ -229,10 +289,10 @@ def Chapter05():
         input()
         print('PERCIVAL: The good news is that the trophy room is open to students at all times.', end='')
         input()
-        print('LEO: The only downside is that the caretaker Mr. Filtch stops by every so often to make sure\n'
+        print('\nLEO: The only downside is that the caretaker Mr. Filtch stops by every so often to make sure\n'
             'there aren\'t any students getting up to no good.', end='')
         input()
-        print('PERCIVAL: And as you could imagine that will be a problem for us.', end='')
+        print('\nPERCIVAL: And as you could imagine that will be a problem for us.', end='')
         input()
         print('PERCIVAL: Just remember before we go in, Merlin attended Hogwarts around the turn of the 11th century,\n'
             'so we need to find a trophy that was issued to a student around the same time.', end='')
@@ -268,7 +328,7 @@ def Chapter05():
         print('\n~Press D to cast Reducto.~\n')
         x = input()
         Reducto(x)
-        print('\n~The class case shatters into a million pieces. Thank Merlin none of them landed on\n'
+        print('\n~The glass case shatters into a million pieces. Thank Merlin none of them landed on\n'
               'the three of you.~', end='')
         input()
         print('\nPERCIVAL: Let\'s see what all the fuss is about with you, Jonathan Able.', end='')
@@ -290,7 +350,8 @@ def Chapter05():
         input()
         print('\nPERCIVAL: Get lost, Milo! This has nothing to do with you.', end='')
         input()
-        print('\nMILO: This has EVERYTHING to do with me.', end='')
+        print('\nMILO: This has everything to do with me.', end='')
+        input()
         print(
             '\n[1] Who\'s this guy?\n'
             '[2] ~Stay silent~\n'
@@ -320,12 +381,24 @@ def Chapter05():
 
     #HUFFLEPUFF PATH
     if playerDict['House'] == 'Hufflepuff':
-        pass
+        print('')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 5: TBD    ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+        input()
+        print('WORK IN PROGRESS', end='')
+        input()
 
 
     #RAVENCLAW PATH
     if playerDict['House'] == 'Ravenclaw':
-        pass
+        print('')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 5: TBD    ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+        input()
+        print('WORK IN PROGRESS', end='')
+        input()
 
 
     #SLYTHERIN PATH
@@ -347,11 +420,11 @@ def Chapter05():
               '[2] ~Scan the room~\n')
         def EncounterFiltch(x):
             if x == 1:
-                pass
+                print('\nMILO: I\'ll make a ')
             elif x == 2:
-                pass
+                print('~You find three objects in the room you can use to your advantage: ~')
             else:
-                pass
+                print()
         x = input()
         EncounterFiltch(x)
         print('\n~Without another moment\'s hesitation, Milo slowly opens the door...~', end='')

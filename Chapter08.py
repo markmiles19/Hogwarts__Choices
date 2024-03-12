@@ -55,21 +55,21 @@ def Chapter08():
                 print('\n~You\'re not getting out of this one so easy...~\n')
                 x = input()
                 SubDecideThree(x)
-        if playerDict['AttendTransfig'] == True:
+        if playerDict['AttendDefense'] == True:
             print(
             '\n[1] Divination\n'
             '[2] Astronomy\n'
             )
             x = input()
             SubDecideOne(x)
-        elif playerDict['AttendHerb'] == True:
+        elif playerDict['AttendDiv'] == True:
             print(
             '\n[1] Defense Against the Dark Arts\n'
             '[2] Astronomy\n'
             )
             x = input()
             SubDecideTwo(x)
-        elif playerDict['AttendCare'] == True:
+        elif playerDict['AttendAstro'] == True:
             print(
             '\n[1] Defense Against the Dark Arts\n'
             '[2] Divination\n'
@@ -83,11 +83,47 @@ def Chapter08():
     #BEGIN COMMON ROOM
     print('')
     print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-    print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 8: TBD    ~ ')
+    print(Back.WHITE + Fore.BLACK + ' ~     CHAPTER 8: The Beyond     ~ ')
     print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
     input()
 
-    print(f"{playerDict['Companion'].upper()}: Anyway, which class do you think you're going to first?", end='')
+
+
+    #BEGIN GRYFFINDOR PATH
+    if playerDict['House'] == 'Gryffindor':
+        print('\n~You\'ve nearly recovered from your great battle yesterday, and now you must return\n'
+              'your mind to your studies.~', end='')
+        input()
+        print('\nPERCIVAL: I don\'t know how I\'m supposed to pay attention in Ancient Runes today\n'
+              'knowing that the treasure it so close now.', end='')
+        input()
+    #END GRYFFINDOR PATH
+
+
+
+    #BEGIN HUFFLEPUFF PATH
+    elif playerDict['House'] == 'Hufflepuff':
+        pass
+    #END GRYFFINDOR PATH
+
+
+
+    #BEGIN RAVENCLAW PATH
+    elif playerDict['House'] == 'Ravenclaw':
+        pass
+    #END GRYFFINDOR PATH
+
+
+
+    #BEGIN SLYTHERIN PATH
+    elif playerDict['House'] == 'Slytherin':
+        pass
+    #END GRYFFINDOR PATH
+
+
+
+    #CONT COMMON ROOM
+    print(f"{playerDict['Companion'].upper()}: Anyway, I think you know the drill by now.", end='')
     input()
     print(
     '\n[1] Defense Against the Dark Arts\n'
@@ -96,17 +132,26 @@ def Chapter08():
     )
     x = input()
     DecideClassOne(x)
+
+    #FIRST CLASS ATTENDED
+
     print('\n~Now with that out of the way, where would you like to go next?~', end='')
     input()
     DecideClassTwo()
+
+    #SECOND CLASS ATTENDED
+
     print('\n~You\'ve finished two of your classes for the day, leaving just one more...~', end='')
     input()
     if playerDict['AttendDefense'] == True and playerDict['AttendDiv'] == True:
         Astronomy()
-    if playerDict['AttendDiv'] == True and playerDict['AttendAst'] == True:
+    elif playerDict['AttendDiv'] == True and playerDict['AttendAstro'] == True:
         Defense()
-    if playerDict['AttendDefense'] == True and playerDict['AttendAst'] == True:
+    elif playerDict['AttendDefense'] == True and playerDict['AttendAstro'] == True:
         Divination()
+
+    #THIRD CLASS ATTENDED
+
     EndDayThree()
     HousePointTotals()
 

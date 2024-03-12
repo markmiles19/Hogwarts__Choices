@@ -54,11 +54,11 @@ def Chapter04():
 
     def branch3(x):
             if x == '1':
-                print('PERCIVAL: The stars DO glitter like gold at night, but that’s not what I’m looking for.', end='')
+                print('\nPERCIVAL: The stars DO glitter like gold at night, but that’s not what I’m looking for.\n')
                 x = input()
                 branch3(x)
             elif x == '2':
-                print('PERCIVAL: That’s really funny, but no.', end='')
+                print('\nPERCIVAL: That’s really funny, but no.\n')
                 x = input()
                 branch3(x)
             elif x == '3':
@@ -80,22 +80,22 @@ def Chapter04():
                 print('PERCIVAL: As a matter of fact, next time I see him, I’ll let him know of our plans.', end='')
                 input()
             elif x == '2':
-                print('PERCIVAL: I like your spirit! Next time I see Leo, I’ll let him know of our plans.', end='')
+                print('\nPERCIVAL: I like your spirit! Next time I see Leo, I’ll let him know of our plans.', end='')
                 input()
             else:
                 print('\nPERCIVAL: Come on, give me a REAL guess.\n')
 
     def branch5(x):
             if x == '1':
-                print('MILO: Several days ago I checked this book out from the library since I’m an avid reader\n'
+                print('\nMILO: Several days ago I checked this book out from the library since I’m an avid reader\n'
                     'and I\'ve always wanted to read “Quidditch Through the Ages.”', end='')
                 input()
             elif x == '2':
-                print('MILO: At the moment I’m reading “Quidditch Through the Ages” by Kennilworthy Whisp. I never\n'
+                print('\nMILO: At the moment I’m reading “Quidditch Through the Ages” by Kennilworthy Whisp. I never\n'
                     'cared too much for Quidditch, but it has a fascinating history.', end='')
                 input()
             else:
-                (print('\nMILO: Could you speak up?\n'))
+                print('\nMILO: Could you speak up?\n')
                 x = input()
                 branch5(x)
 
@@ -113,15 +113,15 @@ def Chapter04():
 
     def branch7(x):
             if x == '1':
-                print('MILO: We could have found him there if it weren’t for the fact that he’s dead.', end='')
+                print('\nMILO: We could have found him there if it weren’t for the fact that he’s dead.\n')
                 x = input()
                 branch7(x)
             elif x == '2':
-                print('MILO: What would a thousand-year old seeker be doing in the dungeons?\n')
+                print('\nMILO: What would a thousand-year old seeker be doing in the dungeons?\n')
                 x = input()
                 branch7(x)
             elif x == '3':
-                print('MILO: My thoughts exactly. If we can find the trophy that belonged to this seeker, it would bring us closer to\n'
+                print('\nMILO: My thoughts exactly. If we can find the trophy that belonged to this seeker, it would bring us closer to\n'
                     'finding the treasure and restoring Merlin’s legacy.', end='')
                 input()
             else:
@@ -134,7 +134,7 @@ def Chapter04():
                 print('\nMILO: Only if we get caught. I’ve done this maybe once or twice, so it should all work out in the end.', end='')
                 input()
             elif x == '2':
-                pass
+                print('')
             else:
                 print('\nMILO: Sorry?\n')
                 x = input()
@@ -217,7 +217,8 @@ def Chapter04():
         print(Back.WHITE + Fore.BLACK + ' ~      CHAPTER 4: MEET THE TEAM     ~ ')
         print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
         input()
-        print('WORK IN PROGRESS')
+        print('WORK IN PROGRESS', end='')
+        input()
         #END HUFFLEPUFF PATH
 
 
@@ -229,7 +230,8 @@ def Chapter04():
         print(Back.WHITE + Fore.BLACK + ' ~    CHAPTER 4: TBD    ~ ')
         print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
         input()
-        print('WORK IN PROGRESS')
+        print('WORK IN PROGRESS', end='')
+        input()
         #END RAVENCLAW PATH
 
 
@@ -241,22 +243,19 @@ def Chapter04():
         print(Back.WHITE + Fore.BLACK + ' ~    CHAPTER 4: MERLIN\'S LEGACY    ~ ')
         print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
         input()
-
-        print('~After a long day of classes, you go to the boathouse where you meet Milo sitting down on the\n'
-            'edge of the dock with his feet in the water. He holds a book in his hands.~\n')
-
+        print('\n~After a long day of classes, you go to the boathouse where you meet Milo sitting down on the\n'
+            'edge of the dock with his feet in the water. He holds a book in his hands.~', end='')
+        input()
         print(f"MILO: I’ve been expecting you, {playerDict['firstName']}. Doesn’t all of your stress just float away when you\n"
             'look out on the water?\n')
-
+        input()
         print(
-        '[1] So what’s the deal with this quest you were talking about?'
+        '\n[1] So what’s the deal with this quest you were talking about?\n'
         '[2] What’s that you’re reading?\n'
         )
-
         x = input()
         branch5(x)
-
-        print('MILO: Although of course I didn’t bring you out here to discuss books, but rather the secrets\n'
+        print('\nMILO: Although of course I didn’t bring you out here to discuss books, but rather the secrets\n'
             'that can be found within. Particularly this parchment that appears to be torn at the top.\n'
             'Here’s what it reads:', end='')
         input()
