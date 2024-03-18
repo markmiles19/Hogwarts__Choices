@@ -18,7 +18,9 @@ def Chapter10():
     print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
     input()
 
-    print('DUMBLEDORE: Another year has concluded, and now the time has come to award the House Cup.', end='')
+    print('\n~The term has concluded and Dumbledore makes an announcement at the feast in the Great Hall.~', end='')
+    input()
+    print('\nDUMBLEDORE: Another year has concluded, and now the time has come to award the House Cup.', end='')
     input()
     print(f"DUMBLEDORE: Currently standing with {housePts['Gryffindor']} points...", end='')
     input()
@@ -52,7 +54,7 @@ def Chapter10():
               f"why I now award 25 points to {playerDict['House']}.", end='')
         input()
         AddHousePoints(25)
-        print('~Applause~', end='')
+        print('\n~Applause~', end='')
         input()
     else:
         pass
@@ -133,7 +135,7 @@ def Chapter10():
 
     keymax = max(zip(housePts.values(), housePts.keys()))[1]
 
-    print('DUMBLEDORE: And so now without further ado...', end='')
+    print('\nDUMBLEDORE: And so now without further ado...', end='')
     input()
     print('DUMBLEDORE: I would like to award the house cup to ' + keymax + '!', end='')
     input()
@@ -333,7 +335,15 @@ def Chapter10():
     input()
     print('\n~Replay the game as each of the other Hogwarts houses in order to view every story path.~', end='')
     input()
-    print('CREDITS')
+    print('\nCREDITS', end='')
+    input()
+    print('\nMARK MILES\nSTORY/CODING', end='')
+    input()
+    print('\nMICHAEL MARTIN\nPLANNING', end='')
+    input()
+    print('\nJ.K. ROWLING\nIDEAS/CHARACTERS', end='')
+    input()
+    print('\nEND OF PROGRAM', end='')
 
 
 

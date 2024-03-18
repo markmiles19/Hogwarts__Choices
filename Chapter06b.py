@@ -304,6 +304,6 @@ def MagicalCreatures():
             input()
             print('\nKETTLEBURN: Well it seems that will make thirteen legs now.', end='')
             input()
-      print('KETTLEBURN: I suppose that\'s more than enough for one day. Class dismissed.', end='')
+      print('\nKETTLEBURN: I suppose that\'s more than enough for one day. Class dismissed.', end='')
       input()
       #END HERBOLOGY

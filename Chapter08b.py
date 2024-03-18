@@ -23,32 +23,32 @@ def Defense():
     x = input()
     if x == 'qazmlp':
         AddHousePoints(10)
-        print('TEACHER: Very good!', end='')
+        print('\nTEACHER: Very good!', end='')
         input()
     else:
-        print('TEACHER: Ooh! Not good.', end='')
+        print('\nTEACHER: Ooh! Not good.', end='')
         input()
     print('\n~weiosdjkxcbn~\n')
     x = input()
     if x == 'weiosdjkxcbn':
         AddHousePoints(10)
-        print('TEACHER: Very good!', end='')
+        print('\nTEACHER: Very good!', end='')
         input()
     else:
-        print('TEACHER: Ooh! Not good.', end='')
+        print('\nTEACHER: Ooh! Not good.', end='')
         input()
     print('\n~rfvbhuh~\n')
     x = input()
     if x == 'rfvbhuh':
         AddHousePoints(10)
-        print('TEACHER: Very good!', end='')
+        print('\nTEACHER: Very good!', end='')
         input()
     else:
-        print('TEACHER: Ooh! Not good.', end='')
+        print('\nTEACHER: Ooh! Not good.', end='')
         input()
-    print('~Riddikulus!~', end='')
+    print('\n~Riddikulus!~', end='')
     input()
-    print('~Your spell disappears into thin air.~', end='')
+    print('\n~Your spell disappears into thin air.~', end='')
     input()
     print('\nTEACHER: Unfortunately we won\'t be able to put the spell to practical\n'
           'use during this class period since all boggarts have been curiously displaced.', end='')
@@ -207,7 +207,7 @@ def Astronomy():
     input()
 
     #QUESTION #1
-    print('SINISTRA: Question #1: The constellation Ursa Major is often seen as either a bear, wagon,\n'
+    print('SINISTRA: Question one - The constellation Ursa Major is often seen as either a bear, wagon,\n'
           'or ladle, but it is more commonly known by what other name?', end='')
     input()
     print(
@@ -248,7 +248,7 @@ def Astronomy():
         input()
 
     #QUESTION #2
-    print('SINISTRA: Question #2: Which zodiac constellation is located between Cancer and Taurus?', end='')
+    print('SINISTRA: Question two - Which zodiac constellation is located between Cancer and Taurus?', end='')
     input()
     print(
         '\n[1] Taurus\n'
@@ -287,7 +287,7 @@ def Astronomy():
         input()
 
     #QUESTION #3
-    print('\nSINISTRA: Question #3: At what time of the year can Orion be seen?', end='')
+    print('\nSINISTRA: Question 3 - At what time of the year can Orion be seen?', end='')
     input()
     print(
         '\n[1] Summer\n'
