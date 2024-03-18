@@ -3,7 +3,7 @@ from Common import AddHousePoints
 
 #BEGIN DEFENSE AGAINST THE DARK ARTS CLASS
 def Defense():
-    print('\n~You reach the Defense Against the Dark Arts Classroom. You don\'t even bother remembering'
+    print('\n~You reach the Defense Against the Dark Arts Classroom. You don\'t even bother remembering\n'
           'the teacher\'s name since you know he\'ll be gone at the end of the year.~', end='')
     input()
     print('\nTEACHER: Good morning, class!', end='')
@@ -53,7 +53,6 @@ def Defense():
     print('\nTEACHER: Unfortunately we won\'t be able to put the spell to practical\n'
           'use during this class period since all boggarts have been curiously displaced.', end='')
     input()
-    playerDict['AttendDefense'] = True
     print('TEACHER: Alright, I won\'t hold you any longer. Off you go!', end='')
     input()
     #END DEFENSE AGAINST THE DARK ARTS CLASS
@@ -181,10 +180,10 @@ def Divination():
     else:
         print('\nTRELAWNEY: Oh are you sure you\'re using your inner eye?', end='')
         input()
-    playerDict['AttendDiv'] = True
     print('\nTRELAWNEY: I\'m afraid that\'s all of the time we have for today.', end='')
     input()
     print('TRELAWNEY: You may go now.', end='')
+    input()
     #END DIVINATION CLASS
 
 
@@ -323,7 +322,6 @@ def Astronomy():
         input()
         print('SINISTRA: The constellation Orion is visible during Winter.', end='')
         input()
-    playerDict['AttendAstro'] = True
     print('SINISTRA: Unfortunately that\'s all the time we have for today.', end='')
     input()
     print('SINISTRA: Class dismissed!', end='')

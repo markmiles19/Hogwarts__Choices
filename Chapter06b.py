@@ -98,7 +98,6 @@ def Transfiguration():
       input()
       print(f"\nMCGONAGALL: Well done, {playerDict['firstName']}!", end='')
       input()
-      playerDict['AttendTransfig'] = True
       print('MCGONAGALL: Be sure to continue practicing the Avifors spell in your own time.', end='')
       input()
       print('MCGONAGALL: Class dismissed!', end='')
@@ -228,7 +227,6 @@ def Herbology():
             FeedCabbages(x)     
       else:
             pass
-      playerDict['AttendHerb'] = True
       print('\nSPROUT: I hope today\'s lesson has been helpful. You may go now.', end='')
       input()
       #END HERBOLOGY
@@ -306,7 +304,6 @@ def MagicalCreatures():
             input()
             print('\nKETTLEBURN: Well it seems that will make thirteen legs now.', end='')
             input()
-      playerDict['AttendCare'] = True
       print('KETTLEBURN: I suppose that\'s more than enough for one day. Class dismissed.', end='')
       input()
       #END HERBOLOGY

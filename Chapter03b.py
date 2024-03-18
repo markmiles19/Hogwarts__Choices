@@ -156,7 +156,6 @@ def Charms():
     input()
     print('\nFLITWICK: Well done! Now you know how to use both Reducto and Reparo.', end='')
     input()
-    playerDict['AttendCharms'] = True
     print('FLITWICK: That is all for today. Class dismissed.', end='')
     input()
 
@@ -258,7 +257,6 @@ def Potions():
     print('\nSNAPE: What more would I expect from some miserable first year? Count yourself grateful that with\n'
           'this being the first day of term, I\'ve chosen not to deduct house points.', end='')
     input()
-    playerDict['AttendPotions'] = True
     print('SNAPE: That is all for today. Class dismissed.', end='')
     input()
 
@@ -287,6 +285,5 @@ def Flying():
     print('\nHOOCH: Well done. I hope you\'ve grown more acquainted with the basics of broom control during our brief\n'
           'class period, although unfortunately we\'ve still got a long ways to go before any of you are ready to fly.', end='')
     input()
-    playerDict['AttendFlying'] = True
     print('HOOCH: Class dismissed!', end='')
     input()

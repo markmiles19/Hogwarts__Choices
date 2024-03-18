@@ -9,19 +9,30 @@ def Chapter08():
     from Common import HousePointTotals
     from Common import EndDayThree
 
+    #IMPORTED CLASSES
+    from Common import Lessons
+    Day_3 = Lessons(False, False, False)
+
     #IMPORTED ETC
     import colorama
     from colorama import Back, Fore, Style
     colorama.init(autoreset=True)
 
+    #TESTING STATEMENTS
+    #playerDict['House'] = 'Gryffindor'
+    #playerDict['Companion'] = 'Percival'
+
     #BRANCH FUNCTIONS
     def DecideClassOne(x):
         if x == '1':
             Defense()
+            Day_3.Attend1 = True
         elif x == '2':
             Divination()
+            Day_3.Attend2 = True
         elif x == '3':
             Astronomy()
+            Day_3.Attend3 = True
         else:
             print(f"\n{playerDict['Companion'].upper()}: Come on, now. Pick one!\n")
             x = input()
@@ -31,8 +42,10 @@ def Chapter08():
         def SubDecideOne(x):
             if x == '1':
                 Divination()
+                Day_3.Attend2 = True
             elif x == '2':
                 Astronomy()
+                Day_3.Attend3 = True
             else:
                 print('\n~You\'re not getting out of this one so easy...~\n')
                 x = input()
@@ -40,8 +53,10 @@ def Chapter08():
         def SubDecideTwo(x):
             if x == '1':
                 Defense()
+                Day_3.Attend1 = True
             elif x == '2':
                 Astronomy()
+                Day_3.Attend3 = True
             else:
                 print('\n~You\'re not getting out of this one so easy...~\n')
                 x = input()
@@ -49,27 +64,29 @@ def Chapter08():
         def SubDecideThree(x):
             if x == '1':
                 Defense()
+                Day_3.Attend1 = True
             elif x == '2':
                 Divination()
+                Day_3.Attend2 = True
             else:
                 print('\n~You\'re not getting out of this one so easy...~\n')
                 x = input()
                 SubDecideThree(x)
-        if playerDict['AttendDefense'] == True:
+        if Day_3.Attend1 == True:
             print(
             '\n[1] Divination\n'
             '[2] Astronomy\n'
             )
             x = input()
             SubDecideOne(x)
-        elif playerDict['AttendDiv'] == True:
+        elif Day_3.Attend2 == True:
             print(
             '\n[1] Defense Against the Dark Arts\n'
             '[2] Astronomy\n'
             )
             x = input()
             SubDecideTwo(x)
-        elif playerDict['AttendAstro'] == True:
+        elif Day_3.Attend3 == True:
             print(
             '\n[1] Defense Against the Dark Arts\n'
             '[2] Divination\n'
@@ -143,12 +160,15 @@ def Chapter08():
 
     print('\n~You\'ve finished two of your classes for the day, leaving just one more...~', end='')
     input()
-    if playerDict['AttendDefense'] == True and playerDict['AttendDiv'] == True:
+    if Day_3.Attend1 == True and Day_3.Attend2 == True:
         Astronomy()
-    elif playerDict['AttendDiv'] == True and playerDict['AttendAstro'] == True:
+        Day_3.Attend3 = True
+    elif Day_3.Attend2 == True and Day_3.Attend3 == True:
         Defense()
-    elif playerDict['AttendDefense'] == True and playerDict['AttendAstro'] == True:
+        Day_3.Attend1 = True
+    elif Day_3.Attend1 == True and Day_3.Attend3 == True:
         Divination()
+        Day_3.Attend2 = True
 
     #THIRD CLASS ATTENDED
 

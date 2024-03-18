@@ -63,6 +63,21 @@ Dueling = {'User': False,
            'Leo': False,
            'Milo': False}
 
+#CLASSES
+class Lessons():
+    def __init__(self, Attend1, Attend2, Attend3):
+        self.Attend1 = Attend1
+        self.Attend2 = Attend2
+        self.Attend3 = Attend3
+
+    def Lesson1(self):
+        self.Attend1 = False
+
+    def Lesson2(self):
+        self.Attend2 = False
+
+    def Lesson3(self):
+        self.Attend3 = False
 
 #FUNCTIONS
 def storeName(name):
@@ -281,3 +296,38 @@ def HousePointTotals():
     elif keymax == 'Slytherin':
         print(Fore.GREEN + '\n~Slytherin is in the lead!~', end='')
         input()
+
+class HousePoints():
+    def __init__(self, G, H, R, S):
+        self.G = G
+        self.H = H
+        self.R = R
+        self.S = S
+
+class EndOfDay(HousePoints):
+    def __init__(self):
+        HousePoints.__init__(self)
+        def Gryffindor(self, G):
+            print('\n~The house point totals are being calculated.~', end='')
+            input()
+            print(Fore.RED + f"\n~Gryffindor: {G}~", end='')
+            input()
+    
+        def Hufflepuff(self, H):
+            print('\n~The house point totals are being calculated.~', end='')
+            input()
+            print(Fore.RED + f"\n~Gryffindor: {H}~", end='')
+            input()
+
+        def Ravenclaw(self, R):
+            print('\n~The house point totals are being calculated.~', end='')
+            input()
+            print(Fore.RED + f"\n~Gryffindor: {R}~", end='')
+            input()
+
+        def Slytherin(self, S):
+            print('\n~The house point totals are being calculated.~', end='')
+            input()
+            print(Fore.RED + f"\n~Gryffindor: {S}~", end='')
+            input()
+            

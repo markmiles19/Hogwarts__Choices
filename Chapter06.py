@@ -10,6 +10,10 @@ def Chapter06():
     from Common import HousePointTotals
     from Common import EndDayTwo
 
+    #IMPORTED CLASSES
+    from Common import Lessons
+    Day_2 = Lessons(False, False, False)
+
     #IMPORTED ETC
     import colorama
     from colorama import Back, Fore, Style
@@ -31,10 +35,13 @@ def Chapter06():
         input()
         if x == '1':
             Transfiguration()
+            Day_2.Attend1 = True
         elif x == '2':
             Herbology()
+            Day_2.Attend2 = True
         elif x == '3':
             MagicalCreatures()
+            Day_2.Attend3 = True
         else:
             print(f"\n{playerDict['Companion'].upper()}: Come on, now. Pick one!\n")
             x = input()
@@ -44,8 +51,10 @@ def Chapter06():
         def SubDecideOne(x):
             if x == '1':
                 Herbology()
+                Day_2.Attend2 = True
             elif x == '2':
                 MagicalCreatures()
+                Day_2.Attend3 = True
             else:
                 print('\n~You\'re not getting out of this one so easy...~\n')
                 x = input()
@@ -53,8 +62,10 @@ def Chapter06():
         def SubDecideTwo(x):
             if x == '1':
                 Transfiguration()
+                Day_2.Attend1 = True
             elif x == '2':
                 MagicalCreatures()
+                Day_2.Attend3 = True
             else:
                 print('\n~You\'re not getting out of this one so easy...~\n')
                 x = input()
@@ -62,27 +73,29 @@ def Chapter06():
         def SubDecideThree(x):
             if x == '1':
                 Transfiguration()
+                Day_2.Attend1 = True
             elif x == '2':
                 Herbology()
+                Day_2.Attend2 = True
             else:
                 print('\n~You\'re not getting out of this one so easy...~\n')
                 x = input()
                 SubDecideThree(x)
-        if playerDict['AttendTransfig'] == True:
+        if Day_2.Attend1 == True:
             print(
             '\n[1] Herbology\n'
             '[2] Care for Magical Creatures\n'
             )
             x = input()
             SubDecideOne(x)
-        elif playerDict['AttendHerb'] == True:
+        elif Day_2.Attend2 == True:
             print(
             '\n[1] Transfiguration\n'
             '[2] Care for Magical Creatures\n'
             )
             x = input()
             SubDecideTwo(x)
-        elif playerDict['AttendCare'] == True:
+        elif Day_2.Attend3 == True:
             print(
             '\n[1] Transfiguration\n'
             '[2] Herbology\n'
@@ -165,12 +178,15 @@ def Chapter06():
     DecideClassTwo()
     print('\n~You\'ve finished two of your classes for the day, leaving just one more...~', end='')
     input()
-    if playerDict['AttendTransfig'] == True and playerDict['AttendHerb'] == True:
+    if Day_2.Attend1 == True and Day_2.Attend2 == True:
         MagicalCreatures()
-    elif playerDict['AttendHerb'] == True and playerDict['AttendCare'] == True:
+        Day_2.Attend3 = True
+    elif Day_2.Attend2 == True and Day_2.Attend3 == True:
         Transfiguration()
-    elif playerDict['AttendTransfig'] == True and playerDict['AttendCare'] == True:
+        Day_2.Attend1 = True
+    elif Day_2.Attend1 == True and Day_2.Attend3 == True:
         Herbology()
+        Day_2.Attend2 = True
     EndDayTwo()
     HousePointTotals()
 

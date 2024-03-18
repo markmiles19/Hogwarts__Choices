@@ -7,6 +7,10 @@ def Chapter03():
     from Chapter03b import Potions
     from Chapter03b import Flying
 
+    #IMPORTED CLASSES
+    from Common import Lessons
+    Day_1 = Lessons(False, False, False)
+
     #TESTING STATEMENTS
     #playerDict['House'] = 'Gryffindor'
     #playerDict['House'] = 'Hufflepuff'
@@ -51,6 +55,7 @@ def Chapter03():
             print('...', end='')
             input()
             Charms()
+            Day_1.Attend1 = True
                 
         elif x == '2':
             if playerDict['House'] == 'Gryffindor':
@@ -73,6 +78,8 @@ def Chapter03():
             print('...', end='')
             input()
             Potions()
+            Day_1.Attend2 = True
+            
 
         elif x == '3':
             if playerDict['House'] == 'Hufflepuff':
@@ -86,6 +93,7 @@ def Chapter03():
             print('...', end='')
             input()
             Flying()
+            Day_1.Attend3 = True
         else:
             print(f"\n{playerDict['Companion'].upper()}: Come on, now. You\'ve got to pick one.", end='')
             x = input()
@@ -94,8 +102,10 @@ def Chapter03():
     def branch3(x):
         if x == '1':
             Potions()
+            Day_1.Attend2 = True
         elif x == '2':
             Flying()
+            Day_1.Attend3 = True
         else:
             print('\n~You\'re not getting out of this one so easy...~\n')
             x = input()
@@ -104,8 +114,10 @@ def Chapter03():
     def branch4(x):
         if x == '1':
             Charms()
+            Day_1.Attend1 = True
         elif x == '2':
             Flying()
+            Day_1.Attend3 = True
         else:
             print('\n~You\'re not getting out of this one so easy...~\n')
             x = input()
@@ -114,29 +126,31 @@ def Chapter03():
     def branch5(x):
         if x == '1':
             Charms()
+            Day_1.Attend1 = True
         elif x == '2':
             Potions()
+            Day_1.Attend2 = True
         else:
             print('\n~You\'re not getting out of this one so easy...~\n')
             x = input()
             branch5(x)
 
     def branch6():
-        if playerDict['AttendCharms'] == True:
+        if Day_1.Attend1 == True:
             print(
             '\n[1] Potions\n'
             '[2] Flying\n'
             )
             x = input()
             branch3(x)
-        elif playerDict['AttendPotions'] == True:
+        elif Day_1.Attend2 == True:
             print(
             '\n[1] Charms\n'
             '[2] Flying\n'
             )
             x = input()
             branch4(x)
-        elif playerDict['AttendFlying'] == True:
+        elif Day_1.Attend3 == True:
             print(
             '\n[1] Charms\n'
             '[2] Potions\n'
@@ -185,12 +199,15 @@ def Chapter03():
     branch6()
     print('\n~You\'ve finished two of your classes for the day, leaving just one more...~', end='')
     input()
-    if playerDict['AttendCharms'] == True and playerDict['AttendPotions'] == True:
+    if Day_1.Attend1 == True and Day_1.Attend2 == True:
         Flying()
-    elif playerDict['AttendPotions'] == True and playerDict['AttendFlying'] == True:
+        Day_1.Attend3 = True
+    elif Day_1.Attend2 == True and Day_1.Attend3 == True:
         Charms()
-    elif playerDict['AttendCharms'] == True and playerDict['AttendFlying'] == True:
+        Day_1.Attend1 = True
+    elif Day_1.Attend1 == True and Day_1.Attend3 == True:
         Potions()
+        Day_1.Attend2 = True
 
 
 
