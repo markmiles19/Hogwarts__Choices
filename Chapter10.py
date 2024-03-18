@@ -157,6 +157,8 @@ def Chapter10():
         print('\n~As you make your way out of the Great Hall with Percival and Leo, you make\n'
               'eye contact with Milo. You approach him.~', end='')
         input()
+
+        #BAD ENDING
         if Choices['TakeFullCredit'] == True:
             print('\nMILO: After all that we\'ve been through, did it really mean nothing\n'
                   'to you?', end='')
@@ -182,6 +184,8 @@ def Chapter10():
             input()
             print('\n~You watch as he leaves you far behind. There are no words.~', end='')
             input()
+
+        #BEST ENDING
         elif Choices['GiveFullCredit'] == True:
             print('\nMILO: I had no idea Dumbledore was going to award you as well. I didn\'t even\n'
                   'mention a word about you like you asked.', end='')
@@ -207,6 +211,8 @@ def Chapter10():
             input()
             print('\n~You follow Milo out of the school, Percival and Leo at your side.~', end='')
             input()
+
+        #GOOD ENDING
         elif Choices['SplitCredit'] == True:
             print('\nMILO: I\'m glad we got to share this journey together.', end='')
             input()
@@ -251,6 +257,8 @@ def Chapter10():
         print('\n~As you make your way out of the Great Hall with Milo, you make\n'
               'eye contact with Percival. You approach him.~', end='')
         input()
+
+        #BAD ENDING
         if Choices['TakeFullCredit'] == True:
             print('\nPERCIVAL: After all that we\'ve been through, did it really mean nothing\n'
                   'to you?', end='')
@@ -276,6 +284,8 @@ def Chapter10():
             input()
             print('\n~You watch as he leaves you far behind. There are no words.~', end='')
             input()
+
+        #BEST ENDING
         elif Choices['GiveFullCredit'] == True:
             print('\nPERCIVAL: I had no idea Dumbledore was going to award you as well. I didn\'t even\n'
                   'mention a word about you like you asked.', end='')
@@ -301,6 +311,8 @@ def Chapter10():
             input()
             print('\n~You follow Percival out of the school, Milo and Leo at your side.~', end='')
             input()
+
+        #GOOD ENDING
         elif Choices['SplitCredit'] == True:
             print('\nPERCIVAL: I\'m glad we got to share this journey together.', end='')
             input()
