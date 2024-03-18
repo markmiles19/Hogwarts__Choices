@@ -5,7 +5,7 @@ def Chapter04():
 
     #IMPORTED FUNCTIONS
     from Common import EndDayOne
-    from Common import HousePointTotals
+    from Common import EndOfDay
 
     #IMPORTED ETC
     import colorama
@@ -324,8 +324,19 @@ def Chapter04():
         print('MILO: Alright. Our quest begins tonight.')
         input()
         #END SLYTHERIN PATH
-    EndDayOne()
-    HousePointTotals()
+
+
+
+    if playerDict['House'] == 'Gryffindor':
+        EndOfFirstDay = EndOfDay(0, 70, 75, 110)
+    elif playerDict['House'] == 'Hufflepuff':
+        EndOfFirstDay = EndOfDay(75, 0, 70, 110)
+    elif playerDict['House'] == 'Ravenclaw':
+        EndOfFirstDay = EndOfDay(75, 70, 0, 110)
+    elif playerDict['House'] == 'Slytherin':
+        EndOfFirstDay = EndOfDay(110, 70, 75, 0)
+
+    EndOfFirstDay.DisplayPoints()
         
 
 

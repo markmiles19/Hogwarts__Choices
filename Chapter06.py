@@ -12,6 +12,7 @@ def Chapter06():
 
     #IMPORTED CLASSES
     from Common import Lessons
+    from Common import EndOfDay
     Day_2 = Lessons(False, False, False)
 
     #IMPORTED ETC
@@ -187,8 +188,19 @@ def Chapter06():
     elif Day_2.Attend1 == True and Day_2.Attend3 == True:
         Herbology()
         Day_2.Attend2 = True
-    EndDayTwo()
-    HousePointTotals()
+
+
+
+    if playerDict['House'] == 'Gryffindor':
+        EndOfSecondDay = EndOfDay(0, 60, 65, 80)
+    elif playerDict['House'] == 'Hufflepuff':
+        EndOfSecondDay = EndOfDay(65, 0, 60, 80)
+    elif playerDict['House'] == 'Ravenclaw':
+        EndOfSecondDay = EndOfDay(65, 60, 0, 80)
+    elif playerDict['House'] == 'Slytherin':
+        EndOfSecondDay = EndOfDay(80, 60, 65, 0)
+
+    EndOfSecondDay.DisplayPoints()
 
 
 

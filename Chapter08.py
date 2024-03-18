@@ -11,6 +11,7 @@ def Chapter08():
 
     #IMPORTED CLASSES
     from Common import Lessons
+    from Common import EndOfDay
     Day_3 = Lessons(False, False, False)
 
     #IMPORTED ETC
@@ -19,8 +20,8 @@ def Chapter08():
     colorama.init(autoreset=True)
 
     #TESTING STATEMENTS
-    #playerDict['House'] = 'Gryffindor'
-    #playerDict['Companion'] = 'Percival'
+    playerDict['House'] = 'Gryffindor'
+    playerDict['Companion'] = 'Percival'
 
     #BRANCH FUNCTIONS
     def DecideClassOne(x):
@@ -171,9 +172,19 @@ def Chapter08():
         Day_3.Attend2 = True
 
     #THIRD CLASS ATTENDED
+        
+    
+    
+    if playerDict['House'] == 'Gryffindor':
+        EndOfThirdDay = EndOfDay(0, 60, 65, 80)
+    elif playerDict['House'] == 'Hufflepuff':
+        EndOfThirdDay = EndOfDay(65, 0, 60, 80)
+    elif playerDict['House'] == 'Ravenclaw':
+        EndOfThirdDay = EndOfDay(65, 60, 0, 80)
+    elif playerDict['House'] == 'Slytherin':
+        EndOfThirdDay = EndOfDay(80, 60, 65, 0)
 
-    EndDayThree()
-    HousePointTotals()
+    EndOfThirdDay.DisplayPoints()
 
 
 

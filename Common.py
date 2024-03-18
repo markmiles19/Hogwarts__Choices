@@ -297,37 +297,51 @@ def HousePointTotals():
         print(Fore.GREEN + '\n~Slytherin is in the lead!~', end='')
         input()
 
-class HousePoints():
+class EndOfDay():
     def __init__(self, G, H, R, S):
         self.G = G
         self.H = H
         self.R = R
         self.S = S
 
-class EndOfDay(HousePoints):
-    def __init__(self):
-        HousePoints.__init__(self)
-        def Gryffindor(self, G):
-            print('\n~The house point totals are being calculated.~', end='')
-            input()
-            print(Fore.RED + f"\n~Gryffindor: {G}~", end='')
-            input()
-    
-        def Hufflepuff(self, H):
-            print('\n~The house point totals are being calculated.~', end='')
-            input()
-            print(Fore.RED + f"\n~Gryffindor: {H}~", end='')
-            input()
+    def AddGryffindor(self):
+        housePts['Gryffindor'] += self.G
 
-        def Ravenclaw(self, R):
-            print('\n~The house point totals are being calculated.~', end='')
-            input()
-            print(Fore.RED + f"\n~Gryffindor: {R}~", end='')
-            input()
+    def AddHufflePuff(self):
+        housePts['Hufflepuff'] += self.H
 
-        def Slytherin(self, S):
-            print('\n~The house point totals are being calculated.~', end='')
+    def AddRavenclaw(self):
+        housePts['Ravenclaw'] += self.R
+
+    def AddSlytherin(self):
+        housePts['Slytherin'] += self.S
+
+    def DisplayPoints(self):
+        EndOfDay.AddGryffindor(self)
+        EndOfDay.AddHufflePuff(self)
+        EndOfDay.AddRavenclaw(self)
+        EndOfDay.AddSlytherin(self)
+        print('\n~The house point totals are being calculated.~', end='')
+        input()
+        print(Fore.RED + f"\n~Gryffindor: {housePts['Gryffindor']}~", end='')
+        input()
+        print(Fore.YELLOW + f"~Hufflepuff: {housePts['Hufflepuff']}~", end='')
+        input()
+        print(Fore.BLUE + f"~Ravenclaw: {housePts['Ravenclaw']}~", end='')
+        input()
+        print(Fore.GREEN + f"~Slytherin: {housePts['Slytherin']}~", end='')
+        input()
+        keymax = max(zip(housePts.values(), housePts.keys()))[1]
+        if keymax == 'Gryffindor':
+            print(Fore.RED + '\n~Gryffindor is in the lead!~', end='')
             input()
-            print(Fore.RED + f"\n~Gryffindor: {S}~", end='')
+        elif keymax == 'Hufflepuff':
+            print(Fore.YELLOW + '\n~Hufflepuff is in the lead!~', end='')
+            input()
+        elif keymax == 'Ravenclaw':
+            print(Fore.BLUE + '\n~Ravenclaw is in the lead!~', end='')
+            input()
+        elif keymax == 'Slytherin':
+            print(Fore.GREEN + '\n~Slytherin is in the lead!~', end='')
             input()
             
