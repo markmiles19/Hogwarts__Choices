@@ -1,17 +1,477 @@
-def Chapter09():
-    #IMPORTED DICTIONARIES
-    from Common import playerDict
-    from Common import Choices
-    from Common import Potions
-    from Common import Dueling
+from Common import Player
+from Common import Choices
+from Common import Potions
+from Common import Dueling
+import time
+import colorama
+from colorama import Back, Fore, Style
+colorama.init(autoreset=True)
 
-    #IMPORTED ETC
-    import time
-    import colorama
-    from colorama import Back, Fore, Style
-    colorama.init(autoreset=True)
+class Chapter():
+    def __init__(self):
+        self.name = 'Chapter 9'
+        self.orange_potion = 'Default'
+        self.pink_potion = 'Default'
+        self.blue_potion = 'Default'
+        self.opponent_one = 'Default'
+        self.opponent_two = 'Default'
 
-    #BRANCH FUNCTIONS
+    def Execute_Main(self):
+        print('')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~     CHAPTER 9: INTO THE DARK    ~ ')
+        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+        input()
+        print('\n~You and your friends stand before the Room of Requirement, but all you see is a blank wall.~', end='')
+        input()
+        print('\nPERCIVAL: Now remember, you need to think about how much you need to find the treasure for\n'
+              'the door to appear.', end='')
+        input()
+        print('\n[1] I need to show that Milo.\n'
+              '[2] I need to earn Percival\'s respect.\n'
+              '[3] I need to restore Merlin\'s Legacy.\n')
+        x = input()
+        Branch_1G(x)
+        print('\n~Before you a grand, arched door begins to form.~', end='')
+        input()
+        print(f"\nPERCIVAL: I think you did it, {Player.first_name}!", end='')
+        input()
+
+        #ROOM 1: THE BOGGART
+        print('\n~The four of you step inside a small, dimly lit room with a musty smell.~', end='')
+        input()
+        print('\n~All that stands in front of you is a wardrobe.~', end='')
+        input()
+        print('\nLEO: What do you think this is?', end='')
+        input()
+        print('\n[1] I know exactly what this is.\n'
+              '[2] I haven\'t the faintest clue.\n')
+        x = input()
+        Branch_2G(x)
+        print('\n~You approach the wardrobe, wand in your hand, prepared to face your fear.~', end='')
+        input()
+        print('\n~The door to the wardrobe slowly beings to open...~', end='')
+        input()
+        if Player.fear == 'being rejected by others':
+            print('\n~~', end='')
+            input()
+        elif Player.fear == 'feeling powerless':
+            print('\n~You can see into a completely setting: A dark and foggy woods.~', end='')
+            input()
+            print('\n~You are engaged in battle with a wizard, his face obscured by darkness.~', end='')
+            input()
+            print('\n~He casts a muffled incantation and you drop to the ground as you write in anguish.~', end='')
+            input()
+            print('\n~You know this to be the Cruciatus Curse: The most unimaginable pain one could undergo.~', end='')
+            input()
+        elif Player.fear == 'being alone':
+            print('\n~You can see into a completely different room and a cold breeze takes over you.~', end='')
+            input()
+            print('\n~It\'s a prison cell. One of the most isolated and secure cells that Azkaban prison\n'
+                  'has to offer.~', end='')
+            input()
+            print('\n~Inside the cell is a person bound by a straight-jacket, struggling to break free.~', end='')
+            input()
+            print('\n~That person is you.~', end='')
+            input()
+        elif Player.fear == 'failing those around you':
+            print('\n~You can see into a completely different room that looks like the Great Hall.~', end='')
+            input()
+            print('\n~You are in the middle of your O.W.L. exams when something goes wrong...~', end='')
+            input()
+            print('\n~You attempt to cast a spell but your magic is gone.~', end='')
+            input()
+            print('\n~You are no longer a wizard.~', end='')
+            input()
+        else:
+            print('\n~What sorcery is this? You have no fear? This can\'t be right~', end='')
+            input()
+        print(f"\nPERCIVAL: Of course, you told the Sorting Hat that your deepest fear was {Player.fear}.", end='')
+        input()
+        print('PERCIVAL: You have to fight it!', end='')
+        input()
+        print('\n~Press R to resist your fear!~\n')
+        x = input()
+        if x == 'r' or x == 'R':
+            YouCanDoThis()
+        else:
+            YouCantDoThis()
+        print('\n~Press G to gather your courage!~\n')
+        x = input()
+        if x == 'g' or x == 'G':
+            YouCanDoThis()
+        else:
+            YouCantDoThis()
+        print('\n~Press X to cast the spell!~\n')
+        x = input()
+        if x == 'x' or x == 'X':
+            print('\n~Riddikulus!~', end='')
+            input()
+            print('\n~Your fear transforms into a tap-dancing gorilla. Under other circumstances you would find it amusing.~', end='')
+            input()
+            print(f"\nPERCIVAL: You had me worried there for a moment, {Player.first_name}. Great job!", end='')
+            input()
+        else:
+            print('\n~Your fear begins to consume you when...~')
+            input()
+            print('\nPERCIVAL: Riddikulus!')
+            input()
+            print('\n~Your fear transforms into a tap-dancing gorilla. Under other circumstances you would find it amusing.~', end='')
+            input()
+            print('\nPERCIVAL: Sorry about that. You weren\'t doing anything and so I had to.', end='')
+            input()
+        print('\nMILO: Come on, the way to the next room is open now.', end='')
+        input()
+        print('\n~Sure enough, the wardrobe and the gorilla have both disappeared and a wooden door has now appeared.~', end='')
+        input()
+        print('\n~You walk on through to find...~', end='')
+        input()
+
+        #ROOM 2: THE POTION
+        print('\n~This next room is no bigger than the last and a small wooden table sits in the center.~', end='')
+        input()
+        print('\n~On the table are three glass tubes being held in place, each one containing a different potion.~', end='')
+        input()
+        print('\nPERCIVAL: There\'s a note on the table. What does it say?', end='')
+        input()
+        print('\nLEO: "Two shall pass. One shall remain."', end='')
+        input()
+        print('\nPERCIVAL: So each of us need to choose a vial and one of the them will leave that person behind, but you didn\'t\n'
+              'think there would be four of us, now did you Merlin?', end='')
+        input()
+        print(f"PERCIVAL: In that case, I\'ll let you decide how we go about this, {Player.first_name}.", end='')
+        input()
+
+        #DECIDE ORANGE
+        print('PERCIVAL: There\'s an orange, pink, and blue vial. Who gets orange?', end='')
+        input()
+        print('\n[1] Percival\n'
+              '[2] Leo\n'
+              '[3] Milo\n'
+              '[4] Me\n')
+        x = input()
+        OrangeVial(x)
+
+        #DECIDE PINK
+        print('\nPERCIVAL: Alright, now who gets pink?', end='')
+        input()
+        if Potions['Percival'] == 'Orange':
+            print('\n[1] Leo\n'
+                  '[2] Milo\n'
+                  '[3] Me\n')
+            x = input()
+            PinkVial_1(x)
+        elif Potions['Leo'] == 'Orange':
+            print('\n[1] Percival\n'
+                  '[2] Milo\n'
+                  '[3] Me\n')
+            x = input()
+            PinkVial_2(x)
+        elif Potions['Milo'] == 'Orange':
+            print('\n[1] Percival\n'
+                  '[2] Leo\n'
+                  '[3] Me\n')
+            x = input()
+            PinkVial_3(x)
+        elif Potions['User'] == 'Orange':
+            print('\n[1] Percival\n'
+                  '[2] Leo\n'
+                  '[3] Milo\n')
+            x = input()
+            PinkVial_4(x)
+
+        #DECIDE BLUE
+        print('\nPERCIVAL: Finally, who will get the blue?', end='')
+        input()
+        if Potions['Percival'] == 'Orange' and Potions['Leo'] == 'Pink':
+            print('\n[1] Milo\n'
+                  '[2] Me\n')
+            x = input()
+            BlueVial_1(x)
+        elif Potions['Percival'] == 'Orange' and Potions['Milo'] == 'Pink':
+            print('\n[1] Leo\n'
+                  '[2] Me\n')
+            x = input()
+            BlueVial_2(x)
+        elif Potions['Percival'] == 'Orange' and Potions['User'] == 'Pink':
+            print('\n[1] Leo\n'
+                  '[2] Milo\n')
+            x = input()
+            BlueVial_3(x)
+        elif Potions['Leo'] == 'Orange' and Potions['Percival'] == 'Pink':
+            print('\n[1] Milo\n'
+                  '[2] Me\n')
+            x = input()
+            BlueVial_4(x)
+        elif Potions['Leo'] == 'Orange' and Potions['Milo'] == 'Pink':
+            print('\n[1] Percival\n'
+                  '[2] Me\n')
+            x = input()
+            BlueVial_5(x)
+        elif Potions['Leo'] == 'Orange' and Potions['User'] == 'Pink':
+            print('\n[1] Percival\n'
+                  '[2] Milo\n')
+            x = input()
+            BlueVial_6(x)
+        elif Potions['Milo'] == 'Orange' and Potions['Percival'] == 'Pink':
+            print('\n[1] Leo\n'
+                  '[2] Me\n')
+            x = input()
+            BlueVial_7(x)
+        elif Potions['Milo'] == 'Orange' and Potions['Leo'] == 'Pink':
+            print('\n[1] Percival\n'
+                  '[2] Me\n')
+            x = input()
+            BlueVial_8(x)
+        elif Potions['Milo'] == 'Orange' and Potions['User'] == 'Pink':
+            print('\n[1] Percival\n'
+                  '[2] Leo\n')
+            x = input()
+            BlueVial_9(x)
+        elif Potions['User'] == 'Orange' and Potions['Percival'] == 'Pink':
+            print('\n[1] Leo\n'
+                  '[2] Milo\n')
+            x = input()
+            BlueVial_10(x)
+        elif Potions['User'] == 'Orange' and Potions['Leo'] == 'Pink':
+            print('\n[1] Percival\n'
+                  '[2] Milo\n')
+            x = input()
+            BlueVial_11(x)
+        elif Potions['User'] == 'Orange' and Potions['Milo'] == 'Pink':
+            print('\n[1] Percival\n'
+                  '[2] Leo\n')
+            x = input()
+            BlueVial_12(x)
+        
+        print('\nPERCIVAL: Well, altogether on three now...', end='')
+        input()
+        print('PERCIVAL: 3...', end='')
+        time.sleep(1)
+        print('\nPERCIVAL: 2...', end='')
+        time.sleep(1)
+        print('\nPERCIVAL: 1...', end='')
+        time.sleep(1)
+        print('\n\n~Sip~', end='')
+        input()
+        if Potions['Percival'] == 'Orange':
+            print('\nPERCIVAL: Oh...', end='')
+            input()
+            print('PERCIVAL: I think I\'m feeling a bit drowsy at the moment...', end='')
+            input()
+            print('\n~Percival falls on the stone-hard floor unconscious.~', end='')
+            input()
+            print('\nLEO: It was a sleeping solution. I should have known.', end='')
+            input()
+            print('\nMILO: Come on. We\'ve got one more room to go.', end='')
+            input()
+            print('\n~A door appears that was not there before, and you continue on...~', end='')
+            input()
+        elif Potions['Leo'] == 'Orange':
+            print('\nLEO: Oh...', end='')
+            input()
+            print('LEO: I think I\'m feeling a bit drowsy at the moment...', end='')
+            input()
+            print('\n~Leo falls on the stone-hard floor unconscious.~', end='')
+            input()
+            print('\nPERCIVAL: It was a sleeping solution. I should have known.', end='')
+            input()
+            print('\nMILO: Come on. We\'ve got one more room to go.', end='')
+            input()
+            print('\n~A door appears that was not there before, and you continue on...~', end='')
+            input()
+        elif Potions['Milo'] == 'Orange':
+            print('\nMILO: Oh...', end='')
+            input()
+            print('MILO: I think I\'m feeling a bit drowsy at the moment...', end='')
+            input()
+            print('\n~Milo falls on the stone-hard floor unconscious.~', end='')
+            input()
+            print('\nPERCIVAL: It was a sleeping solution. I should have known.', end='')
+            input()
+            print('\nLEO: Come on. We\'ve got one more room to go.', end='')
+            input()
+            print('\n~A door appears that was not there before, and you continue on...~', end='')
+            input()
+        elif Potions['User'] == 'Orange':
+            print('\n~You begin to feel drowsy...~', end='')
+            input()
+            print('\n~Your eyes grow heavier until...~', end='')
+            input()
+
+        if Potions['User'] != 'Orange':
+            #ROOM 3: THE DUEL
+            print('\n~The next room is completely empty aside from two runic markings on the ground,\n'
+                  'both opposing each other.~', end='')
+            input()
+
+            #PERCIVAL IS UNCONSCIOUS
+            if Potions['Percival'] == 'Orange':
+                Dueling['Leo'] = True
+                Dueling['Milo'] = True
+                Dueling['User'] = True
+                print('\nLEO: I know what this is...', end='')
+                input()
+                print('LEO: Two of us have to duel our way to the treasure.', end='')
+                input()
+                print('LEO: The only question is which two?', end='')
+                input()
+                print('\n[1] Me and Leo\n'
+                      '[2] Me and Milo\n'
+                      '[3] Leo and Milo\n')
+                x = input()
+                Dueling_1(x)
+
+            #LEO IS UNCONSCIOUS
+            elif Potions['Leo'] == 'Orange':
+                Dueling['Percival'] = True
+                Dueling['Milo'] = True
+                Dueling['User'] = True
+                print('\nPERCIVAL: I know what this is...', end='')
+                input()
+                print('PERCIVAL: Two of us have to duel our way to the treasure.', end='')
+                input()
+                print('PERCIVAL: The only question is which two?', end='')
+                input()
+                print('\n[1] Me and Percival\n'
+                      '[2] Me and Milo\n'
+                      '[3] Percival and Milo\n')
+                x = input()
+                Dueling_2(x)
+
+            #MILO IS UNCONSCIOUS
+            elif Potions['Milo'] == 'Orange':
+                Dueling['Percival'] = True
+                Dueling['Leo'] = True
+                Dueling['User'] = True
+                print('\nPERCIVAL: I know what this is...', end='')
+                input()
+                print('PERCIVAL: Two of us have to duel our way to the treasure.', end='')
+                input()
+                print('PERCIVAL: The only question is which two?', end='')
+                input()
+                print('\n[1] Me and Percival\n'
+                      '[2] Me and Leo\n'
+                      '[3] Percival and Leo\n')
+                x = input()
+                Dueling_3(x)
+                
+            else:
+                print('\n~Wait, what\'s going on? You shouldn\'t be here!~', end='')
+                input()
+            
+            if Dueling['User'] != False:
+                print('\n~The two of you that remain continue into the newly materialized room.~', end='')
+                input()
+                print('\n~The treasure is so close now...~', end='')
+                input()
+
+                #ROOM 4: THE TREASURE
+                if Dueling['User'] == True and Dueling['Percival'] == True:
+                    print('\n~Sitting on a pedestal at the end of the room is a small, silver box.~', end='')
+                    input()
+                    print('\nPERCIVAL: There\'s a note. What does it say?', end='')
+                    input()
+                    print('PERCIVAL: "Dearest Adventurer..."', end='')
+                    input()
+                    print('PERCIVAL: "If you\'re reading this right now, then I applaud your efforts."', end='')
+                    input()
+                    print('PERCIVAL: "In case you were wondering what lies inside the box in front of you, that\n'
+                          'is unfortunately a secret that will be buried in my grave."', end='')
+                    input()
+                    print('PERCIVAL: "I offer this box to you in the hopes that a generation far from now will\n'
+                          'remember everything I\'ve done for them and their school."', end='')
+                    input()
+                    print('PERCIVAL: "Although my great seal will keep the box closed forever, my final wish is\n'
+                          'for it to be given to the school and to my descendants."', end='')
+                    input()
+                    print('PERCIVAL: "Best wishes, Merlin."', end='')
+                    input()
+                    print('PERCIVAL: His descendants? Merlin never had any children. What did he mean by that?', end='')
+                    input()
+                    print('PERCIVAL: Anyway, what are we going to do about the treasure?', end='')
+                    input()
+                    print('\n[1] Give full credit to Gryffindor\n'
+                          '[2] Give full credit to Slytherin\n'
+                          '[3] Split credit between Gryffindor and Slytherin\n')
+                    x = input()
+                    DecideTreasure_1(x)
+
+                elif Dueling['User'] == True and Dueling['Leo'] == True:
+                    print('\n~Sitting on a pedestal at the end of the room is a small, silver box.~', end='')
+                    input()
+                    print('\nLEO: There\'s a note. What does it say?', end='')
+                    input()
+                    print('LEO: "Dearest Adventurer..."', end='')
+                    input()
+                    print('LEO: "If you\'re reading this right now, then I applaud your efforts."', end='')
+                    input()
+                    print('LEO: "In case you were wondering what lies inside the box in front of you, that\n'
+                          'is unfortunately a secret that will be buried in my grave."', end='')
+                    input()
+                    print('LEO: "I offer this box to you in the hopes that a generation far from now will\n'
+                          'remember everything I\'ve done for them and their school."', end='')
+                    input()
+                    print('LEO: "Although my great seal will keep the box closed forever, my final wish is\n'
+                          'for it to be given to the school and to my descendants."', end='')
+                    input()
+                    print('LEO: "Best wishes, Merlin."', end='')
+                    input()
+                    print('LEO: His descendants? Merlin never had any children. What did he mean by that?', end='')
+                    input()
+                    print('LEO: Anyway, what are we going to do about the treasure?', end='')
+                    input()
+                    print('\n[1] Give full credit to Gryffindor\n'
+                          '[2] Give full credit to Slytherin\n'
+                          '[3] Split credit between Gryffindor and Slytherin\n')
+                    x = input()
+                    DecideTreasure_2(x)
+
+                elif Dueling['User'] == True and Dueling['Milo'] == True:
+                    print('\n~Sitting on a pedestal at the end of the room is a small, silver box.~', end='')
+                    input()
+                    print('\nMILO: There\'s a note. What does it say?', end='')
+                    input()
+                    print('MILO: "Dearest Adventurer..."', end='')
+                    input()
+                    print('MILO: "If you\'re reading this right now, then I applaud your efforts."', end='')
+                    input()
+                    print('MILO: "In case you were wondering what lies inside the box in front of you, that\n'
+                          'is unfortunately a secret that will be buried in my grave."', end='')
+                    input()
+                    print('MILO: "I offer this box to you in the hopes that a generation far from now will\n'
+                          'remember everything I\'ve done for them and their school."', end='')
+                    input()
+                    print('MILO: "Although my great seal will keep the box closed forever, my final wish is\n'
+                          'for it to be given to the school and to my descendants."', end='')
+                    input()
+                    print('MILO: "Best wishes, Merlin."', end='')
+                    input()
+                    print('MILO: His descendants? Merlin never had any children. What did he mean by that?', end='')
+                    input()
+                    print('MILO: Anyway, what are we going to do about the treasure?', end='')
+                    input()
+                    print('\n[1] Give full credit to Slytherin\n'
+                          '[2] Split credit between Gryffindor and Slytherin\n')
+                    x = input()
+                    DecideTreasure_3(x)
+
+                else:
+                    print('\n~ Wait, what\'s going on? You shouldn\'t be here! ~', end='')
+                    input()
+
+            else:
+                Choices['SacrificeSelf'] = True
+                HospitalWing()
+
+
+        else:
+            Choices['TakeRealPotion'] = True
+            HospitalWing()
+
+
+
+
     def Branch_1G(x):
         if x == '3':
             pass
@@ -802,609 +1262,3 @@ def Chapter09():
         input()
         print('PERCIVAL: We couldn\'t have done it without you. Remember that.', end='')
         input()
-
-
-
-    #TESTING STATEMENTS
-    #playerDict['House'] = 'Gryffindor'
-    #playerDict['firstName'] = 'Mark'
-    #playerDict['Fear'] = 'being alone'
-
-
-
-    #GRYFFINDOR PATH
-    if playerDict['House'] == 'Gryffindor':
-        print('')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~     CHAPTER 9: INTO THE DARK    ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
-        input()
-        print('\n~You and your friends stand before the Room of Requirement, but all you see is a blank wall.~', end='')
-        input()
-        print('\nPERCIVAL: Now remember, you need to think about how much you need to find the treasure for\n'
-              'the door to appear.', end='')
-        input()
-        print('\n[1] I need to show that Milo.\n'
-              '[2] I need to earn Percival\'s respect.\n'
-              '[3] I need to restore Merlin\'s Legacy.\n')
-        x = input()
-        Branch_1G(x)
-        print('\n~Before you a grand, arched door begins to form.~', end='')
-        input()
-        print(f"\nPERCIVAL: I think you did it, {playerDict['firstName']}!", end='')
-        input()
-
-        #ROOM 1: THE BOGGART
-        print('\n~The four of you step inside a small, dimly lit room with a musty smell.~', end='')
-        input()
-        print('\n~All that stands in front of you is a wardrobe.~', end='')
-        input()
-        print('\nLEO: What do you think this is?', end='')
-        input()
-        print('\n[1] I know exactly what this is.\n'
-              '[2] I haven\'t the faintest clue.\n')
-        x = input()
-        Branch_2G(x)
-        print('\n~You approach the wardrobe, wand in your hand, prepared to face your fear.~', end='')
-        input()
-        print('\n~The door to the wardrobe slowly beings to open...~', end='')
-        input()
-        if playerDict['Fear'] == 'being rejected by others':
-            print('\n~~', end='')
-            input()
-        elif playerDict['Fear'] == 'feeling powerless':
-            print('\n~You can see into a completely setting: A dark and foggy woods.~', end='')
-            input()
-            print('\n~You are engaged in battle with a wizard, his face obscured by darkness.~', end='')
-            input()
-            print('\n~He casts a muffled incantation and you drop to the ground as you write in anguish.~', end='')
-            input()
-            print('\n~You know this to be the Cruciatus Curse: The most unimaginable pain one could undergo.~', end='')
-            input()
-        elif playerDict['Fear'] == 'being alone':
-            print('\n~You can see into a completely different room and a cold breeze takes over you.~', end='')
-            input()
-            print('\n~It\'s a prison cell. One of the most isolated and secure cells that Azkaban prison\n'
-                  'has to offer.~', end='')
-            input()
-            print('\n~Inside the cell is a person bound by a straight-jacket, struggling to break free.~', end='')
-            input()
-            print('\n~That person is you.~', end='')
-            input()
-        elif playerDict['Fear'] == 'failing those around you':
-            print('\n~You can see into a completely different room that looks like the Great Hall.~', end='')
-            input()
-            print('\n~You are in the middle of your O.W.L. exams when something goes wrong...~', end='')
-            input()
-            print('\n~You attempt to cast a spell but your magic is gone.~', end='')
-            input()
-            print('\n~You are no longer a wizard.~', end='')
-            input()
-        else:
-            print('\n~What sorcery is this? You have no fear? This can\'t be right~', end='')
-            input()
-        print(f"\nPERCIVAL: Of course, you told the Sorting Hat that your deepest fear was {playerDict['Fear']}.", end='')
-        input()
-        print('PERCIVAL: You have to fight it!', end='')
-        input()
-        print('\n~Press R to resist your fear!~\n')
-        x = input()
-        if x == 'r' or x == 'R':
-            YouCanDoThis()
-        else:
-            YouCantDoThis()
-        print('\n~Press G to gather your courage!~\n')
-        x = input()
-        if x == 'g' or x == 'G':
-            YouCanDoThis()
-        else:
-            YouCantDoThis()
-        print('\n~Press X to cast the spell!~\n')
-        x = input()
-        if x == 'x' or x == 'X':
-            print('\n~Riddikulus!~', end='')
-            input()
-            print('\n~Your fear transforms into a tap-dancing gorilla. Under other circumstances you would find it amusing.~', end='')
-            input()
-            print(f"\nPERCIVAL: You had me worried there for a moment, {playerDict['firstName']}. Great job!", end='')
-            input()
-        else:
-            print('\n~Your fear begins to consume you when...~')
-            input()
-            print('\nPERCIVAL: Riddikulus!')
-            input()
-            print('\n~Your fear transforms into a tap-dancing gorilla. Under other circumstances you would find it amusing.~', end='')
-            input()
-            print('\nPERCIVAL: Sorry about that. You weren\'t doing anything and so I had to.', end='')
-            input()
-        print('\nMILO: Come on, the way to the next room is open now.', end='')
-        input()
-        print('\n~Sure enough, the wardrobe and the gorilla have both disappeared and a wooden door has now appeared.~', end='')
-        input()
-        print('\n~You walk on through to find...~', end='')
-        input()
-
-        #ROOM 2: THE POTION
-        print('\n~This next room is no bigger than the last and a small wooden table sits in the center.~', end='')
-        input()
-        print('\n~On the table are three glass tubes being held in place, each one containing a different potion.~', end='')
-        input()
-        print('\nPERCIVAL: There\'s a note on the table. What does it say?', end='')
-        input()
-        print('\nLEO: "Two shall pass. One shall remain."', end='')
-        input()
-        print('\nPERCIVAL: So each of us need to choose a vial and one of the them will leave that person behind, but you didn\'t\n'
-              'think there would be four of us, now did you Merlin?', end='')
-        input()
-        print(f"PERCIVAL: In that case, I\'ll let you decide how we go about this, {playerDict['firstName']}.", end='')
-        input()
-
-        #DECIDE ORANGE
-        print('PERCIVAL: There\'s an orange, pink, and blue vial. Who gets orange?', end='')
-        input()
-        print('\n[1] Percival\n'
-              '[2] Leo\n'
-              '[3] Milo\n'
-              '[4] Me\n')
-        x = input()
-        OrangeVial(x)
-
-        #DECIDE PINK
-        print('\nPERCIVAL: Alright, now who gets pink?', end='')
-        input()
-        if Potions['Percival'] == 'Orange':
-            print('\n[1] Leo\n'
-                  '[2] Milo\n'
-                  '[3] Me\n')
-            x = input()
-            PinkVial_1(x)
-        elif Potions['Leo'] == 'Orange':
-            print('\n[1] Percival\n'
-                  '[2] Milo\n'
-                  '[3] Me\n')
-            x = input()
-            PinkVial_2(x)
-        elif Potions['Milo'] == 'Orange':
-            print('\n[1] Percival\n'
-                  '[2] Leo\n'
-                  '[3] Me\n')
-            x = input()
-            PinkVial_3(x)
-        elif Potions['User'] == 'Orange':
-            print('\n[1] Percival\n'
-                  '[2] Leo\n'
-                  '[3] Milo\n')
-            x = input()
-            PinkVial_4(x)
-
-        #DECIDE BLUE
-        print('\nPERCIVAL: Finally, who will get the blue?', end='')
-        input()
-        if Potions['Percival'] == 'Orange' and Potions['Leo'] == 'Pink':
-            print('\n[1] Milo\n'
-                  '[2] Me\n')
-            x = input()
-            BlueVial_1(x)
-        elif Potions['Percival'] == 'Orange' and Potions['Milo'] == 'Pink':
-            print('\n[1] Leo\n'
-                  '[2] Me\n')
-            x = input()
-            BlueVial_2(x)
-        elif Potions['Percival'] == 'Orange' and Potions['User'] == 'Pink':
-            print('\n[1] Leo\n'
-                  '[2] Milo\n')
-            x = input()
-            BlueVial_3(x)
-        elif Potions['Leo'] == 'Orange' and Potions['Percival'] == 'Pink':
-            print('\n[1] Milo\n'
-                  '[2] Me\n')
-            x = input()
-            BlueVial_4(x)
-        elif Potions['Leo'] == 'Orange' and Potions['Milo'] == 'Pink':
-            print('\n[1] Percival\n'
-                  '[2] Me\n')
-            x = input()
-            BlueVial_5(x)
-        elif Potions['Leo'] == 'Orange' and Potions['User'] == 'Pink':
-            print('\n[1] Percival\n'
-                  '[2] Milo\n')
-            x = input()
-            BlueVial_6(x)
-        elif Potions['Milo'] == 'Orange' and Potions['Percival'] == 'Pink':
-            print('\n[1] Leo\n'
-                  '[2] Me\n')
-            x = input()
-            BlueVial_7(x)
-        elif Potions['Milo'] == 'Orange' and Potions['Leo'] == 'Pink':
-            print('\n[1] Percival\n'
-                  '[2] Me\n')
-            x = input()
-            BlueVial_8(x)
-        elif Potions['Milo'] == 'Orange' and Potions['User'] == 'Pink':
-            print('\n[1] Percival\n'
-                  '[2] Leo\n')
-            x = input()
-            BlueVial_9(x)
-        elif Potions['User'] == 'Orange' and Potions['Percival'] == 'Pink':
-            print('\n[1] Leo\n'
-                  '[2] Milo\n')
-            x = input()
-            BlueVial_10(x)
-        elif Potions['User'] == 'Orange' and Potions['Leo'] == 'Pink':
-            print('\n[1] Percival\n'
-                  '[2] Milo\n')
-            x = input()
-            BlueVial_11(x)
-        elif Potions['User'] == 'Orange' and Potions['Milo'] == 'Pink':
-            print('\n[1] Percival\n'
-                  '[2] Leo\n')
-            x = input()
-            BlueVial_12(x)
-        
-        print('\nPERCIVAL: Well, altogether on three now...', end='')
-        input()
-        print('PERCIVAL: 3...', end='')
-        time.sleep(1)
-        print('\nPERCIVAL: 2...', end='')
-        time.sleep(1)
-        print('\nPERCIVAL: 1...', end='')
-        time.sleep(1)
-        print('\n\n~Sip~', end='')
-        input()
-        if Potions['Percival'] == 'Orange':
-            print('\nPERCIVAL: Oh...', end='')
-            input()
-            print('PERCIVAL: I think I\'m feeling a bit drowsy at the moment...', end='')
-            input()
-            print('\n~Percival falls on the stone-hard floor unconscious.~', end='')
-            input()
-            print('\nLEO: It was a sleeping solution. I should have known.', end='')
-            input()
-            print('\nMILO: Come on. We\'ve got one more room to go.', end='')
-            input()
-            print('\n~A door appears that was not there before, and you continue on...~', end='')
-            input()
-        elif Potions['Leo'] == 'Orange':
-            print('\nLEO: Oh...', end='')
-            input()
-            print('LEO: I think I\'m feeling a bit drowsy at the moment...', end='')
-            input()
-            print('\n~Leo falls on the stone-hard floor unconscious.~', end='')
-            input()
-            print('\nPERCIVAL: It was a sleeping solution. I should have known.', end='')
-            input()
-            print('\nMILO: Come on. We\'ve got one more room to go.', end='')
-            input()
-            print('\n~A door appears that was not there before, and you continue on...~', end='')
-            input()
-        elif Potions['Milo'] == 'Orange':
-            print('\nMILO: Oh...', end='')
-            input()
-            print('MILO: I think I\'m feeling a bit drowsy at the moment...', end='')
-            input()
-            print('\n~Milo falls on the stone-hard floor unconscious.~', end='')
-            input()
-            print('\nPERCIVAL: It was a sleeping solution. I should have known.', end='')
-            input()
-            print('\nLEO: Come on. We\'ve got one more room to go.', end='')
-            input()
-            print('\n~A door appears that was not there before, and you continue on...~', end='')
-            input()
-        elif Potions['User'] == 'Orange':
-            print('\n~You begin to feel drowsy...~', end='')
-            input()
-            print('\n~Your eyes grow heavier until...~', end='')
-            input()
-
-        if Potions['User'] != 'Orange':
-            #ROOM 3: THE DUEL
-            print('\n~The next room is completely empty aside from two runic markings on the ground,\n'
-                  'both opposing each other.~', end='')
-            input()
-
-            #PERCIVAL IS UNCONSCIOUS
-            if Potions['Percival'] == 'Orange':
-                Dueling['Leo'] = True
-                Dueling['Milo'] = True
-                Dueling['User'] = True
-                print('\nLEO: I know what this is...', end='')
-                input()
-                print('LEO: Two of us have to duel our way to the treasure.', end='')
-                input()
-                print('LEO: The only question is which two?', end='')
-                input()
-                print('\n[1] Me and Leo\n'
-                      '[2] Me and Milo\n'
-                      '[3] Leo and Milo\n')
-                x = input()
-                Dueling_1(x)
-
-            #LEO IS UNCONSCIOUS
-            elif Potions['Leo'] == 'Orange':
-                Dueling['Percival'] = True
-                Dueling['Milo'] = True
-                Dueling['User'] = True
-                print('\nPERCIVAL: I know what this is...', end='')
-                input()
-                print('PERCIVAL: Two of us have to duel our way to the treasure.', end='')
-                input()
-                print('PERCIVAL: The only question is which two?', end='')
-                input()
-                print('\n[1] Me and Percival\n'
-                      '[2] Me and Milo\n'
-                      '[3] Percival and Milo\n')
-                x = input()
-                Dueling_2(x)
-
-            #MILO IS UNCONSCIOUS
-            elif Potions['Milo'] == 'Orange':
-                Dueling['Percival'] = True
-                Dueling['Leo'] = True
-                Dueling['User'] = True
-                print('\nPERCIVAL: I know what this is...', end='')
-                input()
-                print('PERCIVAL: Two of us have to duel our way to the treasure.', end='')
-                input()
-                print('PERCIVAL: The only question is which two?', end='')
-                input()
-                print('\n[1] Me and Percival\n'
-                      '[2] Me and Leo\n'
-                      '[3] Percival and Leo\n')
-                x = input()
-                Dueling_3(x)
-                
-            else:
-                print('\n~Wait, what\'s going on? You shouldn\'t be here!~', end='')
-                input()
-            
-            if Dueling['User'] != False:
-                print('\n~The two of you that remain continue into the newly materialized room.~', end='')
-                input()
-                print('\n~The treasure is so close now...~', end='')
-                input()
-
-                #ROOM 4: THE TREASURE
-                if Dueling['User'] == True and Dueling['Percival'] == True:
-                    print('\n~Sitting on a pedestal at the end of the room is a small, silver box.~', end='')
-                    input()
-                    print('\nPERCIVAL: There\'s a note. What does it say?', end='')
-                    input()
-                    print('PERCIVAL: "Dearest Adventurer..."', end='')
-                    input()
-                    print('PERCIVAL: "If you\'re reading this right now, then I applaud your efforts."', end='')
-                    input()
-                    print('PERCIVAL: "In case you were wondering what lies inside the box in front of you, that\n'
-                          'is unfortunately a secret that will be buried in my grave."', end='')
-                    input()
-                    print('PERCIVAL: "I offer this box to you in the hopes that a generation far from now will\n'
-                          'remember everything I\'ve done for them and their school."', end='')
-                    input()
-                    print('PERCIVAL: "Although my great seal will keep the box closed forever, my final wish is\n'
-                          'for it to be given to the school and to my descendants."', end='')
-                    input()
-                    print('PERCIVAL: "Best wishes, Merlin."', end='')
-                    input()
-                    print('PERCIVAL: His descendants? Merlin never had any children. What did he mean by that?', end='')
-                    input()
-                    print('PERCIVAL: Anyway, what are we going to do about the treasure?', end='')
-                    input()
-                    print('\n[1] Give full credit to Gryffindor\n'
-                          '[2] Give full credit to Slytherin\n'
-                          '[3] Split credit between Gryffindor and Slytherin\n')
-                    x = input()
-                    DecideTreasure_1(x)
-
-                elif Dueling['User'] == True and Dueling['Leo'] == True:
-                    print('\n~Sitting on a pedestal at the end of the room is a small, silver box.~', end='')
-                    input()
-                    print('\nLEO: There\'s a note. What does it say?', end='')
-                    input()
-                    print('LEO: "Dearest Adventurer..."', end='')
-                    input()
-                    print('LEO: "If you\'re reading this right now, then I applaud your efforts."', end='')
-                    input()
-                    print('LEO: "In case you were wondering what lies inside the box in front of you, that\n'
-                          'is unfortunately a secret that will be buried in my grave."', end='')
-                    input()
-                    print('LEO: "I offer this box to you in the hopes that a generation far from now will\n'
-                          'remember everything I\'ve done for them and their school."', end='')
-                    input()
-                    print('LEO: "Although my great seal will keep the box closed forever, my final wish is\n'
-                          'for it to be given to the school and to my descendants."', end='')
-                    input()
-                    print('LEO: "Best wishes, Merlin."', end='')
-                    input()
-                    print('LEO: His descendants? Merlin never had any children. What did he mean by that?', end='')
-                    input()
-                    print('LEO: Anyway, what are we going to do about the treasure?', end='')
-                    input()
-                    print('\n[1] Give full credit to Gryffindor\n'
-                          '[2] Give full credit to Slytherin\n'
-                          '[3] Split credit between Gryffindor and Slytherin\n')
-                    x = input()
-                    DecideTreasure_2(x)
-
-                elif Dueling['User'] == True and Dueling['Milo'] == True:
-                    print('\n~Sitting on a pedestal at the end of the room is a small, silver box.~', end='')
-                    input()
-                    print('\nMILO: There\'s a note. What does it say?', end='')
-                    input()
-                    print('MILO: "Dearest Adventurer..."', end='')
-                    input()
-                    print('MILO: "If you\'re reading this right now, then I applaud your efforts."', end='')
-                    input()
-                    print('MILO: "In case you were wondering what lies inside the box in front of you, that\n'
-                          'is unfortunately a secret that will be buried in my grave."', end='')
-                    input()
-                    print('MILO: "I offer this box to you in the hopes that a generation far from now will\n'
-                          'remember everything I\'ve done for them and their school."', end='')
-                    input()
-                    print('MILO: "Although my great seal will keep the box closed forever, my final wish is\n'
-                          'for it to be given to the school and to my descendants."', end='')
-                    input()
-                    print('MILO: "Best wishes, Merlin."', end='')
-                    input()
-                    print('MILO: His descendants? Merlin never had any children. What did he mean by that?', end='')
-                    input()
-                    print('MILO: Anyway, what are we going to do about the treasure?', end='')
-                    input()
-                    print('\n[1] Give full credit to Slytherin\n'
-                          '[2] Split credit between Gryffindor and Slytherin\n')
-                    x = input()
-                    DecideTreasure_3(x)
-
-                else:
-                    print('\n~Wait, what\'s going on? You shouldn\'t be here!~', end='')
-                    input()
-
-            else:
-                Choices['SacrificeSelf'] = True
-                HospitalWing()
-
-
-        else:
-            Choices['TakeRealPotion'] = True
-            HospitalWing()
-
-        #END GRYFFINDOR PATH
-
-
-
-    #HUFFLEPUFF PATH
-    if playerDict['House'] == 'Hufflepuff':
-        print('')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 9: TBD    ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
-        input()
-        print('WORK IN PROGRESS', end='')
-        input()
-        #END HUFFLEPUFF PATH
-
-
-
-    #RAVENCLAW PATH
-    if playerDict['House'] == 'Ravenclaw':
-        print('')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 9: TBD    ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
-        input()
-        print('WORK IN PROGRESS', end='')
-        input()
-        #END RAVENCLAW PATH
-
-
-
-    #SLYTHERIN PATH
-    if playerDict['House'] == 'Slytherin':
-        print('')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~     CHAPTER 9: INTO THE DARK    ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
-        input()
-        print('\n~You and your friends stand before the Room of Requirement, but all you see is a blank wall.~', end='')
-        input()
-        print('\nMILO: Now remember, you need to think about how much you need to find the treasure for\n'
-              'the door to appear.', end='')
-        input()
-        print('\n[1] I need to show that Percival.\n'
-              '[2] I need to earn Milo\'s respect.\n'
-              '[3] I need to restore Merlin\'s Legacy.\n')
-        x = input()
-        Branch_1G(x)
-        print('\n~Before you a grand, arched door begins to form.~', end='')
-        input()
-        print(f"\nMILO: I think you did it, {playerDict['firstName']}!", end='')
-        input()
-
-        #ROOM 1: THE BOGGART
-        print('\n~The four of you step inside a small, dimly lit room with a musty smell.~', end='')
-        input()
-        print('\n~All that stands in front of you is a wardrobe.~', end='')
-        input()
-        print('\nLEO: What do you think this is?', end='')
-        input()
-        print('\n[1] I know exactly what this is.\n'
-              '[2] I haven\'t the faintest clue.\n')
-        x = input()
-        Branch_2G(x)
-        print('\n~The approach the wardrobe, wand in your hand, prepared to face your fear.~', end='')
-        input()
-        print('\n~The door to the wardrobe slowly beings to open...~', end='')
-        input()
-        if playerDict['Fear'] == 'being rejected by others':
-            print('\n')
-        elif playerDict['Fear'] == 'feeling powerless':
-            pass
-        elif playerDict['Fear'] == 'being alone':
-            print('\n~You can see into a completely different room and a cold breeze takes over you.~', end='')
-            input()
-            print('\n~It\'s a prison cell. One of the most isolated and secure cells that Azkaban prison\n'
-                  'has to offer.~', end='')
-            input()
-            print('\n~Inside the cell is a person bound by a straight-jacket, struggling to break free.~', end='')
-            input()
-            print('\n~That person is you.~', end='')
-            input()
-        elif playerDict['Fear'] == 'failing those around you':
-            pass
-        else:
-            print('\n~What sorcery is this? You have no fear? This can\'t be right~', end='')
-            input()
-        print(f"\nMILO: Of course, you told the Sorting Hat that your deepest fear was {playerDict['Fear']}.", end='')
-        input()
-        print('MILO: You have to fight it!', end='')
-        input()
-        print('\n~Press R to resist your fear!~\n')
-        x = input()
-        if x == 'r' or x == 'R':
-            YouCanDoThis()
-        else:
-            YouCantDoThis()
-        print('\n~Press G to gather your courage!~\n')
-        x = input()
-        if x == 'r' or x == 'R':
-            YouCanDoThis()
-        else:
-            YouCantDoThis()
-        print('\n~Press X to cast the spell!~\n')
-        x = input()
-        if x == 'x' or x == 'X':
-            print('\n~Riddikulus!~', end='')
-            input()
-            print('\n~Your fear transforms into a tap-dancing gorilla. Under other circumstances you would find it amusing.~', end='')
-            input()
-            print(f"\nMILO: You had me worried there for a moment, {playerDict['firstName']}. Great job!", end='')
-            input()
-        else:
-            print('\n~Your fear begins to consume you when...~')
-            input()
-            print('\nMILO: Riddikulus!')
-            input()
-            print('\n~Your fear transforms into a tap-dancing gorilla. Under other circumstances you would find it amusing.~', end='')
-            input()
-            print('\nMILO: Sorry about that. You weren\'t doing anything and so I had to.', end='')
-            input()
-        print('\nPERCIVAL: Come on, the way to the next room is open now.', end='')
-        input()
-        print('\n~Sure enough, the wardrobe and the gorilla have both disappeared and a wooden door has now appeared.~', end='')
-        input()
-        print('\n~You walk on through to find...~', end='')
-        input()
-
-        #ROOM 2: THE POTION
-
-
-        #ROOM 3: THE DUEL
-
-
-        #ROOM 4: THE TREASURE
-
-
-        #END SLYTHERIN PATH
-
-
-
-#RUN CHAPTER
-#Chapter09()

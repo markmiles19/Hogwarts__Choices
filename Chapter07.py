@@ -1,20 +1,15 @@
-def Chapter07():
-    #IMPORTED DICTIONARIES
-    from Common import playerDict
-    from Common import Choices
-    
-    #IMPORTED FUNCTIONS
-    from Common import AddHousePoints
+from Common import Player
+from Common import Choices
+from Common import AddHousePoints
+import colorama
+from colorama import Back, Fore, Style
+colorama.init(autoreset=True)
 
-    #IMPORTED ETC
-    import colorama
-    from colorama import Back, Fore, Style
-    colorama.init(autoreset=True)
-
-
-
-    #BEGIN GRYFFINDOR PATH
-    if playerDict['House'] == 'Gryffindor':
+class Chapter():
+    def __init__(self):
+        self.name = 'Chapter 7'
+        
+    def Execute_Main(self):
         print('')
         print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
         print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 7: OUT OF BOUNDS    ~ ')
@@ -285,46 +280,3 @@ def Chapter07():
         input()
         print('PERCIVAL: Tomorrow night, we meet at the seventh floor corridor.', end='')
         input()
-    #END GRYFFINDOR PATH
-
-
-
-    #BEGIN HUFFLEPUFF PATH
-    elif playerDict['House'] == 'Hufflepuff':
-        print('')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 7: TBD    ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
-        input()
-        print('WORK IN PROGRESS', end='')
-        input()
-    #END HUFFLEPUFF PATH
-
-
-
-    #BEGIN RAVENCLAW PATH
-    elif playerDict['House'] == 'Ravenclaw':
-        print('')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 7: TBD    ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
-        input()
-        print('WORK IN PROGRESS', end='')
-        input()
-    #END RAVENCLAW PATH
-
-
-
-    #BEGIN SLYTHERIN PATH
-    elif playerDict['House'] == 'Slytherin':
-        print('')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 7: OUT OF BOUNDS    ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
-        input()
-    #END SLYTHERIN PATH
-
-
-
-#RUN CHAPTER
-#Chapter07()

@@ -1,38 +1,23 @@
+from Common import Player
+from Common import Choices
+from Chapter06b import Subchapter
+from Common import HousePointTotals
+from Common import Lessons
+from Common import EndOfDay
+
+Day_2 = Lessons(False, False, False)
+
+class Chapter():
+    def __init__(self):
+        self.name = 'Chapter 6'
+        
+    def Execute_Main(self):
+        pass
+
 def Chapter06():
-    #IMPORTED DICTIONARIES
-    from Common import playerDict
-    from Common import Choices
-
-    #IMPORTED FUNCTIONS
-    from Chapter06b import Transfiguration
-    from Chapter06b import Herbology
-    from Chapter06b import MagicalCreatures
-    from Common import HousePointTotals
-    from Common import EndDayTwo
-
-    #IMPORTED CLASSES
-    from Common import Lessons
-    from Common import EndOfDay
-    Day_2 = Lessons(False, False, False)
-
-    #IMPORTED ETC
-    import colorama
-    from colorama import Back, Fore, Style
-    colorama.init(autoreset=True)
-
-    #TESTING STATEMENTS
-    #playerDict['House'] = 'Gryffindor'
-    #playerDict['House'] = 'Hufflepuff'
-    #playerDict['House'] = 'Ravenclaw'
-    #playerDict['House'] = 'Slytherin'
-    #playerDict['Companion'] = 'Percival'
-    #playerDict['Companion'] = 'Leanna'
-    #playerDict['Companion'] = 'Aliya'
-    #playerDict['Companion'] = 'Milo'
-
     #BRANCH FUNCTIONS
-    def DecideClassOne(x):
-        print(f"\n{playerDict['Companion'].upper()}: See you later, {playerDict['firstName']}.", end='')
+    def Decide_Class_One(x):
+        print(f"\n{Player.companion.upper()}: See you later, {Player.first_name}.", end='')
         input()
         if x == '1':
             Transfiguration()
@@ -44,11 +29,11 @@ def Chapter06():
             MagicalCreatures()
             Day_2.Attend3 = True
         else:
-            print(f"\n{playerDict['Companion'].upper()}: Come on, now. Pick one!\n")
+            print(f"\n{Player.companion.upper()}: Come on, now. Pick one!\n")
             x = input()
             DecideClassOne(x)
 
-    def DecideClassTwo():
+    def Decide_Class_Two():
         def SubDecideOne(x):
             if x == '1':
                 Herbology()
@@ -117,55 +102,31 @@ def Chapter06():
 
 
     #BEGIN GRYFFINDOR PATH
-    if playerDict['House'] == 'Gryffindor':
+    if Player.house != 'Slytherin':
         print('\n~Following the exciting events from last night, you struggle to adjust to start\n'
               'of a new day as you meet Percival in the common room.~', end='')
         input()
-        print('\nPERCIVAL: I was just looking for you.', end='')
+        print(f"\n{Player.companion.upper()}: I was just looking for you.", end='')
         input()
-        print('PERCIVAL: You\'ll be happy to hear that I did a bit of research earlier and I now\n'
+        print(f"{Player.companion.upper()}: You\'ll be happy to hear that I did a bit of research earlier and I now\n"
               'know exactly where the next step in our journey will take us.', end='')
         input()
-        print('PERCIVAL: Mind you that it will be several miles of walking distance, and should anything\n'
-              'go wrong or one of us gets hurt, it\'ll be points from Gryffindor.', end='')
+        print(f"{Player.companion.upper()}: Mind you that it will be several miles of walking distance, and should anything\n"
+              f"go wrong or one of us gets hurt, it\'ll be points from {Player.house}.", end='')
         input()
         if Choices['Compromise'] == True:
-            print('PERCIVAL: As much as I disagree with bringing Milo along, it looks like i have\n'
+            print(f"{Player.companion.upper()}: As much as I disagree with bringing {Player.rival.upper()} along, it looks like i have\n"
                   'no choice but to let him know when I get the chance.', end='')
             input()
         else:
-            print('PERCIVAL: And hopefully Milo will learn to keep his fat nose out of our business.', end='')
+            print(f"{Player.companion.upper()}: And hopefully {Player.rival.upper()} will learn to keep his fat nose out of our business.", end='')
             input()
         #END GRYFFINDOR PATH
 
 
 
-    #BEGIN HUFFLEPUFF PATH
-    if playerDict['House'] == 'Hufflepuff':
-        print('WORK IN PROGRESS', end='')
-        input()
-        #END HUFFLEPUFF PATH
-
-
-
-    #BEGIN HUFFLEPUFF PATH
-    if playerDict['House'] == 'Ravenclaw':
-        print('WORK IN PROGRESS', end='')
-        input()
-        #END RAVENCLAW PATH
-
-
-
-    #BEGIN SLYTHERIN PATH
-    if playerDict['House'] == 'Slytherin':
-        print('~Following the exciting events from last night, you struggle to adjust to start\n'
-              'of a new day as you meet Percival in the common room.~', end='')
-        input()
-        #END SLYTHERIN PATH
-
-
     #CONTINUE COMMON ROOM
-    print(f"{playerDict['Companion'].upper()}: Anyway, which class do you think you're going to first?", end='')
+    print(f"{Player.companion.upper()}: Anyway, which class do you think you're going to first?", end='')
     input()
     print(
     '\n[1] Transfiguration\n'
@@ -191,18 +152,17 @@ def Chapter06():
 
 
 
-    if playerDict['House'] == 'Gryffindor':
+    if Player.house == 'Gryffindor':
         EndOfSecondDay = EndOfDay(0, 60, 65, 80)
-    elif playerDict['House'] == 'Hufflepuff':
+    elif Player.house == 'Hufflepuff':
         EndOfSecondDay = EndOfDay(65, 0, 60, 80)
-    elif playerDict['House'] == 'Ravenclaw':
+    elif Player.house == 'Ravenclaw':
         EndOfSecondDay = EndOfDay(65, 60, 0, 80)
-    elif playerDict['House'] == 'Slytherin':
+    elif Player.house == 'Slytherin':
         EndOfSecondDay = EndOfDay(80, 60, 65, 0)
 
-    EndOfSecondDay.DisplayPoints()
+    EndOfSecondDay.Display_Points()
 
 
 
 #RUN CHAPTER
-#Chapter06()
