@@ -1,10 +1,9 @@
-from Common import Player
-from Common import AddHousePoints
-
 class Subchapter():
-    def __init__(self):
-        self.name = 'Chapter 8b'
+    def __init__(self, User, Pts):
+        self.player = User
+        self.house_pts = Pts
 
+    #BEGIN DEFENSE CLASS
     def Defense(self):
         print('\n~You reach the Defense Against the Dark Arts Classroom. You don\'t even bother remembering\n'
             'the teacher\'s name since you know he\'ll be gone at the end of the year.~', end='')
@@ -25,7 +24,7 @@ class Subchapter():
         print('\n~qazmlp~\n')
         x = input()
         if x == 'qazmlp':
-            AddHousePoints(10)
+            self.house_pts.Add_House_Points(10)
             print('\nTEACHER: Very good!', end='')
             input()
         else:
@@ -34,7 +33,7 @@ class Subchapter():
         print('\n~weiosdjkxcbn~\n')
         x = input()
         if x == 'weiosdjkxcbn':
-            AddHousePoints(10)
+            self.house_pts.Add_House_Points(10)
             print('\nTEACHER: Very good!', end='')
             input()
         else:
@@ -43,7 +42,7 @@ class Subchapter():
         print('\n~rfvbhuh~\n')
         x = input()
         if x == 'rfvbhuh':
-            AddHousePoints(10)
+            self.house_pts.Add_House_Points(10)
             print('\nTEACHER: Very good!', end='')
             input()
         else:
@@ -96,7 +95,7 @@ class Subchapter():
             '[4] Sun\n')
         x = input()
         if x == '3':
-            AddHousePoints(10)
+            self.house_pts.Add_House_Points(10)
         else:
             print('\nTRELAWNEY: Oh are you sure you\'re using your inner eye?', end='')
             input()
@@ -123,7 +122,7 @@ class Subchapter():
             '[4] Kite\n')
         x = input()
         if x == '2':
-            AddHousePoints(10)
+            self.house_pts.Add_House_Points(10)
         else:
             print('\nTRELAWNEY: Oh are you sure you\'re using your inner eye?', end='')
             input()
@@ -150,7 +149,7 @@ class Subchapter():
             '[4] Sun\n')
         x = input()
         if x == '4':
-            AddHousePoints(10)
+            self.house_pts.Add_House_Points(10)
         else:
             print('\nTRELAWNEY: Oh are you sure you\'re using your inner eye?', end='')
             input()
@@ -177,7 +176,7 @@ class Subchapter():
             '[4] Hammer\n')
         x = input()
         if x == '2':
-            AddHousePoints(10)
+            self.house_pts.Add_House_Points(10)
         else:
             print('\nTRELAWNEY: Oh are you sure you\'re using your inner eye?', end='')
             input()
@@ -229,7 +228,7 @@ class Subchapter():
                 'Dipper is used in the United States and Canada to refer to Ursa Minor.', end='')
             input()
         elif x == '3':
-            AddHousePoints(5)
+            self.house_pts.Add_House_Points(5)
             print('\nSINISTRA: Correct.', end='')
             input()
             print('SINISTRA: In the United Kingdom, Ursa Major is known as the Plough.', end='')
@@ -267,7 +266,7 @@ class Subchapter():
             print('SINISTRA: Gemini can be found between Taurus and Cancer, however Leo is found between Cancer and Taurus.', end='')
             input()
         elif x == '3':
-            AddHousePoints(5)
+            self.house_pts.Add_House_Points(5)
             print('\nSINISTRA: Correct!', end='')
             input()
             print('SINISTRA: Leo is found in the fifth position of the Zodiac constellations and appears in the\n'
@@ -301,7 +300,7 @@ class Subchapter():
             print('SINISTRA: The constellation Orion is visible during Winter, not Summer.', end='')
             input()
         elif x == '2':
-            AddHousePoints(5)
+            self.house_pts.Add_House_Points(5)
             print('\nSINISTRA: Correct!', end='')
             input()
             print('SINISTRA: The constellation Orion is visible during Winter.', end='')

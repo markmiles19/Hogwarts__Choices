@@ -1,15 +1,10 @@
 #IMPORTED DICTIONARIES
-from Common import Player
-from Common import AddHousePoints
-from Common import HousePointTotals
 import time
-import colorama
-from colorama import Back, Fore, Style
-colorama.init(autoreset=True)
 
 class Subchapter():
-      def __init__(self):
-            self.name = 'Chapter 6b'
+      def __init__(self, User, Pts):
+            self.player = User
+            self.house_pts = Pts
 
       #BEGIN TRANSFIGURATION
       def Transfiguration(self):
@@ -34,7 +29,7 @@ class Subchapter():
             print('\n~ GDEIHW ~\n')
             x = input()
             if x == 'Hedwig' or x == 'hedwig' or x == 'HEDWIG':
-                  AddHousePoints(10)
+                  self.house_pts.Add_House_Points(10)
             else:
                   print('\n~ GDEIHW ~', end='')
                   time.sleep(0.3)
@@ -51,7 +46,7 @@ class Subchapter():
             print('\n~ SLBGNIO ~\n')
             x = input()
             if x == 'Goblins' or x == 'goblins' or x == 'GOBLINS':
-                  AddHousePoints(10)
+                  self.house_pts.Add_House_Points(10)
             else:
                   print('\n~ SLBGNIO ~', end='')
                   time.sleep(0.3)
@@ -70,7 +65,7 @@ class Subchapter():
             print('\n~ ICXLSIELFFIE ~\n')
             x = input()
             if x == 'Felix Felicis' or x == 'felix felicis' or x == 'FELIX FELICIS' or x == 'FelixFelicis' or x == 'felixfelicis' or x == 'FELIXFELICIS':
-                  AddHousePoints(20)
+                  self.house_pts.Add_House_Points(20)
             else:
                   print('\n~ ICXLSIELFFIE ~', end='')
                   time.sleep(0.3)
@@ -96,7 +91,7 @@ class Subchapter():
             input()
             print('\n~You have successfully transformed your chair into a hummingbird.~', end='')
             input()
-            print(f"\nMCGONAGALL: Well done, {playerDict['firstName']}!", end='')
+            print(f"\nMCGONAGALL: Well done, {self.player.first_name}!", end='')
             input()
             print('MCGONAGALL: Be sure to continue practicing the Avifors spell in your own time.', end='')
             input()
@@ -130,69 +125,69 @@ class Subchapter():
             print('\n~ A ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             else:
                   pass
             print('\n~ C ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(5)
+                  self.house_pts.Add_House_Points(5)
             else:
                   MissedCount += 1
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             print('\n~ A ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(5)
+                  self.house_pts.Add_House_Points(5)
             else:
                   MissedCount += 1
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             print('\n~ P ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             else:
                   pass
             print('\n~ R ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(5)
+                  self.house_pts.Add_House_Points(5)
             else:
                   MissedCount += 1
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             print('\n~ O ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             else:
                   pass
             print('\n~ R ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(5)
+                  self.house_pts.Add_House_Points(5)
             else:
                   MissedCount += 1
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             print('\n~ Q ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             else:
                   pass
             print('\n~ O ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(5)
+                  self.house_pts.Add_House_Points(5)
             else:
                   MissedCount += 1
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             print('\n~ T ~\n')
             x = input()
             if x == 'Pick' or x == 'pick' or x == 'PICK':
-                  AddHousePoints(5)
+                  self.house_pts.Add_House_Points(5)
             else:
                   MissedCount += 1
-                  AddHousePoints(-5)
+                  self.house_pts.Add_House_Points(-5)
             print('\nSPROUT: Time\'s up!', end='')
             input()
             if MissedCount == 0:
@@ -210,7 +205,7 @@ class Subchapter():
                   input()
                   print('SPROUT: I\'m afraid I\'ll have to deduct even more points for that.', end='')
                   input()
-                  AddHousePoints(-10)
+                  self.house_pts.Add_House_Points(-10)
             if MissedCount < 6:
                   print('\n~Press F to feed the cabbages.~\n')
                   x = input()
@@ -259,21 +254,21 @@ class Subchapter():
             print('\n~ertfcvb~\n')
             x = input()
             if x == 'ertfcvb':
-                  AddHousePoints(10)
+                  self.house_pts.Add_House_Points(10)
             else:
                   print('\nKETTLEBURN: You can do better than that.', end='')
                   input()
             print('\n~ertyugcvbnm~\n')
             x = input()
             if x == 'ertyugcvbnm':
-                  AddHousePoints(10)
+                  self.house_pts.Add_House_Points(10)
             else:
                   print('\nKETTLEBURN: You can do better than that.', end='')
                   input()
             print('\n~qweszxc~\n')
             x = input()
             if x == 'qweszxc':
-                  AddHousePoints(10)
+                  self.house_pts.Add_House_Points(10)
             else:
                   print('\nKETTLEBURN: You can do better than that.', end='')
                   input()
@@ -288,13 +283,13 @@ class Subchapter():
                   input()
                   print('\n~You manage to stun the fire crab before it could harm Kettleburn.~', end='')
                   input()
-                  print(f"\nKETTLEBURN: Excellent casting, {playerDict['firstName']}.", end='')
+                  print(f"\nKETTLEBURN: Excellent casting, {self.player.first_name}.", end='')
                   input()
                   print('KETTLEBURN: You saved me from purchasing yet another leg replacement.', end='')
                   input()
-                  print(f"KETTLEBURN: Fifteen points to {playerDict['House']} for your bravery!", end='')
+                  print(f"KETTLEBURN: Fifteen points to {self.player.house} for your bravery!", end='')
                   input()
-                  AddHousePoints(15)
+                  self.house_pts.Add_House_Points(15)
             else:
                   print('\n~The fire crab sears off Kettleburn\'s wooden leg as he struggles to fan out the flame.~', end='')
                   input()

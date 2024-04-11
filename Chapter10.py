@@ -1,10 +1,9 @@
-from Common import Player
-from Common import Choices
-from Common import HousePts
-
 class Chapter():
-    def __init__(self):
-        self.name = 'Chapter 10'
+    def __init__(self, User, Decide, Pts):
+        self.player = User
+        self.choices = Decide
+        self.house_pts = Pts
+
     def Execute_Main(self):
             print('')
             print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
@@ -16,25 +15,25 @@ class Chapter():
             input()
             print('\nDUMBLEDORE: Another year has concluded, and now the time has come to award the House Cup.', end='')
             input()
-            print(f"DUMBLEDORE: Currently standing with {HousePts.gryffindor} points...", end='')
+            print(f"DUMBLEDORE: Currently standing with {self.house_pts.gryffindor} points...", end='')
             input()
             print("DUMBLEDORE: Gryffindor!", end='')
             input()
             print('\n~ Applause ~', end='')
             input()
-            print(f"\nDUMBLEDORE: Currently standing with {HousePts.hufflepuff} points...", end='')
+            print(f"\nDUMBLEDORE: Currently standing with {self.house_pts.hufflepuff} points...", end='')
             input()
             print("DUMBLEDORE: Hufflepuff!", end='')
             input()
             print('\n~ Applause ~', end='')
             input()
-            print(f"\nDUMBLEDORE: Currently standing with {HousePts.ravenclaw} points...", end='')
+            print(f"\nDUMBLEDORE: Currently standing with {self.house_pts.ravenclaw} points...", end='')
             input()
             print("DUMBLEDORE: Ravenclaw!", end='')
             input()
             print('\n~ Applause ~', end='')
             input()
-            print(f"\nDUMBLEDORE: Finally, currently standing with {HousePts.slytherin} points...", end='')
+            print(f"\nDUMBLEDORE: Finally, currently standing with {self.house_pts.slytherin} points...", end='')
             input()
             print(f"DUMBLEDORE: Slytherin!", end='')
             input()
@@ -43,64 +42,64 @@ class Chapter():
             print(f"\nDUMBLEDORE: Well done! However, recent events must be taken into account.", end='')
             input()
 
-            if Choices['Compromise'] == True:
+            if self.choices.compromise == True:
                 print('\nDUMBLEDORE: It takes nothing short of humility to help the ones who oppose you which is\n'
-                    f"why I now award 25 points to {Player.house}.", end='')
+                    f"why I now award 25 points to {self.player.house}.", end='')
                 input()
-                HousePts.Add_House_Points(25)
+                self.house_pts.Add_House_Points(25)
                 print('\n~ Applause ~', end='')
                 input()
             else:
                 pass
 
-            if Choices['HelpCompanion'] == True:
+            if self.choices.help_companion == True:
                 print('\nDUMBLEDORE: A true friend is willing to come to one\'s aid in the face of almost\n'
-                    f"certain death, and so now I award 10 points to {Player.house}.", end='')
+                    f"certain death, and so now I award 10 points to {self.player.house}.", end='')
                 input()
-                HousePts.Add_House_Points(10)
+                self.house_pts.Add_House_Points(10)
                 print('\n~ Applause ~', end='')
                 input()
-            elif Choices['HelpRival'] == True:
+            elif self.choices.help_rival == True:
                 print('\nDUMBLEDORE: While being ready to rescue your friends from imminent harm is\n'
                     'a noble service alone, true nobility can be seen in saving one\'s enemy, and\n'
-                    f"so now I award {Player.house} house with 25 points.", end='')
+                    f"so now I award {self.player.house} house with 25 points.", end='')
                 input()
-                HousePts.Add_House_Points(25)
+                self.house_pts.Add_House_Points(25)
                 print('\n~ Applause ~', end='')
                 input()
             else:
                 pass
 
-            if Choices['TakeFakePotion'] == True:
+            if self.choices.take_fake_potion == True:
                 print('\nDUMBLEDORE: For making a self-less sacrifice that could have cost themselves\n'
-                    f"dearly, I award 25 points to {Player.house}.", end='')
+                    f"dearly, I award 25 points to {self.player.house}.", end='')
                 input()
-                HousePts.Add_House_Points(25)
+                self.house_pts.Add_House_Points(25)
                 print('\n~Applause~', end='')
                 input()
-            elif Choices['TakeRealPotion'] == True:
+            elif self.choices.take_real_potion == True:
                 print('\nDUMBLEDORE: For making a self-less sacrifice that cost themselves dearly, I\n'
-                    f"award 50 points to {Player.full_name}.", end='')
+                    f"award 50 points to {self.player.full_name}.", end='')
                 input()
-                HousePts.Add_House_Points(50)
+                self.house_pts.Add_House_Points(50)
                 print('\n~ Applause ~', end='')
                 input()
             else:
                 pass
 
-            if Choices['TakeFullCredit'] == True:
+            if self.choices.take_full_credit == True:
                 print('\nDUMBLEDORE: Long before any one of you were born, there was a great sorcerer\n'
                     'who sat at the very same tables as you.', end='')
                 input()
                 print('DUMBLEDORE: His name was Merlin.', end='')
                 input()
-                print(f"DUMBLEDORE: I now award 25 points to {Player.house} for the discovery of\n"
+                print(f"DUMBLEDORE: I now award 25 points to {self.player.house} for the discovery of\n"
                     'a treasure that none thought would every see the light of day.', end='')
                 input()
-                HousePts.Add_House_Points(25)
+                self.house_pts.Add_House_Points(25)
                 print('\n~ Applause ~', end='')
                 input()
-            elif Choices['GiveFullCredit'] == True:
+            elif self.choices.give_full_credit == True:
                 print('\nDUMBLEDORE: Long before any one of you were born, there was a great sorcerer\n'
                     'who sat at the very same tables as you.', end='')
                 input()
@@ -109,10 +108,10 @@ class Chapter():
                 print('DUMBLEDORE: I now award 50 points to both Gryffindor and Slytherin for the discovery\n'
                     'of a treasure that none thought would every see the light of day.', end='')
                 input()
-                HousePts.Add_House_Points(50)
+                self.house_pts.Add_House_Points(50)
                 print('\n~ Applause ~', end='')
                 input()
-            elif Choices['SplitCredit'] == True:
+            elif self.choices.split_credit == True:
                 print('\nDUMBLEDORE: Long before any one of you were born, there was a great sorcerer\n'
                     'who sat at the very same tables as you.', end='')
                 input()
@@ -121,22 +120,27 @@ class Chapter():
                 print('DUMBLEDORE: I now award 25 points to both Gryffindor and Slytherin for the discovery\n'
                     'of a treasure that none thought would every see the light of day.', end='')
                 input()
-                HousePts.Add_House_Points(25)
+                self.house_pts.Add_House_Points(25)
                 print('\n~ Applause ~', end='')
                 input()
             else:
                 pass
 
-            keymax = max(zip(HousePts.values(), HousePts.keys()))[1]
+
+            HP_Dict = {'Gryffindor': self.house_pts.gryffindor,
+                       'Hufflepuff': self.house_pts.hufflepuff,
+                       'Ravenclaw': self.house_pts.ravenclaw,
+                       'Slytherin:': self.house_pts.slytherin}
+            keymax = max(zip(HP_Dict.values(), HP_Dict.keys()))[1]
 
             print('\nDUMBLEDORE: And so now without further ado...', end='')
             input()
             print('DUMBLEDORE: I would like to award the house cup to ' + keymax + '!', end='')
             input()
 
-            if keymax == Player.house:
-                Player.house = True
-                print(f"\n~All of your friends in {Player.house} cheer with you!~", end='')
+            if keymax == self.player.house:
+                self.player.house = True
+                print(f"\n~All of your friends in {self.player.house} cheer with you!~", end='')
                 input()
                 print('\n~ You\'ve never felt happier in your life! ~', end='')
                 input()
@@ -147,23 +151,23 @@ class Chapter():
                 input()
 
             #GRYFFINDOR/HUFFLEPUFF/RAVENCLAW ENDINGS
-            if Player.house != 'Slytherin':
+            if self.player.house != 'Slytherin':
                 print('\n~ As you make your way out of the Great Hall with Percival and Leo, you make\n'
                     'eye contact with Milo. You approach him. ~', end='')
                 input()
 
                 #BAD ENDING
-                if Choices['TakeFullCredit'] == True:
+                if self.choices.take_full_credit == True:
                     print('\nMILO: After all that we\'ve been through, did it really mean nothing\n'
                         'to you?', end='')
                     input()
-                    if Choices['Compromise'] == True:
+                    if self.choices.compromise == True:
                         print('MILO: After you offered to help...', end='')
                         input()
-                    if Choices['HelpRival'] == True:
+                    if self.choices.help_rival == True:
                         print('MILO: After you saved my life...', end='')
                         input()
-                    if Player.win_house_cup == True:
+                    if self.player.win_house_cup == True:
                         print('MILO: I hope you\'re happy that you won the House Cup, knowing that you\n'
                             'lied and cheated to get where you are.', end='')
                         input()
@@ -180,7 +184,7 @@ class Chapter():
                     input()
 
                 #BEST ENDING
-                elif Choices['GiveFullCredit'] == True:
+                elif self.choices.give_full_credit == True:
                     print('\nMILO: I had no idea Dumbledore was going to award you as well. I didn\'t even\n'
                         'mention a word about you like you asked.', end='')
                     input()
@@ -188,13 +192,13 @@ class Chapter():
                     input()
                     print('MILO: Oh, and by the way, I wanted to say thank you...', end='')
                     input()
-                    if Choices['Compromise'] == True:
+                    if self.choices.compromise == True:
                         print('MILO: For offering to help...', end='')
                         input()
-                    if Choices['HelpRival'] == True:
+                    if self.choices.help_rival == True:
                         print('MILO: For saving my life...', end='')
                         input()
-                    if Player.win_house_cup == True:
+                    if self.player.win_house_cup == True:
                         print('MILO: I may not have won the House Cup, but I think I\'ve already been awarded\n'
                             'enough.', end='')
                         input()
@@ -207,18 +211,18 @@ class Chapter():
                     input()
 
                 #GOOD ENDING
-                elif Choices['SplitCredit'] == True:
+                elif self.choices.split_credit == True:
                     print('\nMILO: I\'m glad we got to share this journey together.', end='')
                     input()
                     print('MILO: I wanted to say thank you...', end='')
                     input()
-                    if Choices['Compromise'] == True:
+                    if self.choices.compromise == True:
                         print('MILO: For offering to help...', end='')
                         input()
-                    if Choices['HelpRival'] == True:
+                    if self.choices.help_rival == True:
                         print('MILO: For saving my life...', end='')
                         input()
-                    if Player.win_house_cup == True:
+                    if self.player.win_house_cup == True:
                         print('MILO: I may not have won the House Cup, but I think I\'ve already been awarded\n'
                             'enough.', end='')
                         input()
@@ -235,23 +239,23 @@ class Chapter():
 
 
             #SLYTHERIN ENDINGS
-            if Player.house == 'Slytherin':
+            if self.player.house == 'Slytherin':
                 print('\n~ As you make your way out of the Great Hall with Milo, you make\n'
                     'eye contact with Percival. You approach him. ~', end='')
                 input()
 
                 #BAD ENDING
-                if Choices['TakeFullCredit'] == True:
+                if self.choices.take_full_credit == True:
                     print('\nPERCIVAL: After all that we\'ve been through, did it really mean nothing\n'
                         'to you?', end='')
                     input()
-                    if Choices['Compromise'] == True:
+                    if self.choices.compromise == True:
                         print('PERCIVAL: After you offered to help...', end='')
                         input()
-                    if Choices['HelpRival'] == True:
+                    if self.choices.help_rival == True:
                         print('PERCIVAL: After you saved my life...', end='')
                         input()
-                    if Player.win_house_cup == True:
+                    if self.player.win_house_cup == True:
                         print('PERCIVAL: I hope you\'re happy that you won the House Cup, knowing that you\n'
                             'lied and cheated to get where you are.', end='')
                         input()
@@ -268,7 +272,7 @@ class Chapter():
                     input()
 
                 #BEST ENDING
-                elif Choices['GiveFullCredit'] == True:
+                elif self.choices.give_full_credit == True:
                     print('\nPERCIVAL: I had no idea Dumbledore was going to award you as well. I didn\'t even\n'
                         'mention a word about you like you asked.', end='')
                     input()
@@ -276,13 +280,13 @@ class Chapter():
                     input()
                     print('PERCIVAL: Oh, and by the way, I wanted to say thank you...', end='')
                     input()
-                    if Choices['Compromise'] == True:
+                    if self.choices.compromise == True:
                         print('PERCIVAL: For offering to help...', end='')
                         input()
-                    if Choices['HelpRival'] == True:
+                    if self.choices.help_rival == True:
                         print('PERCIVAL: For saving my life...', end='')
                         input()
-                    if Player.win_house_cup == True:
+                    if self.player.win_house_cup == True:
                         print('PERCIVAL: I may not have won the House Cup, but I think I\'ve already been awarded\n'
                             'enough.', end='')
                         input()
@@ -295,18 +299,18 @@ class Chapter():
                     input()
 
                 #GOOD ENDING
-                elif Choices['SplitCredit'] == True:
+                elif self.choices.split_credit == True:
                     print('\nPERCIVAL: I\'m glad we got to share this journey together.', end='')
                     input()
                     print('PERCIVAL: I wanted to say thank you...', end='')
                     input()
-                    if Choices['Compromise'] == True:
+                    if self.choices.compromise == True:
                         print('PERCIVAL: For offering to help...', end='')
                         input()
-                    if Choices['HelpRival'] == True:
+                    if self.choices.help_rival == True:
                         print('PERCIVAL: For saving my life...', end='')
                         input()
-                    if Player.win_house_cup == True:
+                    if self.player.win_house_cup == True:
                         print('PERCIVAL: I may not have won the House Cup, but I think I\'ve already been awarded\n'
                             'enough.', end='')
                         input()
@@ -338,8 +342,3 @@ class Chapter():
             print('\nJ.K. ROWLING\nIDEAS/CHARACTERS', end='')
             input()
             print('\nEND OF PROGRAM', end='')
-
-
-
-#RUN CHAPTER
-#Chapter.Execute_Main()

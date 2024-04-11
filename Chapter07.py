@@ -1,9 +1,6 @@
 from Common import Player
 from Common import Choices
-from Common import AddHousePoints
-import colorama
-from colorama import Back, Fore, Style
-colorama.init(autoreset=True)
+from Common import HousePts
 
 class Chapter():
     def __init__(self):
@@ -11,9 +8,9 @@ class Chapter():
         
     def Execute_Main(self):
         print('')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 7: OUT OF BOUNDS    ~ ')
-        print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+        print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+        print(' ~   CHAPTER 7: OUT OF BOUNDS    ~ ')
+        print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
         input()
         if Choices['Compromise'] == True:
             print('\n~You set out from the castle with Percival, Leo, and Milo at nightfall, navigating\n'
@@ -280,3 +277,9 @@ class Chapter():
         input()
         print('PERCIVAL: Tomorrow night, we meet at the seventh floor corridor.', end='')
         input()
+
+
+
+#RUN CHAPTER
+#Ch07 = Chapter()
+#Ch07.Execute_Main()

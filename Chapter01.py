@@ -1,11 +1,6 @@
-#IMPORTED
-import colorama
-from colorama import Back, Fore, Style
-colorama.init(autoreset=True)
-from Common import Player
-
 class Chapter():
-      def __init__(self):
+      def __init__(self, User):
+            self.player = User
             self.name = 'CHAPTER 1'
             self.gryffindor = 0
             self.hufflepuff = 0
@@ -17,23 +12,23 @@ class Chapter():
             tokens = self.user_name.split()
             if len(tokens) == 2:
                   if tokens[0].isalpha and tokens[1].isalpha():
-                        Player.first_name = tokens[0]
-                        Player.first_name = Player.first_name[0].upper() + Player.first_name[1:].lower()
-                        Player.last_name = tokens[1]
-                        Player.last_name = Player.last_name[0].upper() + Player.last_name[1:].lower()
-                        Player.full_name = Player.first_name + ' ' + Player.last_name
+                        self.player.first_name = tokens[0]
+                        self.player.first_name = self.player.first_name[0].upper() + self.player.first_name[1:].lower()
+                        self.player.last_name = tokens[1]
+                        self.player.last_name = self.player.last_name[0].upper() + self.player.last_name[1:].lower()
+                        self.player.full_name = self.player.first_name + ' ' + self.player.last_name
                   else:
                         print('\n~ Preferably first and last name AND NO SYMBOLS. ~\n')
                         user_name = input()
-                        Chapter.Store_Name(user_name)
+                        self.Store_Name(user_name)
             elif len(tokens) < 2:
                   print('\n~ Preferably first AND last name. ~\n')
                   user_name = input()
-                  Chapter.Store_Name(user_name)
+                  self.Store_Name(user_name)
             elif len(tokens) > 2:
                   print('\n~ Preferably first and last name ONLY. ~\n')
                   user_name = input()
-                  Chapter.Store_Name(user_name)
+                  self.Store_Name(user_name)
 
       def Question_One(self, user_num):
             self.user_num = user_num
@@ -48,7 +43,7 @@ class Chapter():
             else:
                   print('\nSORTING HAT: I beg your pardon?\n')
                   user_num = input()
-                  Chapter.Question_One(user_num)
+                  self.Question_One(user_num)
       
       def Question_Two(self, user_num):
             self.user_num = user_num
@@ -63,7 +58,7 @@ class Chapter():
             else:
                   print('\nSORTING HAT: I beg your pardon?\n')
                   user_num = input()
-                  Chapter.Question_Two(user_num)
+                  self.Question_Two(user_num)
 
       def Question_Three(self, user_num):
             self.user_num = user_num
@@ -78,7 +73,7 @@ class Chapter():
             else:
                   print('\nSORTING HAT: I beg your pardon?\n')
                   user_num = input()
-                  Chapter.Question_Three(user_num)
+                  self.Question_Three(user_num)
 
       def Question_Four(self, user_num):
             self.user_num = user_num
@@ -93,7 +88,7 @@ class Chapter():
             else:
                   print('\nSORTING HAT: I beg your pardon?\n')
                   user_num = input()
-                  Chapter.Question_Four(user_num)
+                  self.Question_Four(user_num)
 
       def Question_Five(self, user_num):
             self.user_num = user_num
@@ -108,7 +103,7 @@ class Chapter():
             else:
                   print('\nSORTING HAT: I beg your pardon?\n')
                   user_num = input()
-                  Chapter.Question_Five(user_num)
+                  self.Question_Five(user_num)
 
       def Finalize_Sort(self):
             sorting_dict = {'Gryffindor': self.gryffindor,
@@ -117,43 +112,43 @@ class Chapter():
                             'Slytherin': self.slytherin}
             keymax = max(zip(sorting_dict.values(), sorting_dict.keys()))[1]
             if keymax == 'Gryffindor':
-                  Player.house = 'Gryffindor'
-                  Player.companion = 'Percival'
-                  Player.rival = 'Milo'
-                  Player.house_color = 'RED'
+                  self.player.house = 'Gryffindor'
+                  self.player.companion = 'Percival'
+                  self.player.rival = 'Milo'
+                  self.player.house_color = 'RED'
             elif keymax == 'Hufflepuff':
-                  Player.house = 'Hufflepuff'
-                  Player.companion = 'Percival'
-                  Player.rival = 'Milo'
-                  Player.house_color = 'YELLOW'
+                  self.player.house = 'Hufflepuff'
+                  self.player.companion = 'Percival'
+                  self.player.rival = 'Milo'
+                  self.player.house_color = 'YELLOW'
             elif keymax == 'Ravenclaw':
-                  Player.house = 'Ravenclaw'
-                  Player.companion = 'Percival'
-                  Player.rival = 'Milo'
-                  Player.house_color = 'BLUE'
+                  self.player.house = 'Ravenclaw'
+                  self.player.companion = 'Percival'
+                  self.player.rival = 'Milo'
+                  self.player.house_color = 'BLUE'
             elif keymax == 'Slytherin':
-                  Player.house = 'Slytherin'
-                  Player.companion = 'Milo'
-                  Player.rival = 'Percival'
-                  Player.house_color = 'GREEN'
+                  self.player.house = 'Slytherin'
+                  self.player.companion = 'Milo'
+                  self.player.rival = 'Percival'
+                  self.player.house_color = 'GREEN'
 
       #CHAPTER CONTENTS
-      def Execute_Main():
+      def Execute_Main(self):
             print('')
-            print(Back.RED + Fore.YELLOW +                      ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-            print(Back.YELLOW + Fore.BLACK +                    ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-            print(Back.WHITE + Fore.BLACK +                     ' ~ ~HOGWARTS: CHOICES~ ~ ')
-            print(Back.BLUE + Fore.LIGHTYELLOW_EX +             ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-            print(Back.GREEN + Fore.LIGHTBLACK_EX +             ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+            print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+            print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+            print(' ~ ~HOGWARTS: CHOICES~ ~ ')
+            print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+            print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
             input()
             print('\n~ Before we begin, would you mind giving me your name? Preferably first AND last. ~\n')
 
             user_name = input()
-            Chapter.Store_Name(user_name)
+            self.Store_Name(user_name)
 
             print('\n~ Excellent! We\'re ready to begin. (Press RETURN to continue.) ~', end='')
             input()
-            print(f"\nDear Mr/Ms. {Player.last_name},\n"
+            print(f"\nDear Mr/Ms. {self.player.last_name},\n"
                   'We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardry.\n'
                   'Please find enclosed a list of all necessary books and equipment. Term begins on the first of September.\n'
                   'We await your owl by no later than the thirty-first of July.\n'
@@ -161,9 +156,9 @@ class Chapter():
                   'Minerva McGonagall', end='')
             input()
             print('')
-            print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
-            print(Back.WHITE + Fore.BLACK + ' ~   CHAPTER 1: THE SORTING HAT    ~ ')
-            print(Back.WHITE + Fore.BLACK + ' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
+            print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
+            print(' ~   CHAPTER 1: THE SORTING HAT    ~ ')
+            print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
             input()
             print('\n~ You meet the Hogwarts groundskeeper, Rubeus Hagrid, and the two of you travel to Diagon Alley to purchase\n'
                   'a most unusual list of school supplies including a set of long black robes, an old-fashioned ink and quill,\n'
@@ -215,7 +210,7 @@ class Chapter():
             input()
             print('\n~ Applause ~', end='')
             input()
-            print(f"\nMCGONAGALL: {Player.full_name}.", end='')
+            print(f"\nMCGONAGALL: {self.player.full_name}.", end='')
             input()
             print('...', end='')
             input()
@@ -236,7 +231,7 @@ class Chapter():
             )
 
             user_num = input()
-            Chapter.Question_One(user_num)
+            self.Question_One(user_num)
 
             print('\nSORTING HAT: Interesting. Very interesting. Now let’s see...', end='')
             input()
@@ -255,7 +250,7 @@ class Chapter():
             )
 
             user_num = input()
-            Chapter.Question_Two(user_num)
+            self.Question_Two(user_num)
 
             print('\nSORTING HAT: I see...', end='')
             input()
@@ -271,7 +266,7 @@ class Chapter():
             )
 
             user_num = input()
-            Chapter.Question_Three(user_num)
+            self.Question_Three(user_num)
 
             print('\nSORTING HAT: Very curious indeed...', end='')
             input()
@@ -289,7 +284,7 @@ class Chapter():
             )
 
             user_num = input()
-            Chapter.Question_Four(user_num)
+            self.Question_Four(user_num)
 
             print('\nSORTING HAT: Hmm... how very quaint. Now finally...', end='')
             input()
@@ -306,17 +301,16 @@ class Chapter():
             )
 
             user_num = input()
-            Chapter.Question_Five(user_num)
-
-            Chapter.Finalize_Sort()
+            self.Question_Five(user_num)
+            self.Finalize_Sort()
 
             print('\nSORTING HAT: Hmm... yes.', end='')
             input()
             print('SORTING HAT: I know just where to put you!', end='')
             input()
-            print(f"SORTING HAT: {Player.house}!", end='')
+            print(f"SORTING HAT: {self.player.house}!", end='')
             input()
-            print(f"\n~ The students from the {Player.house} table cheer for you and you sit down next to someone who welcomes you with a pat on the back. ~", end='')
+            print(f"\n~ The students from the {self.player.house} table cheer for you and you sit down next to someone who welcomes you with a pat on the back. ~", end='')
             input()
             print('\n~ The last first-year has just been sorted and the headmaster Professor Dumbledore stands to speak to the school. ~', end='')
             input()
@@ -333,6 +327,3 @@ class Chapter():
             input()
             print('...', end='')
             input()
-
-#RUN CHAPTER
-Chapter.Execute_Main()
