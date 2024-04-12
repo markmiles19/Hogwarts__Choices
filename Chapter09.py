@@ -633,7 +633,32 @@ class Dialogue():
                 self.DecideTreasure_1(x)
         else:
             #SLYTHERIN PATH HERE
-            pass
+            if x == '1':
+                self.choices.give_full_credit = True
+                print('\nPERCIVAL: Are you sure about that?', end='')
+                input()
+                print('PERCIVAL: You\'ve worked so hard to get here.', end='')
+                input()
+                print('PERCIVAL: Well, I suppose it is your choice.', end='')
+                input()
+                print('PERCIVAL: Once we get out, I\'ll go to Professor McGonagall first thing, I\'ll let\n'
+                    'him know about Leo and Milo, and then I\'ll hand the box off to her.', end='')
+                input()
+                print('PERCIVAL: We did it. Both of us.', end='')
+                input()
+            elif x == '2':
+                self.choices.split_credit = True
+                print('\nPERCIVAL: That only seems fair.', end='')
+                input()
+                print('PERCIVAL: Once we get out, I\'ll go to Professor McGonagall first thing, I\'ll let\n'
+                    'her know about Percival and Milo, and then I\'ll hand the box off to her.', end='')
+                input()
+                print('PERCIVAL: We did it. Both of us.', end='')
+                input()
+            else:
+                print('\nPERCIVAL: This is too important to be messing around.\n')
+                x = input()
+                self.DecideTreasure_1(x)
 
     def DecideTreasure_2(self, x):
         if self.player.house != 'Slytherin':
@@ -683,7 +708,32 @@ class Dialogue():
                 self.DecideTreasure_2(x)
         else:
             #SLYTHERIN PATH HERE
-            pass
+            if x == '1':
+                self.choices.give_full_credit = True
+                print('\nLEO: Are you sure about that?', end='')
+                input()
+                print('LEO: You\'ve worked so hard to get here.', end='')
+                input()
+                print('LEO: Well, I suppose it is your choice.', end='')
+                input()
+                print('LEO: Once we get out, I\'ll go to Professor McGonagall first thing, I\'ll let\n'
+                    'him know about Leo and Milo, and then I\'ll hand the box off to her.', end='')
+                input()
+                print('LEO: We did it. Both of us.', end='')
+                input()
+            elif x == '2':
+                self.choices.split_credit = True
+                print('\nLEO: That only seems fair.', end='')
+                input()
+                print('LEO: Once we get out, I\'ll go to Professor McGonagall first thing, I\'ll let\n'
+                    'her know about Percival and Milo, and then I\'ll hand the box off to her.', end='')
+                input()
+                print('LEO: We did it. Both of us.', end='')
+                input()
+            else:
+                print('\nLEO: This is too important to be messing around.\n')
+                x = input()
+                self.DecideTreasure_2(x)
 
     def DecideTreasure_3(self, x):
         if self.player.house != 'Slytherin':
@@ -715,7 +765,44 @@ class Dialogue():
                 self.DecideTreasure_3(x)
         else:
             #SLYTHERIN PATH HERE
-            pass
+            if x == '1':
+                self.choices.give_full_credit = True
+                print('\nMILO: But why would you do that?', end='')
+                input()
+                print('MILO: We were the ones who sought the treasure for a good reason.', end='')
+                input()
+                print('MILO: Either way I suppose I trust your judgement.', end='')
+                input()
+                print('MILO: Once we get out, I\'ll go to Professor McGonagall first thing, I\'ll let\n'
+                    'her know about Percival and Milo, and then I\'ll hand the box off to her, and I\'ll tell\n'
+                    'her to hand it off to Snape.', end='')
+                input()
+                print('MILO: We did it. Both of us.', end='')
+                input()
+            elif x == '2':
+                self.choices.take_full_credit = True
+                print('\nMILO: Are you sure about that?', end='')
+                input()
+                print('MILO: Well Leo\'s not going to be happy about this.', end='')
+                input()
+                print('MILO: Once we get out, I\'ll go to Professor Snape first thing, I\'ll let\n'
+                    'him know about Percival and Leo, and then I\'ll hand the box off to him.', end='')
+                input()
+                print('MILO: We did it. Both of us.', end='')
+                input()
+            elif x == '3':
+                self.choices.split_credit = True
+                print('\nMILO: That only seems fair.', end='')
+                input()
+                print('MILO: Once we get out, I\'ll go to Professor Snape first thing, I\'ll let\n'
+                    'him know about Percival and Leo, and then I\'ll hand the box off to him.', end='')
+                input()
+                print('MILO: We did it. Both of us.', end='')
+                input()
+            else:
+                print('\nMILO: This is too important to be messing around.\n')
+                x = input()
+                self.DecideTreasure_3(x)
 
     def HospitalWing(self):
         #OPTIMIZE FOR HOUSE PATHS
@@ -786,15 +873,11 @@ class Dialogue():
         print(f"{self.player.companion.upper()}: We couldn\'t have done it without you. Remember that.", end='')
         input()
 
-Branch = Dialogue()
-
 class Potions():
     def __init__(self):
         self.orange = 'Default'
         self.pink = 'Default'
         self.blue = 'Default'
-
-Potion = Potions()
 
 class Dueling():
     def __init__(self):
@@ -803,15 +886,13 @@ class Dueling():
         self.milo = False
         self.leo = False
 
-Duel = Dueling()
-
 class Chapter():
-    def __init__(self, User, Decide, Branch, Potion, Duel):
+    def __init__(self, User, Decide):
         self.player = User
         self.choices = Decide
-        self.dialogue = Branch
-        self.potions = Potion
-        self.dueling = Duel
+        self.dialogue = Dialogue(User, Decide, self.potions, self.dueling)
+        self.potions = Potions()
+        self.dueling = Dueling()
 
     def Execute_Main(self):
         print('')

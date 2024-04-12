@@ -7,33 +7,33 @@ class Dialogue():
 
     def Branch_1(self, user_input):
         if user_input == '1':
-            print('\nPERCIVAL: Sorry about that. Like I said, Ancient Runes was a big mistake.', end='')
+            print(f'\n{self.player.companion.upper()}: Sorry about that. Too much work.', end='')
         elif user_input == '2':
-            print('\nPERCIVAL: Thanks for waiting up for me.', end='')
+            print(f'\n{self.player.companion.upper()}: Thanks for waiting up for me.', end='')
         else:
-            print('PERCIVAL: Did you say something?\n')
+            print(f'{self.player.companion.upper()}: Did you say something?\n')
             user_input = input()
             self.Branch_1(user_input)
 
     def Branch_2(self, user_input):
         if user_input == '1':
-            print('\nPERCIVAL: Well what are you waiting for? Cast Reducto on the glass.', end='')
+            print(f'\n{self.player.companion.upper()}: Well what are you waiting for? Cast Reducto on the glass.', end='')
             input()
         elif user_input == '2':
-            print('\nPERCIVAL: Flitwick taught you both Reducto AND Reparo, right?', end='')
+            print(f'\n{self.player.companion.upper()}: Flitwick taught you both Reducto AND Reparo, right?', end='')
             input()
-            print('PERCIVAL: As long as we repair the glass after we\'re done, no one will ever know.', end='')
+            print(f'{self.player.companion.upper()}: As long as we repair the glass after we\'re done, no one will ever know.', end='')
             input()
-            print('PERCIVAL: Now go on...', end='')
+            print(f'{self.player.companion.upper()}: Now go on...', end='')
             input()
         else:
-            print('PERCIVAL: Are you going to cast Reducto or not?\n')
+            print(f'{self.player.companion.upper()}: Are you going to cast Reducto or not?\n')
             user_input = input()
             self.Branch_2(user_input)
 
     def Branch_3(self, user_input):
         if user_input == '1':
-            print(f"\nPERCIVAL: Not the time, {self.player.first_name}!", end='')
+            print(f"\n{self.player.companion.upper()}: Not the time, {self.player.first_name}!", end='')
             input()
         elif user_input == '2':
             print('')
@@ -45,12 +45,12 @@ class Dialogue():
             print('\n~ Reducto! ~', end='')
             input()
         else:
-            print('\nPERCIVAL: Just cast the flippin\' spell already!\n')
+            print(f'\n{self.player.companion.upper()}: Just cast the flippin\' spell already!\n')
             user_input = input()
             self.Reducto(user_input)
 
     def FiltchIsComing(self):
-        print(f"\n{self.player.companion}: Filtch is coming! Hide!", end='')
+        print(f"\n{self.player.companion.upper()}: Filtch is coming! Hide!", end='')
         input()
         print('\n~Press H to hide behind a trophy case.~\n')
         user_input = input()
@@ -120,8 +120,8 @@ class Dialogue():
 
     def Standstill(self, user_input):
         if user_input == '1':
-            print('\nPERCIVAL: No!')
-            print('MILO: No!\n')
+            print(f'\n{self.player.companion.upper()}: No!')
+            print(f'{self.player.rival.upper()}: No!\n')
             user_input = input()
             self.Standstill(user_input)
         elif user_input == '2':
@@ -346,33 +346,47 @@ class Chapter():
         print('\n???: I\'m afraid I can\'t let you do that.', end='')
         input()
         if self.player.house != 'Slytherin':
-        print('\n~Out from behind a trophy case, a Slytherin boy reveals himself.~', end='')
-        input()
-        print('\nPERCIVAL: Get lost, Milo! This has nothing to do with you.', end='')
-        input()
-        print('\nMILO: This has everything to do with me.', end='')
+            print('\n~ Out from behind a trophy case, a Slytherin boy reveals himself. ~', end='')
+            input()
+            print('\nPERCIVAL: Get lost, Milo! This has nothing to do with you.', end='')
+            input()
+            print('\nMILO: This has everything to do with me.', end='')
+        else:
+            print('\n~ Out from behind a trophy case, two Gryffindor boys reveal themselves. ~', end='')
+            input()
+            print('\nMILO: Get lost, Percival! This has nothing to do with you two.', end='')
+            input()
+            print('\nPERCIVAL: This has everything to do with us.', end='')
         input()
         print(
             '\n[1] Who\'s this guy?\n'
-            '[2] ~Stay silent~\n'
+            '[2] ~ Stay silent ~\n'
         )
         x = input()
         self.dialogue.Branch_3(x)
-        print('PERCIVAL: We found the trophy first. You can leave now.', end='')
+        print(f'{self.player.companion.upper()}: We found the trophy first. You can leave now.', end='')
         input()
-        print('\nMILO: I\'m not leaving without that trophy!', end='')
-        input()
-        print('\nPERCIVAL: What does it matter to you, anyway?', end='')
-        input()
-        print('\nMILO: The treasure belongs to Slytherin. It always has and it always will.', end='')
-        input()
-        print('\n~Percival and Milo are at a standstill. What are you going to do about it?~', end='')
+        if self.player.house != 'Slytherin':
+            print('\nMILO: I\'m not leaving without that trophy!', end='')
+            input()
+            print('\nPERCIVAL: What does it matter to you, anyway?', end='')
+            input()
+            print('\nMILO: The treasure belongs to Slytherin. It always has and it always will.', end='')
+            input()
+        else:
+            print('\nPERCIVAL: We\'re not leaving without that trophy!', end='')
+            input()
+            print('\nMILO: What does it matter to you, anyway?', end='')
+            input()
+            print('\nPERCIVAL: We\'re adventurers. Seeking after lost treasure is simply what we do.', end='')
+            input()
+        print('\n~ Percival and Milo are at a standstill. What are you going to do about it? ~', end='')
         input()
         print(
             '\n[1] I\'m sure if we just talk about it we can come to a mutual understanding.\n'
-            '[2] ~Compromise~\n'
-            '[3] ~Stun and run~\n'
-            '[4] ~Wizard\'s duel~\n'
+            '[2] ~ Compromise ~\n'
+            '[3] ~ Stun and run ~\n'
+            '[4] ~ Wizard\'s duel ~\n'
         )
         x = input()
         self.dialogue.Standstill(x)

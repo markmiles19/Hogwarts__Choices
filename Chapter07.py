@@ -1,10 +1,8 @@
-from Common import Player
-from Common import Choices
-from Common import HousePts
-
 class Chapter():
-    def __init__(self):
-        self.name = 'Chapter 7'
+    def __init__(self, User, Decide, Pts):
+        self.player = User
+        self.choices = Decide
+        self.house_pts = Pts
         
     def Execute_Main(self):
         print('')
@@ -12,11 +10,11 @@ class Chapter():
         print(' ~   CHAPTER 7: OUT OF BOUNDS    ~ ')
         print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
         input()
-        if Choices['Compromise'] == True:
-            print('\n~You set out from the castle with Percival, Leo, and Milo at nightfall, navigating\n'
-                  'hills, ponds, and swamps for what feels like hours.~', end='')
+        if self.choices.compromise:
+            print('\n~ You set out from the castle with Percival, Leo, and Milo at nightfall, navigating\n'
+                  'hills, ponds, and swamps for what feels like hours. ~', end='')
             input()
-            print('\n~Finally, you come to a decent-sided cave.~', end='')
+            print('\n~ Finally, you come to a decent-sided cave. ~', end='')
             input()
             print('\nPERCIVAL: We need to be prepared for whatever we find in there, so have your wands\n'
                   'at the ready.', end='')
@@ -24,31 +22,31 @@ class Chapter():
             print('\nMILO: There\'s nothing scary at all about this.', end='')
             input()
         else:
-            print('\n~You set out from the castle with Percival and Leo at nightfall, navigating hills,\n'
-                  'ponds, and swamps for what feels like hours.~', end='')
+            print('\n~ You set out from the castle with Percival and Leo at nightfall, navigating hills,\n'
+                  'ponds, and swamps for what feels like hours. ~', end='')
             input()
-            print('\n~Finally, you come to a decent-sided cave.~', end='')
+            print('\n~ Finally, you come to a decent-sided cave. ~', end='')
             input()
             print('\nPERCIVAL: We need to be prepared for whatever we find in there, so have your wands\n'
                   'at the ready.', end='')
             input()
             print('\nLEO: I\'m not sure I like this.', end='')
             input()
-            print('\n~Before you manage to set foot in the cave, you hear a rustling sound behind you.~', end='')
+            print('\n~ Before you manage to set foot in the cave, you hear a rustling sound behind you. ~', end='')
             input()
             print('\nPERCIVAL: What was that?', end='')
             input()
-            print('\n~Everything around you is dead quiet until...~', end='')
+            print('\n~ Everything around you is dead quiet until... ~', end='')
             input()
             print('\nPERCIVAL: Revelio!', end='')
             input()
-            print('\n~From out of the foliage stumbles a newly materialized Milo.~', end='')
+            print('\n~ From out of the foliage stumbles a newly materialized Milo. ~', end='')
             input()
             print('\nPERCIVAL: I know a disillusionment charm when I see one, now leave us.', end='')
             input()
             print('\nMILO: Like I said, the treasure belongs with Slytherin.', end='')
             input()
-            print('\nLEO: ~Sigh~', end='')
+            print('\nLEO: ~ Sigh ~', end='')
             input()
             print('LEO: I guess we have no choice.', end='')
             input()
@@ -57,48 +55,48 @@ class Chapter():
             print('\nPERCIVAL: Fine.', end='')
             input()
 
-        print('\n~The four of you enter the cave as the Lumos spell provides illumination from the tip\n'
-              'of your wand.~', end='')
+        print('\n~ The four of you enter the cave as the Lumos spell provides illumination from the tip\n'
+              'of your wand. ~', end='')
         input()
-        print('\n~There seems to be a faint, growling sound coming from the back walls.~', end='')
+        print('\n~ There seems to be a faint, growling sound coming from the back walls. ~', end='')
         input()
         print('\nMILO: What was that?', end='')
         input()
         print('\nPERCIVAL: If I\'m right then I\'m afraid to say...', end='')
         input()
-        print('\n~From out of the darkness emerges a creature like a fire crab, but bigger...~', end='')
+        print('\n~ From out of the darkness emerges a creature like a fire crab, but bigger... ~', end='')
         input()
         print('\nPERCIVAL: Blast-ended skrewt!', end='')
         input()
-        print('\n~He manages to dodge just as the skrewt shoots fire.~', end='')
+        print('\n~ He manages to dodge just as the skrewt shoots fire. ~', end='')
         input()
-        print('\n~It\'s time to put what you\'ve learned into practice.~', end='')
+        print('\n~ It\'s time to put what you\'ve learned into practice. ~', end='')
         input()
 
         HitPoints = 0
         def Blackout():
-            print('\n~Before you can react, you get hit and become unconscious.~', end='')
+            print('\n~ Before you can react, you get hit and become unconscious. ~', end='')
             input()
-            print('\n~Next thing that you know, you are lying on a bed in the hospital wing,\n'
-                  'Madame Pomfrey towering over you.~', end='')
+            print('\n~ Next thing that you know, you are lying on a bed in the hospital wing,\n'
+                  'Madame Pomfrey towering over you. ~', end='')
             input()
-            print('\n~POMFREY: You\'re lucky we were able to find you all the way outside the castle!~', end='')
+            print('\n~ POMFREY: You\'re lucky we were able to find you all the way outside the castle! ~', end='')
             input()
             print('POMFREY: Wandering about the castle at night is bad enough, but leaving the castle...', end='')
             input()
-            if playerDict['House'] == 'Gryffindor':
-                print('POMFREY: I\'ve spoken to Professor McGonagall and she has deducted fifty points\n'
-                      'from Gryffindor.', end='')
+            if self.player.house == 'Gryffindor':
+                print('POMFREY: I\'ve spoken to your head of house and they have deducted fifty points\n'
+                      f'from {self.player.house}.', end='')
                 input()
-                AddHousePoints(-50)
-            elif playerDict['House'] == 'Slytherin':
+                self.house_pts.Add_House_Points(-50)
+            elif self.player.house == 'Slytherin':
                 print('POMFREY: I\'ve spoken to Professor Snape and he has deducted fifty points\n'
                       'from Gryffindor.', end='')
                 input()
-                AddHousePoints(-50)
+                self.house_pts.Add_House_Points(-50)
             print('~That does not stop you. Once you get out of here, you\'ll finish what you started.~', end='')
             input()
-            Chapter07()
+            self.Execute_Main()
                 
         print('\nLEO: We\'ve got to find a way to distract him that way we can get in a hit.', end='')
         input()
@@ -114,28 +112,28 @@ class Chapter():
         if x == '1':
             print('\nLEO: Good thinking!', end='')
             input()
-            print(f"\nMILO: I\'ll help you out, {playerDict['firstName']}.", end='')
+            print(f"\nMILO: I\'ll help you out, {self.player.first_name}.", end='')
             input()
         elif x == '2':
             print('\nMILO: Good thinking!', end='')
             input()
-            print(f"\nLEO: I\'ll help you out, {playerDict['firstName']}.", end='')
+            print(f"\nLEO: I\'ll help you out, {self.player.first_name}.", end='')
             input()
         else:
             HitPoints += 1
-            print('\n~You take too long and the beast sears your clothing as you dodge out of the way.~', end='')
+            print('\n~ You take too long and the beast sears your clothing as you dodge out of the way. ~', end='')
             input()
-        print('\n~Cast the incantations indicated...~', end='')
+        print('\n~ Cast the incantations indicated... ~', end='')
         input()
-        print('\n~Incendio!~\n')
+        print('\n~ Incendio! ~\n')
         x = input()
         if x == 'Incendio' or x == 'incendio' or x == 'INCENDIO':
             pass
         else:
             HitPoints += 1
-            print('\n~Ouch!~', end='')
+            print('\n~ Ouch! ~', end='')
             input()
-        print('\n~Confringo!~\n')
+        print('\n~ Confringo! ~\n')
         x = input()
         if x == 'Confringo' or x == 'confringo' or x == 'CONFRINGO':
             pass
@@ -144,21 +142,21 @@ class Chapter():
             if HitPoints >= 3:
                 Blackout()
             else:
-                print('\n~Ouch!~', end='')
+                print('\n~ Ouch! ~', end='')
                 input()
-        print('\n~Rictusempra!~\n')
+        print('\n~ Rictusempra! ~\n')
         x = input()
         if x == 'Rictusempra' or x == 'rictusempra' or x == 'RICTUSEMPRA':
-            print('\n~That\'s done it! Keep going!~', end='')
+            print('\n~ That\'s done it! Keep going! ~', end='')
             input()
         else:
             HitPoints += 1
             if HitPoints >= 3:
                 Blackout()
             else:
-                print('\n~Ouch!~', end='')
+                print('\n~ Ouch! ~', end='')
                 input()
-        print('\n~It\'s coming at you now! Dodge with D.~\n')
+        print('\n~ It\'s coming at you now! Dodge with D. ~\n')
         x = input()
         if x == 'd' or x == 'D':
             pass
@@ -167,13 +165,13 @@ class Chapter():
             if HitPoints >= 3:
                 Blackout()
             else:
-                print('\n~Ouch!~', end='')
+                print('\n~ Ouch! ~', end='')
                 input()
-        print('\n~You are now separated from your helper.~', end='')
+        print('\n~ You are now separated from your helper. ~', end='')
         input()
-        print('\n~You\'re strength is beginning to give, but you are determined.~', end='')
+        print('\n~ You\'re strength is beginning to give, but you are determined. ~', end='')
         input()
-        print('\n~Rctsmpr~\n')
+        print('\n~ Rctsmpr ~\n')
         x = input()
         if x == 'Rctsmpr' or x == 'rctsmpr' or x == 'RCTSMPR':
             pass
@@ -182,9 +180,9 @@ class Chapter():
             if HitPoints >= 3:
                 Blackout()
             else:
-                print('\n~Ouch!~', end='')
+                print('\n~ Ouch! ~', end='')
                 input()
-        print('\n~Crfngo~\n')
+        print('\n~ Crfngo ~\n')
         x = input()
         if x == 'Crfngo' or x == 'crfngo' or x == 'CRFNGO':
             pass
@@ -193,9 +191,9 @@ class Chapter():
             if HitPoints >= 3:
                 Blackout()
             else:
-                print('\n~Ouch!~', end='')
+                print('\n~ Ouch! ~', end='')
                 input()
-        print('\n~Ineio~\n')
+        print('\n~ Ineio ~\n')
         x = input()
         if x == 'Ineio' or x == 'ineio' or x == 'INEIO':
             pass
@@ -204,7 +202,7 @@ class Chapter():
             if HitPoints >= 3:
                 Blackout()
             else:
-                print('\n~Ouch!~', end='')
+                print('\n~ Ouch! ~', end='')
                 input()
         print('\n~You\'ve managed to fend of against the skrewt, but now it has both Percival cornered at\n'
               'its pincers and Milo at its rear.~', end='')
@@ -215,24 +213,30 @@ class Chapter():
         )
         def SaveDecision(x):
             if x == '1':
-                Choices['HelpCompanion'] = True
-                print('\n~You rush in at Percival and push him out of the way just as...~', end='')
+                if self.player.house != 'Slytherin':
+                    self.choices.help_companion = True
+                else:
+                    self.choices.help_rival = True
+                print('\n~ You rush in at Percival and push him out of the way just as... ~', end='')
                 input()
-                print('\n~Rictusempra!~', end='')
+                print('\n~ Rictusempra! ~', end='')
                 input()
-                print('\n~You cast the spell and it dissolves away into nothing.~', end='')
+                print('\n~ You cast the spell and it dissolves away into nothing. ~', end='')
                 input()
                 print('\nMILO: Don\'t worry! I\'m perfectly fine over here.', end='')
                 input()
-                print('\n~He pats out a waning flame on his robes.~', end='')
+                print('\n~ He pats out a waning flame on his robes. ~', end='')
                 input()
             elif x == '2':
-                Choices['HelpRival'] = True
-                print('\n~You rush in at Milo and push him out of the way just as...~', end='')
+                if self.player.house != 'Slytherin':
+                    self.choices.help_rival = True
+                else:
+                    self.choices.help_companion = True
+                print('\n~ You rush in at Milo and push him out of the way just as... ~', end='')
                 input()
-                print('\n~Rictusempra!~', end='')
+                print('\n~ Rictusempra! ~', end='')
                 input()
-                print('\n~You cast the spell and it dissolves away into nothing.~', end='')
+                print('\n~ You cast the spell and it dissolves away into nothing. ~', end='')
                 input()
                 print('\nPERCIVAL: That was a close one!', end='')
                 input()
@@ -240,11 +244,11 @@ class Chapter():
                 Blackout()
         x = input()
         SaveDecision(x)
-        print('\n~You notice a strange piece of parchment now lying on the ground.~', end='')
+        print('\n~ You notice a strange piece of parchment now lying on the ground. ~', end='')
         input()
         print('\nPERCIVAL: That\'s odd.', end='')
         input()
-        print('\n~He inches towards it and begins to read...~', end='')
+        print('\n~ He inches towards it and begins to read... w~', end='')
         input()
         print('\nPERCIVAL: "In the place that cannot be seen..."', end='')
         input()
@@ -277,9 +281,3 @@ class Chapter():
         input()
         print('PERCIVAL: Tomorrow night, we meet at the seventh floor corridor.', end='')
         input()
-
-
-
-#RUN CHAPTER
-#Ch07 = Chapter()
-#Ch07.Execute_Main()

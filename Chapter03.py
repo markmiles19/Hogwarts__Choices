@@ -18,36 +18,36 @@ class Subchapter():
             print('FLITWICK: Let\'s have you, right there in the middle. Is that alright?', end='')
             input()
 
-    def SayUp(self, user_input):
-            if user_input == 'up' or user_input == 'UP':
-                print('\n~Say UP~\n')
-                user_input = input()
-                if user_input == 'up' or user_input == 'UP':
-                    print('\n~Say UP~\n')
-                    user_input = input()
+    def SayUp(self, x):
+            if x == 'up' or x == 'UP':
+                print('\n~ Say UP ~\n')
+                x = input()
+                if x == 'up' or x == 'UP':
+                    print('\n~ Say UP ~\n')
+                    x = input()
                     if x == 'up' or x == 'UP':
                         self.house_pts.Add_House_Points(5)
                     else:
                         print(f"HOOCH: You're going to have to do better than that, {self.player.last_name}.", end='')
                         input()
                         print('\n~Say UP~\n')
-                        user_input = input()
-                        self.SayUp(user_input)
+                        x = input()
+                        self.SayUp(x)
                 else:
                     print(f"HOOCH: You're going to have to do better than that, {self.player.last_name}.", end='')
                     input()
-                    print('\n~Say UP~\n')
-                    user_input = input()
-                    self.SayUp(user_input)
+                    print('\n~ Say UP ~\n')
+                    x = input()
+                    self.SayUp(x)
             else:
                 print(f"HOOCH: You're going to have to do better than that, {self.player.last_name}.", end='')
                 input()
-                print('\n~Say UP~\n')
-                user_input = input()
-                self.SayUp(user_input)
+                print('\n~ Say UP ~\n')
+                x = input()
+                self.SayUp(x)
 
     def FlyUp(self):
-        print('\n~Press W to fly up.~\n')
+        print('\n~ Press W to fly up. ~\n')
         user_input = input()
         if user_input == 'w' or user_input == 'W':
             pass
@@ -56,7 +56,7 @@ class Subchapter():
             self.FlyUp()
 
     def FlyDown(self):
-        print('\n~Press S to fly down.~\n')
+        print('\n~ Press S to fly down. ~\n')
         user_input = input()
         if user_input == 's' or user_input == 'S':
             pass
@@ -112,7 +112,7 @@ class Subchapter():
         else:
             print('FLITWICK: Oh, not good.', end='')
 
-        print('\n~esxcvgresxcvgr~\n')
+        print('\n~ esxcvgresxcvgr ~\n')
         x = input()
         if x == 'esxcvgresxcvgr':
             self.house_pts.Add_House_Points(10)
@@ -121,27 +121,27 @@ class Subchapter():
 
         print('\nFLITWICK: Reducto!', end='')
         input()
-        print('\n~You cast the incantation at the statue and it reduces itself to rubble.~', end='')
+        print('\n~ You cast the incantation at the statue and it reduces itself to rubble. ~', end='')
         input()
         print('\nFLITWICK: Excellent casting! Now we will learn how to repair the object.', end='')
         input()
         print('FLITWICK: Let us begin!', end='')
         input()
-        print('\n~tyjnbvftyjnbvf~\n')
+        print('\n~ tyjnbvftyjnbvf ~\n')
         x = input()
         if x == 'tyjnbvftyjnbvf':
             self.house_pts.Add_House_Points(10)
         else:
             print('FLITWICK: Oh, not good.', end='')
 
-        print('\n~rthbvcdrthbvcd~\n')
+        print('\n~ rthbvcdrthbvcd ~\n')
         x = input()
         if x == 'rthbvcdrthbvcd':
             self.house_pts.Add_House_Points(10)
         else:
             print('FLITWICK: Oh, not good.', end='')
 
-        print('\n~ergvcxsergvcxs~\n')
+        print('\n~ ergvcxsergvcxs ~\n')
         x = input()
         if x == 'ergvcxsergvcxs':
             self.house_pts.Add_House_Points(10)
@@ -150,7 +150,7 @@ class Subchapter():
 
         print('\nFLITWICK: Reparo!', end='')
         input()
-        print('\n~You pieces of the statue slowly reassemble themselves until they finally become whole.~', end='')
+        print('\n~ You pieces of the statue slowly reassemble themselves until they finally become whole. ~', end='')
         input()
         print('\nFLITWICK: Well done! Now you know how to use both Reducto and Reparo.', end='')
         input()
@@ -158,7 +158,7 @@ class Subchapter():
         input()
 
     def Potions(self):
-        print('\n~You descend down into the deep, dark dungeons of the castle where you arrive at the potions classroom~', end='')
+        print('\n~ You descend down into the deep, dark dungeons of the castle where you arrive at the potions classroom. ~', end='')
         input()
         print('\nProfessor Snape approaches the front of the class and everyone immediately falls silent.', end='')
         input()
@@ -173,13 +173,13 @@ class Subchapter():
         input()
         print('SNAPE: Open your books to page 12 and begin.', end='')
         input()
-        print('\n~12~\n'
-            '~Chapter 1~\n'
-            '~Wiggenweld Potion~\n'
-            '~The Wiggenweld potion heals all injuries inflicted upon the one who consumes its contents. In order\n'
-            'to begin, you must first acquire bark of the wiggentree, and break apart until no longer possible.~', end='')
+        print('\n~ 12 ~\n'
+            '~ Chapter 1 ~\n'
+            '~ Wiggenweld Potion ~\n'
+            '~ The Wiggenweld potion heals all injuries inflicted upon the one who consumes its contents. In order\n'
+            'to begin, you must first acquire bark of the wiggentree, and break apart until no longer possible. ~', end='')
         input()
-        print('\n~Press B to break wiggentree bark.~\n')
+        print('\n~ Press B to break wiggentree bark. ~\n')
         x = input()
         if x == 'b' or x == 'B':
             print('\n~Press B to break wiggentree bark.~\n')
@@ -199,15 +199,15 @@ class Subchapter():
             print(f"\nSNAPE: {self.player.last_name}! Don't force me to deduct house points.", end='')
             input()
 
-        print('\n~Next you must add the broken pieces of wiggentree bark into the cauldron in patient succession.~', end='')
+        print('\n~ Next you must add the broken pieces of wiggentree bark into the cauldron in patient succession. ~', end='')
         input()
-        print('\n~Press A to add the contents to the potion.~\n')
+        print('\n~ Press A to add the contents to the potion. ~\n')
         x = input()
         if x == 'a' or x == 'A':
-            print('\n~Press A to add the contents to the potion.~\n')
+            print('\n~ Press A to add the contents to the potion. ~\n')
             x = input()
             if x == 'a' or x == 'A':
-                print('\n~Press A to add the contents to the potion.~\n')
+                print('\n~ Press A to add the contents to the potion. ~\n')
                 x = input()
                 if x == 'a' or x == 'A':
                     self.house_pts.Add_House_Points(5)
@@ -221,15 +221,15 @@ class Subchapter():
             print(f"SNAPE: {self.player.last_name}! Don't force me to deduct house points.", end='')
             input()
 
-        print('\n~Finally, stir the wiggentree bark until the potion turns a bright shade of green.~', end='')
+        print('\n~ Finally, stir the wiggentree bark until the potion turns a bright shade of green. ~', end='')
         input()
-        print('\n~Stir: asdfghjkl~\n')
+        print('\n~ Stir: asdfghjkl ~\n')
         x = input()
         if x == 'asdfghjkl':
-            print('\n~Stir: lkjhgfdsa~\n')
+            print('\n~ Stir: lkjhgfdsa ~\n')
             x = input()
             if x == 'lkjhgfdsa':
-                print('\n~Stir: poiuytrewq~\n')
+                print('\n~ Stir: poiuytrewq ~\n')
                 x = input()
                 if x == 'poiuytrewq':
                     print('\nStir: zxcvbnm\n')
@@ -247,7 +247,7 @@ class Subchapter():
 
         print('\nSNAPE: Time\'s up! Let\'s witness the damage done today.', end='')
         input()
-        print('\n~Professor Snape inches towards your cauldron, towering over you.~', end='')
+        print('\n~ Professor Snape inches towards your cauldron, towering over you. ~', end='')
         input()
         print('\nSNAPE: What more would I expect from some miserable first year? Count yourself grateful that with\n'
             'this being the first day of term, I\'ve chosen not to deduct house points.', end='')
@@ -256,15 +256,15 @@ class Subchapter():
         input()
 
     def Flying(self):
-        print('\n~After navigating the vast, open grounds of the castle, you find yourself lined up alongside\n'
-        'other first-years, a broomstick on the ground separating each one of you.~', end='')
+        print('\n~ After navigating the vast, open grounds of the castle, you find yourself lined up alongside\n'
+        'other first-years, a broomstick on the ground separating each one of you. ~', end='')
         input()
-        print('\n~Madame Hooch approaches the class.~', end='')
+        print('\n~ Madame Hooch approaches the class. ~', end='')
         input()
         print('\nHOOCH: Welcome to your first flying lesson. We\'ll start with the basics. Everyone hold your hand\n'
             'over the broom on your right and say "up!"', end='')
         input()
-        print('\n~Say UP~\n')
+        print('\n~ Say UP ~\n')
         user_input = input()
         self.SayUp(user_input)
         print('\nHOOCH: Right. Once you\'ve managed to lift your broomstick, you will be ready to mount it.', end='')
@@ -441,7 +441,7 @@ class Chapter():
         print(
         '\n[1] Feeling ready to learn is more like it.\n'
         '[2] I just hope I’m ready for this.\n'
-        '[3] ~Shrug~\n'
+        '[3] ~ Shrug ~\n'
         )
         user_input = input()
         self.dialogue.Branch_1(user_input)

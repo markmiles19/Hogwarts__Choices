@@ -105,9 +105,14 @@ class Chapter():
                 input()
                 print('DUMBLEDORE: His name was Merlin.', end='')
                 input()
-                print('DUMBLEDORE: I now award 50 points to both Gryffindor and Slytherin for the discovery\n'
-                    'of a treasure that none thought would every see the light of day.', end='')
-                input()
+                if self.player.house != 'Slytherin':
+                    print(f'DUMBLEDORE: I now award 50 points to both {self.player.house} and Slytherin for the discovery\n'
+                        'of a treasure that none thought would every see the light of day.', end='')
+                    input()
+                else:
+                    print(f'DUMBLEDORE: I now award 50 points to both Slytherin and Gryffindor for the discovery\n'
+                        'of a treasure that none thought would every see the light of day.', end='')
+                    input()
                 self.house_pts.Add_House_Points(50)
                 print('\n~ Applause ~', end='')
                 input()
@@ -117,9 +122,14 @@ class Chapter():
                 input()
                 print('DUMBLEDORE: His name was Merlin.', end='')
                 input()
-                print('DUMBLEDORE: I now award 25 points to both Gryffindor and Slytherin for the discovery\n'
-                    'of a treasure that none thought would every see the light of day.', end='')
-                input()
+                if self.player.house != 'Slytherin':
+                    print(f'DUMBLEDORE: I now award 25 points to both {self.player.house} and Slytherin for the discovery\n'
+                        'of a treasure that none thought would every see the light of day.', end='')
+                    input()
+                else:
+                    print(f'DUMBLEDORE: I now award 25 points to both Slytherin and Gryffindor for the discovery\n'
+                        'of a treasure that none thought would every see the light of day.', end='')
+                    input()
                 self.house_pts.Add_House_Points(25)
                 print('\n~ Applause ~', end='')
                 input()
@@ -237,9 +247,8 @@ class Chapter():
                     pass
 
 
-
             #SLYTHERIN ENDINGS
-            if self.player.house == 'Slytherin':
+            else:
                 print('\n~ As you make your way out of the Great Hall with Milo, you make\n'
                     'eye contact with Percival. You approach him. ~', end='')
                 input()

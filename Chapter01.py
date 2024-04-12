@@ -162,7 +162,7 @@ class Chapter():
             input()
             print('\n~ You meet the Hogwarts groundskeeper, Rubeus Hagrid, and the two of you travel to Diagon Alley to purchase\n'
                   'a most unusual list of school supplies including a set of long black robes, an old-fashioned ink and quill,\n'
-                  'and a wand.~ ', end='')
+                  'and a wand. ~ ', end='')
             input()
             print('\n~ Finally, you arrive at the Hogwarts entrance hall and he sees you off. ~', end='')
             input()

@@ -1,10 +1,5 @@
 import time
 
-Blacklist = ['HARRY POTTER', 'RON WEASLEY', 'HERMIONE GRANGER', 'NEVILLE LONGBOTTOM', 'ALBUS DUMBLEDORE',
-             'SEVERUS SNAPE', 'SIRIUS BLACK', 'DRACO MALFOY', 'TOM RIDDLE', 'GILDEROY LOCKHART',
-             'DOLORES UMBRIDGE', 'BATHILDA BAGSHOT', 'BELLATRIX LESTRANGE', 'SUSAN BONES', 'LAVENDER BROWN',
-             'CHO CHANG', 'COLIN CREEVY', 'VERNON DURSLEY', 'LUNA LOVEGOOD', 'RUBEUS HAGRID']
-
 class Player():
     def __init__(self):
         self.first_name = 'Firstname'
@@ -132,7 +127,7 @@ Pts = HousePts()
 
 import Chapter01
 import Chapter02
-#import Chapter03
+import Chapter03
 #import Chapter04
 #import Chapter05
 #import Chapter06
@@ -143,9 +138,9 @@ import Chapter02
 
 Ch01 = Chapter01.Chapter(User)
 Ch02 = Chapter02.Chapter(User)
-#Ch03 = Chapter03.Chapter(User)
-#Ch04 = Chapter04.Chapter(User)
-#Ch05 = Chapter05.Chapter(User)
+Ch03 = Chapter03.Chapter(User, Pts)
+#Ch04 = Chapter04.Chapter(User, Pts)
+#Ch05 = Chapter05.Chapter(User, Pts)
 #Ch06 = Chapter06.Chapter(User)
 #Ch07 = Chapter07.Chapter(User)
 #Ch08 = Chapter08.Chapter(User)
@@ -154,7 +149,7 @@ Ch02 = Chapter02.Chapter(User)
 
 Ch01.Execute_Main()
 Ch02.Execute_Main()
-#Ch03.Execute_Main()
+Ch03.Execute_Main()
 #Ch04.Execute_Main()
 #Ch05.Execute_Main()
 #Ch06.Execute_Main()

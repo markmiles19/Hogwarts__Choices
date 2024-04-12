@@ -1,6 +1,6 @@
-from Main import Blacklist
+from Data import Blacklist
 
-class Dialogue():
+class Chapter():
     def __init__(self, User):
         self.player = User
 
@@ -72,11 +72,6 @@ class Dialogue():
             user_input = input()
             self.Branch_4(user_input)
 
-class Chapter():
-    def __init__(self, User):
-        self.player = User
-        self.dialogue = Dialogue(User)
-
     def Execute_Main(self):
 
         print('')
@@ -99,7 +94,7 @@ class Chapter():
             '[3] ~ Say nothing ~\n'
             )
             user_input = input()
-            self.dialogue.Branch_1(user_input)
+            self.Branch_1(user_input)
             print('PERCIVAL: I actually have a younger brother who just started this year, Leo. I’m sure you’ll see him around.', end='')
             input()
             print('PERCIVAL: Without giving away too much, I’ll let you in on a little secret...', end='')
@@ -111,7 +106,7 @@ class Chapter():
             '[2] Is that so?\n'
             )
             user_input = input()
-            self.dialogue.Branch_2(user_input)
+            self.Branch_2(user_input)
             print('PERCIVAL: Anyway, classes start in the morning. I just hope that you’re prepared.', end='')
             input()
 
@@ -125,7 +120,7 @@ class Chapter():
             '[3] ~ Say nothing ~\n'
             )
             user_input = input()
-            self.dialogue.Branch_3(user_input)
+            self.Branch_3(user_input)
             print('\nMILO: My name is Milo, by the way. I’m in my second year at Hogwarts.', end='')
             input()
             print('MILO: I’m sure you’ve noticed by now that the Slytherin house isn’t generally welcoming to first-years, but I’d like to fix that.', end='')
@@ -137,7 +132,7 @@ class Chapter():
             '[2] Sure. Why not?\n'
             )
             user_input = input()
-            self.dialogue.Branch_4(user_input)
+            self.Branch_4(user_input)
             print('MILO: I won’t keep you any longer. You’ll need your rest for classes tomorrow.', end='')
             input()
 
