@@ -1,5 +1,5 @@
 import time
-from Main import Lessons
+from Data import Lessons
 
 Day_2 = Lessons(False, False, False)
 
@@ -306,10 +306,10 @@ class Subchapter():
             #END HERBOLOGY
 
 class Chapter():
-    def __init__(self, User, Decide, Pts):
+    def __init__(self, User, Pts, Decide):
         self.player = User
-        self.choices = Decide
         self.house_pts = Pts
+        self.choices = Decide
         self.subchapter = Subchapter(User, Pts)
 
     def Decide_Class_One(self, x):
@@ -382,6 +382,8 @@ class Chapter():
             '\n[1] Transfiguration\n'
             '[2] Herbology\n'
             )
+            x = input()
+            SubDecideThree(x)
 
     def Execute_Main(self):
         print('')
@@ -402,11 +404,11 @@ class Chapter():
                 f"go wrong or one of us gets hurt, it\'ll be points from {self.player.house}.", end='')
             input()
             if self.choices.compromise == True:
-                print(f"{self.player.companion.upper()}: As much as I disagree with bringing {self.player.rival.upper()} along, it looks like i have\n"
+                print(f"{self.player.companion.upper()}: As much as I disagree with bringing {self.player.rival} along, it looks like i have\n"
                     'no choice but to let him know when I get the chance.', end='')
                 input()
             else:
-                print(f"{self.player.companion.upper()}: And hopefully {self.player.rival.upper()} will learn to keep his fat nose out of our business.", end='')
+                print(f"{self.player.companion.upper()}: And hopefully {self.player.rival} will learn to keep his fat nose out of our business.", end='')
                 input()
         print(f"{self.player.companion.upper()}: Anyway, which class do you think you're going to first?", end='')
         input()
@@ -416,10 +418,10 @@ class Chapter():
         '[3] Care for Magical Creatures\n'
         )
         x = input()
-        self.dialogue.DecideClassOne(x)
+        self.Decide_Class_One(x)
         print('\n~Now with that out of the way, where would you like to go next?~', end='')
         input()
-        self.dialogue.DecideClassTwo()
+        self.Decide_Class_Two()
         print('\n~You\'ve finished two of your classes for the day, leaving just one more...~', end='')
         input()
         if Day_2.Attend1 == True and Day_2.Attend2 == True:

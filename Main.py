@@ -1,4 +1,8 @@
 import time
+from Data import Player
+from Data import Choices
+from Data import Lessons
+from Data import HousePts
 
 class Player():
     def __init__(self):
@@ -7,11 +11,11 @@ class Player():
         self.full_name = 'Firstname Lastname'
         self.fear = 'the default fear'
         self.house = 'Default'
-        self.house_color = 'default'
         self.companion = 'your companion'
         self.rival = 'your rival'
-        self.rival = 'your rival'
         self.win_house_cup = False
+
+User = Player()
 
 class Choices():
     def __init__(self):
@@ -25,45 +29,33 @@ class Choices():
         self.give_full_credit = False
         self.split_credit = False
 
-class Lessons():
-    def __init__(self, Attend1, Attend2, Attend3):
-        self.Attend1 = Attend1
-        self.Attend2 = Attend2
-        self.Attend3 = Attend3
-
-    def Lesson1(self):
-        self.Attend1 = False
-
-    def Lesson2(self):
-        self.Attend2 = False
-
-    def Lesson3(self):
-        self.Attend3 = False
+Decide = Choices()
 
 class HousePts():
-    def __init__(self):
+    def __init__(self, User):
+        self.player = User
         self.gryffindor = 0
         self.hufflepuff = 0
         self.ravenclaw = 0
         self.slytherin = 0
 
     def Add_House_Points(self, num_value):
-        if Player.house == 'Gryffindor':
+        if self.player.house == 'Gryffindor':
             self.gryffindor += int(num_value)
             print('\n+' + str(num_value) + '*', end='')
             time.sleep(0.5)
             print()
-        elif Player.house == 'Hufflepuff':
+        elif self.player.house == 'Hufflepuff':
             self.hufflepuff += int(num_value)
             print('\n+' + str(num_value) + '*', end='')
             time.sleep(0.5)
             print()
-        elif Player.house == 'Ravenclaw':
+        elif self.player.house == 'Ravenclaw':
             self.ravenclaw += int(num_value)
             print('\n+' + str(num_value) + '*', end='')
             time.sleep(0.5)
             print()
-        elif Player.house == 'Slytherin':
+        elif self.player.house == 'Slytherin':
             self.slytherin += int(num_value)
             print('\n+' + str(num_value) + '*', end='')
             time.sleep(0.5)
@@ -119,41 +111,41 @@ class HousePts():
             print('\n~ Slytherin is in the lead! ~', end='')
             input()
 
-User = Player()
-Decide = Choices()
-Pts = HousePts()
+Pts = HousePts(User)
 
 #ALWAYS MAKE SURE THAT TESTING AND RUN STATEMENTS IN EVERY CHAPTER HAVE BEEN COMMENTED.
+
+
 
 import Chapter01
 import Chapter02
 import Chapter03
-#import Chapter04
-#import Chapter05
-#import Chapter06
-#import Chapter07
-#import Chapter08
-#import Chapter09
-#import Chapter10
+import Chapter04
+import Chapter05
+import Chapter06
+import Chapter07
+import Chapter08
+import Chapter09
+import Chapter10
 
 Ch01 = Chapter01.Chapter(User)
 Ch02 = Chapter02.Chapter(User)
 Ch03 = Chapter03.Chapter(User, Pts)
-#Ch04 = Chapter04.Chapter(User, Pts)
-#Ch05 = Chapter05.Chapter(User, Pts)
-#Ch06 = Chapter06.Chapter(User)
-#Ch07 = Chapter07.Chapter(User)
-#Ch08 = Chapter08.Chapter(User)
-#Ch09 = Chapter09.Chapter(User, Decide)
-#Ch10 = Chapter10.Chapter(User, Pts)
+Ch04 = Chapter04.Chapter(User, Pts)
+Ch05 = Chapter05.Chapter(User, Pts, Decide)
+Ch06 = Chapter06.Chapter(User, Pts, Decide)
+Ch07 = Chapter07.Chapter(User, Pts, Decide)
+Ch08 = Chapter08.Chapter(User, Pts)
+Ch09 = Chapter09.Chapter(User, Decide)
+Ch10 = Chapter10.Chapter(User, Pts, Decide)
 
 Ch01.Execute_Main()
 Ch02.Execute_Main()
 Ch03.Execute_Main()
-#Ch04.Execute_Main()
-#Ch05.Execute_Main()
-#Ch06.Execute_Main()
-#Ch07.Execute_Main()
-#Ch08.Execute_Main()
-#Ch09.Execute_Main()
-#Ch10.Execute_Main()
+Ch04.Execute_Main()
+Ch05.Execute_Main()
+Ch06.Execute_Main()
+Ch07.Execute_Main()
+Ch08.Execute_Main()
+Ch09.Execute_Main()
+Ch10.Execute_Main()

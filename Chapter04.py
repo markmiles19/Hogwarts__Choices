@@ -1,5 +1,3 @@
-from Main import Player
-
 class Dialogue():
     def __init__(self, User):
         self.player = User

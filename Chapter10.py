@@ -1,5 +1,5 @@
 class Chapter():
-    def __init__(self, User, Decide, Pts):
+    def __init__(self, User, Pts, Decide):
         self.player = User
         self.choices = Decide
         self.house_pts = Pts
@@ -149,7 +149,6 @@ class Chapter():
             input()
 
             if keymax == self.player.house:
-                self.player.house = True
                 print(f"\n~All of your friends in {self.player.house} cheer with you!~", end='')
                 input()
                 print('\n~ You\'ve never felt happier in your life! ~', end='')

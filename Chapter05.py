@@ -1,9 +1,8 @@
-class Dialogue():
+class Chapter():
     def __init__(self, User, Pts, Decide):
         self.player = User
         self.house_pts = Pts
         self.choices = Decide
-        self.chapter = Chapter(User, Pts)
 
     def Branch_1(self, user_input):
         if user_input == '1':
@@ -72,7 +71,7 @@ class Dialogue():
             input()
             print('\n~After another day of classes and a grueling evening serving detention, you start over again...~', end='')
             input()
-            self.chapter.Execute_Main()
+            self.Execute_Main()
 
     def Section_3(self):
         print(
@@ -247,12 +246,7 @@ class Dialogue():
             user_input = input()
             self.Standstill(user_input)
 
-class Chapter():
-    def __init__(self, User, Pts):
-        self.player = User
-        self.house_pts = Pts
-        self.dialogue = Dialogue(User, Pts)
-        
+
     def Execute_Main(self):
         #GRYFFINDOR/RAVENCLAW/HUFFLEPUFF PATH
         print('')
@@ -272,7 +266,7 @@ class Chapter():
             '[2] I\'m ready when you are.\n'
         )
         user_input = input()
-        self.dialogue.Branch_1(user_input)
+        self.Branch_1(user_input)
         input()
         print(f'{self.player.companion.upper()}: The good news is that the trophy room is open to students at all times.', end='')
         input()
@@ -307,7 +301,7 @@ class Chapter():
         input()
         print('\n~ You inch towards a trophy case in the far back, and scan its contents. ~', end='')
         input()
-        self.dialogue.Section_1()
+        self.Section_1()
         print('\n~ You found it! ~', end='')
         input()
         if self.player.house != 'Slytherin':
@@ -323,10 +317,10 @@ class Chapter():
             '[2] Wouldn\'t that be vandalism?\n'
         )
         x = input()
-        self.dialogue.Branch_2(x)
+        self.Branch_2(x)
         print('\n~Press D to cast Reducto.~\n')
         x = input()
-        self.dialogue.Reducto(x)
+        self.Reducto(x)
         print('\n~ The glass case shatters into a million pieces. Thank Merlin none of them landed on\n'
             'the three of you. ~', end='')
         input()
@@ -363,7 +357,7 @@ class Chapter():
             '[2] ~ Stay silent ~\n'
         )
         x = input()
-        self.dialogue.Branch_3(x)
+        self.Branch_3(x)
         print(f'{self.player.companion.upper()}: We found the trophy first. You can leave now.', end='')
         input()
         if self.player.house != 'Slytherin':
@@ -389,4 +383,4 @@ class Chapter():
             '[4] ~ Wizard\'s duel ~\n'
         )
         x = input()
-        self.dialogue.Standstill(x)
+        self.Standstill(x)

@@ -1,11 +1,24 @@
 import time
 
-class Dialogue():
-    def __init__(self, User, Decide, Potion, Duel):
+class Potions():
+    def __init__(self):
+        self.orange = 'Default'
+        self.pink = 'Default'
+        self.blue = 'Default'
+
+class Dueling():
+    def __init__(self):
+        self.user = False
+        self.percival = False
+        self.milo = False
+        self.leo = False
+
+class Chapter():
+    def __init__(self, User, Decide):
         self.player = User
         self.choices = Decide
-        self.potions = Potion
-        self.dueling = Duel
+        self.potions = Potions()
+        self.dueling = Dueling()
 
     def Branch_1(self, x):
         if x == '3':
@@ -67,12 +80,12 @@ class Dialogue():
 
     def PinkVial_2(self, x):
         if x == '1':
-            Potions['Percival'] = 'Pink'
+            self.potions.pink = 'Percival'
         elif x == '2':
-            Potions['Milo'] = 'Pink'
+            self.potions.pink = 'Milo'
         elif x == '3':
-            Potions['User'] = 'Pink'
-            Choices['TakeFakePotion'] = True
+            self.potions.pink = 'User'
+            self.choices.take_fake_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -80,12 +93,12 @@ class Dialogue():
 
     def PinkVial_3(self, x):
         if x == '1':
-            Potions['Percival'] = 'Pink'
+            self.potions.pink = 'Percival'
         elif x == '2':
-            Potions['Leo'] = 'Pink'
+            self.potions.pink = 'Leo'
         elif x == '3':
-            Potions['User'] = 'Pink'
-            Choices['TakeFakePotion'] = True
+            self.potions.pink = 'User'
+            self.choices.take_fake_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -93,11 +106,11 @@ class Dialogue():
 
     def PinkVial_4(self, x):
         if x == '1':
-            Potions['Percival'] = 'Pink'
+            self.potions.pink = 'Percival'
         elif x == '2':
-            Potions['Leo'] = 'Pink'
+            self.potions.pink = 'Leo'
         elif x == '3':
-            Potions['Milo'] = 'Pink'
+            self.potions.pink = 'Milo'
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -105,10 +118,10 @@ class Dialogue():
 
     def BlueVial_1(self, x):
         if x == '1':
-            Potions['Milo'] = 'Blue'
+            self.potions.blue = 'Milo'
         elif x == '2':
-            Potions['User'] = 'Blue'
-            Choices['TakeFakePotion'] = True
+            self.potions.blue = 'User'
+            self.choices.take_fake_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -116,10 +129,10 @@ class Dialogue():
 
     def BlueVial_2(self, x):
         if x == '1':
-            Potions['Leo'] = 'Blue'
+            self.potions.blue = 'Leo'
         elif x == '2':
-            Potions['User'] = 'Blue'
-            Choices['TakeFakePotion'] = True
+            self.potions.blue = 'User'
+            self.choices.take_fake_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -127,9 +140,9 @@ class Dialogue():
 
     def BlueVial_3(self, x):
         if x == '1':
-            Potions['Leo'] = 'Blue'
+            self.potions.blue = 'Leo'
         elif x == '2':
-            Potions['Milo'] = 'Blue'
+            self.potions.blue = 'Milo'
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -137,10 +150,10 @@ class Dialogue():
 
     def BlueVial_4(self, x):
         if x == '1':
-            Potions['Milo'] = 'Blue'
+            self.potions.blue = 'Milo'
         elif x == '2':
-            Potions['User'] = 'Blue'
-            Choices['TakeFakePotion'] = True
+            self.potions.blue = 'User'
+            self.choices.take_fake_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -148,10 +161,10 @@ class Dialogue():
 
     def BlueVial_5(self, x):
         if x == '1':
-            Potions['Percival'] = 'Blue'
+            self.potions.blue = 'Percival'
         elif x == '2':
-            Potions['User'] = 'Blue'
-            Choices['TakeFakePotion'] = True
+            self.potions.blue = 'User'
+            self.choices.take_fake_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -159,9 +172,9 @@ class Dialogue():
 
     def BlueVial_6(self, x):
         if x == '1':
-            Potions['Percival'] = 'Blue'
+            self.potions.blue = 'Percival'
         elif x == '2':
-            Potions['Milo'] = 'Blue'
+            self.potions.blue = 'Milo'
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -169,10 +182,10 @@ class Dialogue():
 
     def BlueVial_7(self, x):
         if x == '1':
-            Potions['Leo'] = 'Blue'
+            self.potions.blue = 'Leo'
         elif x == '2':
-            Potions['User'] = 'Blue'
-            Choices['TakeFakePotion'] = True
+            self.potions.blue = 'User'
+            self.choices.take_fake_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -180,10 +193,10 @@ class Dialogue():
 
     def BlueVial_8(self, x):
         if x == '1':
-            Potions['Percival'] = 'Blue'
+            self.potions.blue = 'Percival'
         elif x == '2':
-            Potions['User'] = 'Blue'
-            Choices['TakeFakePotion'] = True
+            self.potions.blue = 'User'
+            self.choices.take_fake_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -191,9 +204,9 @@ class Dialogue():
 
     def BlueVial_9(self, x):
         if x == '1':
-            Potions['Percival'] = 'Blue'
+            self.potions.blue = 'Percival'
         elif x == '2':
-            Potions['Leo'] = 'Blue'
+            self.potions.blue = 'Leo'
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -201,9 +214,9 @@ class Dialogue():
 
     def BlueVial_10(self, x):
         if x == '1':
-            Potions['Leo'] = 'Blue'
+            self.potions.blue = 'Leo'
         elif x == '2':
-            Potions['Milo'] = 'Blue'
+            self.potions.blue = 'Milo'
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -211,9 +224,9 @@ class Dialogue():
 
     def BlueVial_11(self, x):
         if x == '1':
-            Potions['Percival'] = 'Blue'
+            self.potions.blue = 'Percival'
         elif x == '2':
-            Potions['Milo'] = 'Blue'
+            self.potions.blue = 'Milo'
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -221,9 +234,9 @@ class Dialogue():
 
     def BlueVial_12(self, x):
         if x == '1':
-            Potions['Percival'] = 'Blue'
+            self.potions.blue = 'Percival'
         elif x == '2':
-            Potions['Leo'] = 'Blue'
+            self.potions.blue = 'Leo'
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
@@ -873,27 +886,6 @@ class Dialogue():
         print(f"{self.player.companion.upper()}: We couldn\'t have done it without you. Remember that.", end='')
         input()
 
-class Potions():
-    def __init__(self):
-        self.orange = 'Default'
-        self.pink = 'Default'
-        self.blue = 'Default'
-
-class Dueling():
-    def __init__(self):
-        self.user = False
-        self.percival = False
-        self.milo = False
-        self.leo = False
-
-class Chapter():
-    def __init__(self, User, Decide):
-        self.player = User
-        self.choices = Decide
-        self.dialogue = Dialogue(User, Decide, self.potions, self.dueling)
-        self.potions = Potions()
-        self.dueling = Dueling()
-
     def Execute_Main(self):
         print('')
         print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ')
@@ -909,7 +901,7 @@ class Chapter():
               '[2] I need to earn Percival\'s respect.\n'
               '[3] I need to restore Merlin\'s Legacy.\n')
         user_input = input()
-        self.dialogue.Branch_1(user_input)
+        self.Branch_1(user_input)
         print('\n~Before you a grand, arched door begins to form.~', end='')
         input()
         print(f"\nPERCIVAL: I think you did it, {self.player.first_name}!", end='')
@@ -925,7 +917,7 @@ class Chapter():
         print('\n[1] I know exactly what this is.\n'
               '[2] I haven\'t the faintest clue.\n')
         user_input = input()
-        self.dialogue.Branch_2(user_input)
+        self.Branch_2(user_input)
         print('\n~You approach the wardrobe, wand in your hand, prepared to face your fear.~', end='')
         input()
         print('\n~The door to the wardrobe slowly beings to open...~', end='')
@@ -971,15 +963,15 @@ class Chapter():
         print('\n~Press R to resist your fear!~\n')
         x = input()
         if x == 'r' or x == 'R':
-            self.dialogue.YouCanDoThis()
+            self.YouCanDoThis()
         else:
-            self.dialogue.YouCantDoThis()
+            self.YouCantDoThis()
         print('\n~Press G to gather your courage!~\n')
         x = input()
         if x == 'g' or x == 'G':
-            self.dialogue.YouCanDoThis()
+            self.YouCanDoThis()
         else:
-            self.dialogue.YouCantDoThis()
+            self.YouCantDoThis()
         print('\n~Press X to cast the spell!~\n')
         x = input()
         if x == 'x' or x == 'X':
@@ -1028,7 +1020,7 @@ class Chapter():
               '[3] Milo\n'
               '[4] Me\n')
         x = input()
-        self.dialogue.OrangeVial(x)
+        self.OrangeVial(x)
 
         #DECIDE PINK
         print('\nPERCIVAL: Alright, now who gets pink?', end='')
@@ -1038,25 +1030,25 @@ class Chapter():
                   '[2] Milo\n'
                   '[3] Me\n')
             x = input()
-            self.dialogue.PinkVial_1(x)
+            self.PinkVial_1(x)
         elif self.potions.orange == 'Leo':
             print('\n[1] Percival\n'
                   '[2] Milo\n'
                   '[3] Me\n')
             x = input()
-            self.dialogue.PinkVial_2(x)
+            self.PinkVial_2(x)
         elif self.potions.orange == 'Milo':
             print('\n[1] Percival\n'
                   '[2] Leo\n'
                   '[3] Me\n')
             x = input()
-            self.dialogue.PinkVial_3(x)
+            self.PinkVial_3(x)
         elif self.potions.orange == 'User':
             print('\n[1] Percival\n'
                   '[2] Leo\n'
                   '[3] Milo\n')
             x = input()
-            self.dialogue.PinkVial_4(x)
+            self.PinkVial_4(x)
 
         #DECIDE BLUE
         print('\nPERCIVAL: Finally, who will get the blue?', end='')
@@ -1065,62 +1057,62 @@ class Chapter():
             print('\n[1] Milo\n'
                   '[2] Me\n')
             x = input()
-            self.dialogue.BlueVial_1(x)
+            self.BlueVial_1(x)
         elif self.potions.orange == 'Percival' and self.potions.pink == 'Milo':
             print('\n[1] Leo\n'
                   '[2] Me\n')
             x = input()
-            self.dialogue.BlueVial_2(x)
+            self.BlueVial_2(x)
         elif self.potions.orange == 'Percival' and self.potions.orange == 'User':
             print('\n[1] Leo\n'
                   '[2] Milo\n')
             x = input()
-            self.dialogue.BlueVial_3(x)
+            self.BlueVial_3(x)
         elif self.potions.orange == 'Leo' and self.potions.pink == 'Percival':
             print('\n[1] Milo\n'
                   '[2] Me\n')
             x = input()
-            self.dialogue.BlueVial_4(x)
+            self.BlueVial_4(x)
         elif self.potions.orange == 'Leo' and self.potions.pink == 'Milo':
             print('\n[1] Percival\n'
                   '[2] Me\n')
             x = input()
-            self.dialogue.BlueVial_5(x)
+            self.BlueVial_5(x)
         elif self.potions.orange == 'Leo' and self.potions.pink == 'User':
             print('\n[1] Percival\n'
                   '[2] Milo\n')
             x = input()
-            self.dialogue.BlueVial_6(x)
+            self.BlueVial_6(x)
         elif self.potions.orange == 'Milo' and self.potions.pink == 'Percival':
             print('\n[1] Leo\n'
                   '[2] Me\n')
             x = input()
-            self.dialogue.BlueVial_7(x)
+            self.BlueVial_7(x)
         elif self.potions.orange == 'Milo' and self.potions.pink == 'Leo':
             print('\n[1] Percival\n'
                   '[2] Me\n')
             x = input()
-            self.dialogue.BlueVial_8(x)
+            self.BlueVial_8(x)
         elif self.potions.orange == 'Milo' and self.potions.pink == 'User':
             print('\n[1] Percival\n'
                   '[2] Leo\n')
             x = input()
-            self.dialogue.BlueVial_9(x)
+            self.BlueVial_9(x)
         elif self.potions.orange == 'User' and self.potions.pink == 'Percival':
             print('\n[1] Leo\n'
                   '[2] Milo\n')
             x = input()
-            self.dialogue.BlueVial_10(x)
+            self.BlueVial_10(x)
         elif self.potions.orange == 'User' and self.potions.pink == 'Leo':
             print('\n[1] Percival\n'
                   '[2] Milo\n')
             x = input()
-            self.dialogue.BlueVial_11(x)
+            self.BlueVial_11(x)
         elif self.potions.orange == 'User' and self.potions.pink == 'Milo':
             print('\n[1] Percival\n'
                   '[2] Leo\n')
             x = input()
-            self.dialogue.BlueVial_12(x)
+            self.BlueVial_12(x)
         
         print('\nPERCIVAL: Well, altogether on three now...', end='')
         input()
@@ -1198,7 +1190,7 @@ class Chapter():
                       '[2] Me and Milo\n'
                       '[3] Leo and Milo\n')
                 x = input()
-                self.dialogue.Dueling_1(x)
+                self.Dueling_1(x)
 
             #LEO IS UNCONSCIOUS
             elif self.potions.orange == 'Leo':
@@ -1215,7 +1207,7 @@ class Chapter():
                       '[2] Me and Milo\n'
                       '[3] Percival and Milo\n')
                 x = input()
-                self.dialogue.Dueling_2(x)
+                self.Dueling_2(x)
 
             #MILO IS UNCONSCIOUS
             elif self.potions.orange == 'Milo':
@@ -1232,7 +1224,7 @@ class Chapter():
                       '[2] Me and Leo\n'
                       '[3] Percival and Leo\n')
                 x = input()
-                self.dialogue.Dueling_3(x)
+                self.Dueling_3(x)
                 
             else:
                 print('\n~Wait, what\'s going on? You shouldn\'t be here!~', end='')
@@ -1278,7 +1270,7 @@ class Chapter():
                         print('[1] Give full credit to Gryffindor\n'
                             f"[2] Split credit between Slytherin and Gryffindor\n")
                     x = input()
-                    self.dialogue.DecideTreasure_1(x)
+                    self.DecideTreasure_1(x)
 
                 elif self.dueling.user == True and self.dueling.leo == True:
                     print('\n~Sitting on a pedestal at the end of the room is a small, silver box.~', end='')
@@ -1312,7 +1304,7 @@ class Chapter():
                         print('[1] Give full credit to Gryffindor\n'
                             f"[2] Split credit between Slytherin and Gryffindor\n")
                     x = input()
-                    self.dialogue.DecideTreasure_2(x)
+                    self.DecideTreasure_2(x)
 
                 elif self.dueling.user == True and self.dueling.milo == True:
                     print('\n~Sitting on a pedestal at the end of the room is a small, silver box.~', end='')
@@ -1346,7 +1338,7 @@ class Chapter():
                             '[2] Give full credit to Slytherin\n'
                             f"[3] Split credit between Gryffindor and Slytherin\n")
                     x = input()
-                    self.dialogue.DecideTreasure_3(x)
+                    self.DecideTreasure_3(x)
 
                 else:
                     print('\n~ Wait, what\'s going on? You shouldn\'t be here! ~', end='')
@@ -1354,9 +1346,9 @@ class Chapter():
 
             else:
                 self.choices.sacrifice_self = True
-                self.dialogue.HospitalWing()
+                self.HospitalWing()
 
 
         else:
             self.choices.take_real_potion = True
-            self.dialogue.HospitalWing()
+            self.HospitalWing()

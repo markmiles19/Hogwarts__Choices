@@ -1,4 +1,4 @@
-from Main import Lessons
+from Data import Lessons
 
 Day_3 = Lessons(False, False, False)
 

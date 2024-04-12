@@ -1,5 +1,4 @@
-from Main import Lessons
-from Main import Player
+from Data import Lessons
 
 Day_1 = Lessons(False, False, False)
 
@@ -281,8 +280,10 @@ class Subchapter():
         input()
 
 class Dialogue():
-    def __init__(self, User):
+    def __init__(self, User, Pts):
         self.player = User
+        self.house_pts = Pts
+        self.subchapter = Subchapter(User, Pts)
 
     def Branch_1(self, user_input):
         if user_input == '1':
@@ -311,8 +312,7 @@ class Dialogue():
                 input()
             print('...', end='')
             input()
-            Ch03b = Subchapter()
-            Ch03b.Charms()
+            self.subchapter.Charms()
             Day_1.Attend1 = True
                 
         elif user_input == '2':
@@ -335,8 +335,7 @@ class Dialogue():
                 input()
             print('...', end='')
             input()
-            Ch03b = Subchapter()
-            Ch03b.Potions()
+            self.subchapter.Potions()
             Day_1.Attend2 = True
             
 
@@ -346,8 +345,7 @@ class Dialogue():
             input()
             print('...', end='')
             input()
-            Ch03b = Subchapter()
-            Ch03b.Flying()
+            self.subchapter.Flying()
             Day_1.Attend3 = True
         else:
             print(f"\n{self.player.companion.upper()}: Come on, now. You\'ve got to pick one.", end='')
@@ -356,12 +354,10 @@ class Dialogue():
 
     def Sub_Decide_One(self, user_input):
         if user_input == '1':
-            Ch03b = Subchapter()
-            Ch03b.Potions()
+            self.subchapter.Potions()
             Day_1.Attend2 = True
         elif user_input == '2':
-            Ch03b = Subchapter()
-            Ch03b.Flying()
+            self.subchapter.Flying()
             Day_1.Attend3 = True
         else:
             print('\n~You\'re not getting out of this one so easy...~\n')
@@ -370,12 +366,10 @@ class Dialogue():
 
     def Sub_Decide_Two(self, user_input):
         if user_input == '1':
-            Ch03b = Subchapter()
-            Ch03b.Charms()
+            self.subchapter.Charms()
             Day_1.Attend1 = True
         elif user_input == '2':
-            Ch03b = Subchapter()
-            Ch03b.Flying()
+            self.subchapter.Flying()
             Day_1.Attend3 = True
         else:
             print('\n~You\'re not getting out of this one so easy...~\n')
@@ -384,12 +378,10 @@ class Dialogue():
 
     def Sub_Decide_Three(self, user_input):
         if user_input == '1':
-            Ch03b = Subchapter()
-            Ch03b.Charms()
+            self.subchapter.Charms()
             Day_1.Attend1 = True
         elif user_input == '2':
-            Ch03b = Subchapter()
-            Ch03b.Potions()
+            self.subchapter.Potions()
             Day_1.Attend2 = True
         else:
             print('\n~You\'re not getting out of this one so easy...~\n')
@@ -422,8 +414,8 @@ class Dialogue():
 class Chapter():
     def __init__(self, User, Pts):
         self.player = User
-        self.dialogue = Dialogue(User)
         self.house_pts = Pts
+        self.dialogue = Dialogue(User, Pts)
         self.subchapter = Subchapter(User, Pts)
         
     def Execute_Main(self):

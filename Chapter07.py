@@ -1,5 +1,5 @@
 class Chapter():
-    def __init__(self, User, Decide, Pts):
+    def __init__(self, User, Pts, Decide):
         self.player = User
         self.choices = Decide
         self.house_pts = Pts
