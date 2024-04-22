@@ -72,7 +72,7 @@ class Chapter():
             self.potions.pink = 'Milo'
         elif x == '3':
             self.potions.pink = 'User'
-            Choices['TakeFakePotion'] = True
+            self.choices.take_real_potion = True
         else:
             print('\nPERCIVAL: Come on, this is no time to play around.\n')
             x = input()
