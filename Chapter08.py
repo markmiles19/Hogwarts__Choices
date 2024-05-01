@@ -25,7 +25,7 @@ class Subchapter():
         input()
         print('TEACHER: Now pay close attention to my movements and repeat the spell.', end='')
         input()
-        print('\n~qazmlp~\n')
+        print('\n~ TYPE: qazmlp ~\n')
         x = input()
         if x == 'qazmlp':
             self.house_pts.Add_House_Points(10)
@@ -34,7 +34,7 @@ class Subchapter():
         else:
             print('\nTEACHER: Ooh! Not good.', end='')
             input()
-        print('\n~weiosdjkxcbn~\n')
+        print('\n~ TYPE: weiosdjkxcbn ~\n')
         x = input()
         if x == 'weiosdjkxcbn':
             self.house_pts.Add_House_Points(10)
@@ -43,7 +43,7 @@ class Subchapter():
         else:
             print('\nTEACHER: Ooh! Not good.', end='')
             input()
-        print('\n~rfvbhuh~\n')
+        print('\n~ TYPE: rfvbhuh ~\n')
         x = input()
         if x == 'rfvbhuh':
             self.house_pts.Add_House_Points(10)
@@ -52,9 +52,9 @@ class Subchapter():
         else:
             print('\nTEACHER: Ooh! Not good.', end='')
             input()
-        print('\n~Riddikulus!~', end='')
+        print('\n~ Riddikulus! ~', end='')
         input()
-        print('\n~Your spell disappears into thin air.~', end='')
+        print('\n~ Your spell disappears into thin air. ~', end='')
         input()
         print('\nTEACHER: Unfortunately we won\'t be able to put the spell to practical\n'
             'use during this class period since all boggarts have been curiously displaced.', end='')

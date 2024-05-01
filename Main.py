@@ -42,28 +42,53 @@ class HousePts():
     def Add_House_Points(self, num_value):
         if self.player.house == 'Gryffindor':
             self.gryffindor += int(num_value)
-            print('\n+' + str(num_value) + '*', end='')
-            time.sleep(0.5)
-            print()
+            if int(num_value) >= 0:
+                print('\n+' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
+            else:
+                print('\n' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
         elif self.player.house == 'Hufflepuff':
             self.hufflepuff += int(num_value)
-            print('\n+' + str(num_value) + '*', end='')
-            time.sleep(0.5)
-            print()
+            if int(num_value) >= 0:
+                print('\n+' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
+            else:
+                print('\n' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
         elif self.player.house == 'Ravenclaw':
             self.ravenclaw += int(num_value)
-            print('\n+' + str(num_value) + '*', end='')
-            time.sleep(0.5)
-            print()
+            if int(num_value) >= 0:
+                print('\n+' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
+            else:
+                print('\n' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
         elif self.player.house == 'Slytherin':
             self.slytherin += int(num_value)
-            print('\n+' + str(num_value) + '*', end='')
-            time.sleep(0.5)
-            print()
+            if int(num_value) >= 0:
+                print('\n+' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
+            else:
+                print('\n' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
         else:
-            print('\n~ Wait, are you unsorted? What are you doing here? ~', end='')
-            time.sleep(0.5)
-            print()
+            if int(num_value) >= 0:
+                print('\n+' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
+            else:
+                print('\n' + str(num_value) + '*', end='')
+                time.sleep(0.5)
+                print('')
 
     def Add_Gryffindor(self, G):
         self.G = G
@@ -139,10 +164,10 @@ Ch08 = Chapter08.Chapter(User, Pts)
 Ch09 = Chapter09.Chapter(User, Decide)
 Ch10 = Chapter10.Chapter(User, Pts, Decide)
 
-Ch01.Execute_Main()
+'''Ch01.Execute_Main()
 Ch02.Execute_Main()
 Ch03.Execute_Main()
-Ch04.Execute_Main()
+Ch04.Execute_Main()'''
 Ch05.Execute_Main()
 Ch06.Execute_Main()
 Ch07.Execute_Main()

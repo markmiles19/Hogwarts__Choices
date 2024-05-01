@@ -1,7 +1,6 @@
 class Chapter():
       def __init__(self, User):
             self.player = User
-            self.name = 'CHAPTER 1'
             self.gryffindor = 0
             self.hufflepuff = 0
             self.ravenclaw = 0

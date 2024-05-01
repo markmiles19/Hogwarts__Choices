@@ -3,6 +3,7 @@ class Chapter():
         self.player = User
         self.house_pts = Pts
         self.choices = Decide
+        self.correct_trophy = False
 
     def Branch_1(self, user_input):
         if user_input == '1':
@@ -64,6 +65,7 @@ class Chapter():
             input()
             self.Section_1()
         else:
+            self.caught = True
             print('\n~You accidentally knock over something, alerting Filtch to your presence.~', end='')
             input()
             self.house_pts.Add_House_Points(-15)
@@ -84,7 +86,7 @@ class Chapter():
         if x == '<':
             self.Section_2()
         elif x == '3':
-            pass
+            self.correct_trophy = True
         else:
             self.FiltchIsComing()
 
@@ -121,6 +123,12 @@ class Chapter():
         if user_input == '1':
             print(f'\n{self.player.companion.upper()}: No!')
             print(f'{self.player.rival.upper()}: No!\n')
+            print(
+            '\n[1] I\'m sure if we just talk about it we can come to a mutual understanding.\n'
+            '[2] ~ Compromise ~\n'
+            '[3] ~ Stun and run ~\n'
+            '[4] ~ Wizard\'s duel ~\n'
+            )
             user_input = input()
             self.Standstill(user_input)
         elif user_input == '2':
@@ -150,7 +158,7 @@ class Chapter():
             input()
             print(f'{self.player.rival.upper}: Stupefy!', end='')
             input()
-            print('\n~ Press D to dodge. ~', end='')
+            print('\n~ Press D to dodge. ~\n')
             user_input = input()
             if user_input == 'd' or user_input == 'D':
                 pass
@@ -185,21 +193,21 @@ class Chapter():
                 input()
             print('\n~ You leave your cover and open fire on him. ~', end='')
             input()
-            print('~ Press S to cast stupefy. ~', end='')
+            print('~ Press S to cast stupefy. ~\n')
             user_input = input()
             if user_input == 's' or user_input == 'S':
                 pass
             else:
                 print('~ OUCH ~', end='')
                 input()
-            print('~Press S to cast stupefy.~', end='')
+            print('~ Press S to cast stupefy. ~\n')
             user_input = input()
             if user_input == 's' or user_input == 'S':
                 pass
             else:
                 print('~ OUCH ~', end='')
                 input()
-            print('~Press P to defend with Protego.~', end='')
+            print('~ Press P to defend with Protego. ~\n')
             user_input = input()
             if user_input == 'p' or user_input == 'P':
                 pass
@@ -236,7 +244,7 @@ class Chapter():
                     'you turn in after an exhausting night. ~', end='')
                     input()
                 else:
-                    print('\nYou have an important decision to make. Now choose!', end='')
+                    print('\n~ You have an important decision to make. Now choose! ~', end='')
                     x = input()
                     RivalFate(x)
             x = input()
@@ -301,86 +309,92 @@ class Chapter():
         input()
         print('\n~ You inch towards a trophy case in the far back, and scan its contents. ~', end='')
         input()
+        print('\n~ There are three sections of trophies to choose from. Who attended Hogwarts around the turn\n'
+              'of the 11th century? ~\n')
         self.Section_1()
-        print('\n~ You found it! ~', end='')
-        input()
-        if self.player.house != 'Slytherin':
-            print('\n~ You let Percival and Leo know and they dart over to the trophy. ~', end='')
+
+
+        if self.correct_trophy == True:
+            print('\n~ You found it! ~', end='')
             input()
-        else:
-            print('\n~ You let Milo know and he darts over to the trophy. ~', end='')
+            if self.player.house != 'Slytherin':
+                print('\n~ You let Percival and Leo know and they dart over to the trophy. ~', end='')
+                input()
+            else:
+                print('\n~ You let Milo know and he darts over to the trophy. ~', end='')
+                input()
+            print(f'\n{self.player.companion.upper()}: That\'s great! All we need to do now is break through the glass case.', end='')
             input()
-        print(f'\n{self.player.companion.upper()}: That\'s great! All we need to do now is break through the glass case.', end='')
-        input()
-        print(
-            '\n[1] That shouldn\'t be too hard.\n'
-            '[2] Wouldn\'t that be vandalism?\n'
-        )
-        x = input()
-        self.Branch_2(x)
-        print('\n~Press D to cast Reducto.~\n')
-        x = input()
-        self.Reducto(x)
-        print('\n~ The glass case shatters into a million pieces. Thank Merlin none of them landed on\n'
-            'the three of you. ~', end='')
-        input()
-        print(f'\n{self.player.companion.upper()}: Let\'s see what all the fuss is about with you, Jonathan Able.', end='')
-        input()
-        print(f'\n~ {self.player.companion} examines the Golden Snitch recreated in fine detail, perched atop the trophy. ~', end='')
-        input()
-        print(f'\n{self.player.companion.upper()}: There seems to be some sort of markings on the Snitch\'s wings. If I\'m not mistaken...', end='')
-        input()
-        print(f'{self.player.companion.upper()}: Of course! They\'re coordinates.', end='')
-        input()
-        print(f'{self.player.companion.upper()}: And they seem to lead off somewhere into the Highlands.', end='')
-        input()
-        print(f'{self.player.companion.upper()}: We\'re going to need to hold onto this for the moment so that I can study the coordinates\n'
-            'and pinpoint the location.', end='')
-        input()
-        print('\n???: I\'m afraid I can\'t let you do that.', end='')
-        input()
-        if self.player.house != 'Slytherin':
-            print('\n~ Out from behind a trophy case, a Slytherin boy reveals himself. ~', end='')
+            print(
+                '\n[1] That shouldn\'t be too hard.\n'
+                '[2] Wouldn\'t that be vandalism?\n'
+            )
+            x = input()
+            self.Branch_2(x)
+            print('\n~ Press D to cast Reducto. ~\n')
+            x = input()
+            self.Reducto(x)
+            print('\n~ The glass case shatters into a million pieces. Thank Merlin none of them landed on\n'
+                'the three of you. ~', end='')
             input()
-            print('\nPERCIVAL: Get lost, Milo! This has nothing to do with you.', end='')
+            print(f'\n{self.player.companion.upper()}: Let\'s see what all the fuss is about with you, Jonathan Able.', end='')
             input()
-            print('\nMILO: This has everything to do with me.', end='')
-        else:
-            print('\n~ Out from behind a trophy case, two Gryffindor boys reveal themselves. ~', end='')
+            print(f'\n~ {self.player.companion} examines the Golden Snitch recreated in fine detail, perched atop the trophy. ~', end='')
             input()
-            print('\nMILO: Get lost, Percival! This has nothing to do with you two.', end='')
+            print(f'\n{self.player.companion.upper()}: There seems to be some sort of markings on the Snitch\'s wings. If I\'m not mistaken...', end='')
             input()
-            print('\nPERCIVAL: This has everything to do with us.', end='')
-        input()
-        print(
-            '\n[1] Who\'s this guy?\n'
-            '[2] ~ Stay silent ~\n'
-        )
-        x = input()
-        self.Branch_3(x)
-        print(f'{self.player.companion.upper()}: We found the trophy first. You can leave now.', end='')
-        input()
-        if self.player.house != 'Slytherin':
-            print('\nMILO: I\'m not leaving without that trophy!', end='')
+            print(f'{self.player.companion.upper()}: Of course! They\'re coordinates.', end='')
             input()
-            print('\nPERCIVAL: What does it matter to you, anyway?', end='')
+            print(f'{self.player.companion.upper()}: And they seem to lead off somewhere into the Highlands.', end='')
             input()
-            print('\nMILO: The treasure belongs to Slytherin. It always has and it always will.', end='')
+            print(f'{self.player.companion.upper()}: We\'re going to need to hold onto this for the moment so that I can study the coordinates\n'
+                'and pinpoint the location.', end='')
             input()
-        else:
-            print('\nPERCIVAL: We\'re not leaving without that trophy!', end='')
+            print('\n???: I\'m afraid I can\'t let you do that.', end='')
             input()
-            print('\nMILO: What does it matter to you, anyway?', end='')
+            if self.player.house != 'Slytherin':
+                print('\n~ Out from behind a trophy case, a Slytherin boy reveals himself. ~', end='')
+                input()
+                print('\nPERCIVAL: Get lost, Milo! This has nothing to do with you.', end='')
+                input()
+                print('\nMILO: This has everything to do with me.', end='')
+            else:
+                print('\n~ Out from behind a trophy case, two Gryffindor boys reveal themselves. ~', end='')
+                input()
+                print('\nMILO: Get lost, Percival! This has nothing to do with you two.', end='')
+                input()
+                print('\nPERCIVAL: This has everything to do with us.', end='')
             input()
-            print('\nPERCIVAL: We\'re adventurers. Seeking after lost treasure is simply what we do.', end='')
+            print(
+                '\n[1] Who\'s this guy?\n'
+                '[2] ~ Stay silent ~\n'
+            )
+            x = input()
+            self.Branch_3(x)
+            print(f'{self.player.companion.upper()}: We found the trophy first. You can leave now.', end='')
             input()
-        print('\n~ Percival and Milo are at a standstill. What are you going to do about it? ~', end='')
-        input()
-        print(
-            '\n[1] I\'m sure if we just talk about it we can come to a mutual understanding.\n'
-            '[2] ~ Compromise ~\n'
-            '[3] ~ Stun and run ~\n'
-            '[4] ~ Wizard\'s duel ~\n'
-        )
-        x = input()
-        self.Standstill(x)
+            if self.player.house != 'Slytherin':
+                print('\nMILO: I\'m not leaving without that trophy!', end='')
+                input()
+                print('\nPERCIVAL: What does it matter to you, anyway?', end='')
+                input()
+                print('\nMILO: The treasure belongs to Slytherin. It always has and it always will.', end='')
+                input()
+            else:
+                print('\nPERCIVAL: We\'re not leaving without that trophy!', end='')
+                input()
+                print('\nMILO: What does it matter to you, anyway?', end='')
+                input()
+                print('\nPERCIVAL: We\'re adventurers. Seeking after lost treasure is simply what we do.', end='')
+                input()
+            print('\n~ Percival and Milo are at a standstill. What are you going to do about it? ~', end='')
+            input()
+            print(
+                '\n[1] I\'m sure if we just talk about it we can come to a mutual understanding.\n'
+                '[2] ~ Compromise ~\n'
+                '[3] ~ Stun and run ~\n'
+                '[4] ~ Wizard\'s duel ~\n'
+            )
+            x = input()
+            self.Standstill(x)
+            self.correct_trophy = False

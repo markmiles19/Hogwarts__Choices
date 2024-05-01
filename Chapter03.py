@@ -18,13 +18,13 @@ class Subchapter():
             input()
 
     def SayUp(self, x):
-            if x == 'up' or x == 'UP':
-                print('\n~ Say UP ~\n')
+            if x == 'up' or x == 'UP' or x == 'Up':
+                print('\n~ TYPE: Up ~\n')
                 x = input()
-                if x == 'up' or x == 'UP':
-                    print('\n~ Say UP ~\n')
+                if x == 'up' or x == 'UP' or x == 'Up':
+                    print('\n~ TYPE: Up ~\n')
                     x = input()
-                    if x == 'up' or x == 'UP':
+                    if x == 'up' or x == 'UP' or x == 'Up':
                         self.house_pts.Add_House_Points(5)
                     else:
                         print(f"HOOCH: You're going to have to do better than that, {self.player.last_name}.", end='')
@@ -41,7 +41,7 @@ class Subchapter():
             else:
                 print(f"HOOCH: You're going to have to do better than that, {self.player.last_name}.", end='')
                 input()
-                print('\n~ Say UP ~\n')
+                print('\n~ TYPE: Up ~\n')
                 x = input()
                 self.SayUp(x)
 
@@ -97,21 +97,21 @@ class Subchapter():
         input()
         print('\nFLITWICK: Let us begin!', end='')
         input()
-        print('\n~ tfvbnjytfvbnjy ~\n')
+        print('\n~ TYPE: tfvbnjytfvbnjy ~\n')
         x = input()
         if x == 'tfvbnjytfvbnjy':
             self.house_pts.Add_House_Points(10)
         else:
             print('FLITWICK: Oh, not good.', end='')
 
-        print('\n~ rdcvbhtrdcvbht ~\n')
+        print('\n~ TYPE: rdcvbhtrdcvbht ~\n')
         x = input()
         if x == 'rdcvbhtrdcvbht':
             self.house_pts.Add_House_Points(10)
         else:
             print('FLITWICK: Oh, not good.', end='')
 
-        print('\n~ esxcvgresxcvgr ~\n')
+        print('\n~ TYPE: esxcvgresxcvgr ~\n')
         x = input()
         if x == 'esxcvgresxcvgr':
             self.house_pts.Add_House_Points(10)
@@ -126,21 +126,21 @@ class Subchapter():
         input()
         print('FLITWICK: Let us begin!', end='')
         input()
-        print('\n~ tyjnbvftyjnbvf ~\n')
+        print('\n~ TYPE: tyjnbvftyjnbvf ~\n')
         x = input()
         if x == 'tyjnbvftyjnbvf':
             self.house_pts.Add_House_Points(10)
         else:
             print('FLITWICK: Oh, not good.', end='')
 
-        print('\n~ rthbvcdrthbvcd ~\n')
+        print('\n~ TYPE: rthbvcdrthbvcd ~\n')
         x = input()
         if x == 'rthbvcdrthbvcd':
             self.house_pts.Add_House_Points(10)
         else:
             print('FLITWICK: Oh, not good.', end='')
 
-        print('\n~ ergvcxsergvcxs ~\n')
+        print('\n~ TYPE: ergvcxsergvcxs ~\n')
         x = input()
         if x == 'ergvcxsergvcxs':
             self.house_pts.Add_House_Points(10)
@@ -222,16 +222,16 @@ class Subchapter():
 
         print('\n~ Finally, stir the wiggentree bark until the potion turns a bright shade of green. ~', end='')
         input()
-        print('\n~ Stir: asdfghjkl ~\n')
+        print('\n~ TYPE: asdfghjkl ~\n')
         x = input()
         if x == 'asdfghjkl':
-            print('\n~ Stir: lkjhgfdsa ~\n')
+            print('\n~ TYPE: lkjhgfdsa ~\n')
             x = input()
             if x == 'lkjhgfdsa':
-                print('\n~ Stir: poiuytrewq ~\n')
+                print('\n~ TYPE: poiuytrewq ~\n')
                 x = input()
                 if x == 'poiuytrewq':
-                    print('\nStir: zxcvbnm\n')
+                    print('\n~ TYPE: zxcvbnm ~\n')
                     x = input()
                     if x == 'zxcvbnm':
                         self.house_pts.Add_House_Points(5)
@@ -263,7 +263,7 @@ class Subchapter():
         print('\nHOOCH: Welcome to your first flying lesson. We\'ll start with the basics. Everyone hold your hand\n'
             'over the broom on your right and say "up!"', end='')
         input()
-        print('\n~ Say UP ~\n')
+        print('\n~ TYPE: Up ~\n')
         user_input = input()
         self.SayUp(user_input)
         print('\nHOOCH: Right. Once you\'ve managed to lift your broomstick, you will be ready to mount it.', end='')

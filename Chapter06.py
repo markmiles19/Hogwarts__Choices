@@ -10,8 +10,8 @@ class Subchapter():
 
       #BEGIN TRANSFIGURATION
       def Transfiguration(self):
-            print('\n~You nearly get lost on your way to Transfiguration with Professor McGonagall, but you manage to\n'
-                  'make it just in time.~', end='')
+            print('\n~ You nearly get lost on your way to Transfiguration with Professor McGonagall, but you manage to\n'
+                  'make it just in time. ~', end='')
             input()
             print('\nMCGONAGALL: Take a seat everyone! We\'ll being momentarily.', end='')
             input()
@@ -26,74 +26,87 @@ class Subchapter():
             input()
             print('MCGONAGALL: Now you may begin!', end='')
             input()
-            print('\n~To cast Avifors, you must unscramble each anagram.~', end='')
+            print('\n~ To cast Avifors, you must type each unscrambled anagram. ~', end='')
             input()
+
+
+
+            #HEDWIG
             print('\n~ GDEIHW ~\n')
+            print('UNSCRAMBLED: ', end='')
             x = input()
             if x == 'Hedwig' or x == 'hedwig' or x == 'HEDWIG':
                   self.house_pts.Add_House_Points(10)
-            else:
-                  print('\n~ GDEIHW ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ HGDEIW ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ HEGDIW ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ HEDGIW ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ HEDWGI ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ HEDWIG ~', end='')
-                  input()
+            print('\n~ GDEIHW ~', end='')
+            time.sleep(0.3)
+            print('\n~ HGDEIW ~', end='')
+            time.sleep(0.3)
+            print('\n~ HEGDIW ~', end='')
+            time.sleep(0.3)
+            print('\n~ HEDGIW ~', end='')
+            time.sleep(0.3)
+            print('\n~ HEDWGI ~', end='')
+            time.sleep(0.3)
+            print('\n~ HEDWIG ~', end='')
+            input()
+
+
+
+            #GOBLINS
             print('\n~ SLBGNIO ~\n')
+            print('UNSCRAMBLED: ', end='')
             x = input()
             if x == 'Goblins' or x == 'goblins' or x == 'GOBLINS':
                   self.house_pts.Add_House_Points(10)
-            else:
-                  print('\n~ SLBGNIO ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ GSLBNIO ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ GOSLBNI ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ GOBSLNI ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ GOBLSNI ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ GOBLISN ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ GOBLINS ~', end='')
-                  input()
+            print('\n~ SLBGNIO ~', end='')
+            time.sleep(0.3)
+            print('\n~ GSLBNIO ~', end='')
+            time.sleep(0.3)
+            print('\n~ GOSLBNI ~', end='')
+            time.sleep(0.3)
+            print('\n~ GOBSLNI ~', end='')
+            time.sleep(0.3)
+            print('\n~ GOBLSNI ~', end='')
+            time.sleep(0.3)
+            print('\n~ GOBLISN ~', end='')
+            time.sleep(0.3)
+            print('\n~ GOBLINS ~', end='')
+            input()
+
+
+
+            #FELIX FELICIS
             print('\n~ ICXLSIELFFIE ~\n')
+            print('UNSCRAMBLED: ', end='')
             x = input()
             if x == 'Felix Felicis' or x == 'felix felicis' or x == 'FELIX FELICIS' or x == 'FelixFelicis' or x == 'felixfelicis' or x == 'FELIXFELICIS':
                   self.house_pts.Add_House_Points(20)
-            else:
-                  print('\n~ ICXLSIELFFIE ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FICXLSIELFIE ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FEICXLSILFIE ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FELICXSILFIE ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FELIXCSILFIE ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FELIXFCSILIE ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FELIXFECSILI ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FELIXFELCSII ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FELIXFELICSI ~', end='')
-                  time.sleep(0.3)
-                  print('\n~ FELIXFELICIS ~', end='')
-                  input()
-            print('\n~Avifors!~', end='')
+            print('\n~ ICXLSIELFFIE ~', end='')
+            time.sleep(0.3)
+            print('\n~ FICXLSIELFIE ~', end='')
+            time.sleep(0.3)
+            print('\n~ FEICXLSILFIE ~', end='')
+            time.sleep(0.3)
+            print('\n~ FELICXSILFIE ~', end='')
+            time.sleep(0.3)
+            print('\n~ FELIXCSILFIE ~', end='')
+            time.sleep(0.3)
+            print('\n~ FELIXFCSILIE ~', end='')
+            time.sleep(0.3)
+            print('\n~ FELIXFECSILI ~', end='')
+            time.sleep(0.3)
+            print('\n~ FELIXFELCSII ~', end='')
+            time.sleep(0.3)
+            print('\n~ FELIXFELICSI ~', end='')
+            time.sleep(0.3)
+            print('\n~ FELIXFELICIS ~', end='')
             input()
-            print('\n~You have successfully transformed your chair into a hummingbird.~', end='')
+
+
+
+            print('\n~ Avifors! ~', end='')
             input()
-            print(f"\nMCGONAGALL: Well done, {self.player.first_name}!", end='')
+            print('\n~Your chair has transformed into a hummingbird.~', end='')
             input()
             print('MCGONAGALL: Be sure to continue practicing the Avifors spell in your own time.', end='')
             input()
@@ -232,11 +245,11 @@ class Subchapter():
 
       #BEGIN CARE FOR MAGICAL CREATURES
       def MagicalCreatures(self):
-            print('\n~You make your way over to an open clearing right outside the Forbidden Forest where other students\n'
-                  'are gathered around.~', end='')
+            print('\n~ You make your way over to an open clearing right outside the Forbidden Forest where other students\n'
+                  'are gathered around. ~', end='')
             input()
-            print('\n~You come face to face with Professor Kettleburn, an old man decorated in prosthetic limbs with a\n'
-                  'bandage covering an eye. Next to him sits a large tortoise-like creature in a cage.~', end='')
+            print('\n~ You come face to face with Professor Kettleburn, an old man decorated in prosthetic limbs with a\n'
+                  'bandage covering an eye. Next to him sits a large tortoise-like creature in a cage. ~', end='')
             input()
             print('\nKETTLEBURN: Thank you everyone for attending class today. We\'ll be learning about a very fascinating\n'
                   'type of creature today, the fire crab.', end='')
@@ -253,30 +266,30 @@ class Subchapter():
             input()
             print('KETTLEBURN: Follow my wand movement like so.', end='')
             input()
-            print('\n~ertfcvb~\n')
+            print('\n~ TYPE: ertfcvb ~\n')
             x = input()
             if x == 'ertfcvb':
                   self.house_pts.Add_House_Points(10)
             else:
                   print('\nKETTLEBURN: You can do better than that.', end='')
                   input()
-            print('\n~ertyugcvbnm~\n')
+            print('\n~ TYPE: ertyugcvbnm ~\n')
             x = input()
             if x == 'ertyugcvbnm':
                   self.house_pts.Add_House_Points(10)
             else:
                   print('\nKETTLEBURN: You can do better than that.', end='')
                   input()
-            print('\n~qweszxc~\n')
+            print('\n~ TYPE: qweszxc ~\n')
             x = input()
             if x == 'qweszxc':
                   self.house_pts.Add_House_Points(10)
             else:
                   print('\nKETTLEBURN: You can do better than that.', end='')
                   input()
-            print('\n~You hear the sound of crunching wood...~', end='')
+            print('\n~ You hear the sound of crunching wood... ~', end='')
             input()
-            print('\n~The fire crab has broken free!~', end='')
+            print('\n~ The fire crab has broken free! ~', end='')
             input()
             print('\n~Quick! Press R to cast Rictusempra!~\n')
             x = input()
@@ -338,7 +351,7 @@ class Chapter():
                 self.subchapter.MagicalCreatures()
                 Day_2.Attend3 = True
             else:
-                print('\n~You\'re not getting out of this one so easy...~\n')
+                print('\n~ You\'re not getting out of this one so easy... ~\n')
                 x = input()
                 SubDecideOne(x)
         def SubDecideTwo(x):
@@ -349,7 +362,7 @@ class Chapter():
                 self.subchapter.MagicalCreatures()
                 Day_2.Attend3 = True
             else:
-                print('\n~You\'re not getting out of this one so easy...~\n')
+                print('\n~ You\'re not getting out of this one so easy... ~\n')
                 x = input()
                 SubDecideTwo(x)
         def SubDecideThree(x):
@@ -392,8 +405,8 @@ class Chapter():
         print(' ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ', end=' ')
         input()
         if self.player.house != 'Slytherin':
-            print('\n~Following the exciting events from last night, you struggle to adjust to start\n'
-                'of a new day as you meet Percival in the common room.~', end='')
+            print('\n~ Following the exciting events from last night, you struggle to adjust to start\n'
+                'of a new day as you meet Percival in the common room. ~', end='')
             input()
             print(f"\n{self.player.companion.upper()}: I was just looking for you.", end='')
             input()
@@ -419,10 +432,10 @@ class Chapter():
         )
         x = input()
         self.Decide_Class_One(x)
-        print('\n~Now with that out of the way, where would you like to go next?~', end='')
+        print('\n~ Now with that out of the way, where would you like to go next? ~', end='')
         input()
         self.Decide_Class_Two()
-        print('\n~You\'ve finished two of your classes for the day, leaving just one more...~', end='')
+        print('\n~ You\'ve finished two of your classes for the day, leaving just one more... ~', end='')
         input()
         if Day_2.Attend1 == True and Day_2.Attend2 == True:
             self.subchapter.MagicalCreatures()
