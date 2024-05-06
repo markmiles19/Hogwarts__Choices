@@ -164,10 +164,10 @@ Ch08 = Chapter08.Chapter(User, Pts)
 Ch09 = Chapter09.Chapter(User, Decide)
 Ch10 = Chapter10.Chapter(User, Pts, Decide)
 
-'''Ch01.Execute_Main()
+Ch01.Execute_Main()
 Ch02.Execute_Main()
 Ch03.Execute_Main()
-Ch04.Execute_Main()'''
+Ch04.Execute_Main()
 Ch05.Execute_Main()
 Ch06.Execute_Main()
 Ch07.Execute_Main()
